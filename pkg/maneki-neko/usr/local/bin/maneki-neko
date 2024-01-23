@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 import sys
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets, QtCore, QtGui
@@ -24,8 +23,7 @@ class welcomeScreen(QMainWindow):
 
         # always init window to first page
         self.windowStackedWidget.setCurrentIndex(0)
-        # if AUTOSTART already enabled, then update the text of the autostartCheckBox
-        self.updateAutostartCheckBoxState()
+
         # Buttons
         self.nextButton.clicked.connect(self.moveForward)
         self.backButton.clicked.connect(self.moveBackward)
@@ -40,19 +38,7 @@ class welcomeScreen(QMainWindow):
 
         return
 
-    def updateAutostartCheckBoxState(self):
-        # purpose of this function is to update the text of 
-        # autostart checkbox to Enabled if the desktop file already exists
-        home = os.path.expanduser("~")
-        filePath = home + "/.config/autostart/maneki_neko.desktop"
-        print(filePath)
-
-        if os.path.isfile(filePath):
-            # the file exists so update the checkbox text
-            self.autostartCheckBox.setText("Autostart Maneki Neko (Enabled)")
-            self.autostartCheckBox.setChecked(True)
-
-        return
+    
 
     def disableBackAtFirstPage(self):
         currentIndex = self.windowStackedWidget.currentIndex() #current index of the window
@@ -115,7 +101,7 @@ class welcomeScreen(QMainWindow):
 
         # the command to execute
         # pls change this
-        command = ["gnome-terminal", "--", 'bash -c /home/kali/Desktop/stratOS_welcome/src/scripts/distroInstaller.sh']
+        command = ["gnome-terminal", "-e", 'bash -c /home/kali/Desktop/stratOS_welcome/src/scripts/distroInstaller.sh']
 
         temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
 
@@ -132,7 +118,7 @@ class welcomeScreen(QMainWindow):
 
         # the command to execute
         # pls change this
-        command = ["gnome-terminal", "--", 'bash -c /home/kali/Desktop/stratOS_welcome/src/scripts/themeChanger.sh']
+        command = ["gnome-terminal", "-e", 'bash -c /home/kali/Desktop/stratOS_welcome/src/scripts/themeChanger.sh']
 
         temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
 
@@ -149,8 +135,7 @@ class welcomeScreen(QMainWindow):
 
         # the command to execute
         # pls change this
-
-        command = ["gnome-terminal", "--", '$HOME/Desktop/stratOS_welcome/src/scripts/browserInstaller.sh']
+        command = ["gnome-terminal", "-e", 'bash -c /home/kali/Desktop/stratOS_welcome/src/scripts/browserInstaller.sh']
 
         temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
 
@@ -241,7 +226,6 @@ def main():
     global app
     print("Program launch OK")
     mainScreen = welcomeScreen()
-    mainScreen.setWindowIcon(QtGui.QIcon("src/png/maneki_neko.png"))
     mainScreen.show()
     try:
         sys.exit(app.exec_())

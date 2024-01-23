@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>CreditsPage</class>
+ <widget class="QDialog" name="CreditsPage">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Credits Page</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../png/maneki_neko.png</normaloff>../png/maneki_neko.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -341,8 +345,7 @@ color: rgb(38, 162, 105);</string>
            <string comment="Visit StratOS Github Repo" extracomment="Visit StratOS Github Repo"/>
           </property>
           <property name="styleSheet">
-           <string notr="true">
-</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>Github Repo</string>
@@ -400,7 +403,7 @@ color: rgb(38, 162, 105);</string>
   <connection>
    <sender>dialogButtonBox</sender>
    <signal>accepted()</signal>
-   <receiver>Dialog</receiver>
+   <receiver>CreditsPage</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -416,7 +419,7 @@ color: rgb(38, 162, 105);</string>
   <connection>
    <sender>dialogButtonBox</sender>
    <signal>rejected()</signal>
-   <receiver>Dialog</receiver>
+   <receiver>CreditsPage</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
