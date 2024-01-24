@@ -18,21 +18,24 @@
     <normaloff>../png/maneki_neko.png</normaloff>../png/maneki_neko.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">QDialog{
-background-color: rgb(30, 31, 47);
-	alternate-background-color: rgb(33, 39, 54);
+   <string notr="true">	background-color: rgb(40, 40, 40);
+	
+	alternate-background-color: rgb(29, 32, 33);
 
-}</string>
+</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QFrame" name="frame">
      <property name="styleSheet">
       <string notr="true">QFrame{
-	background-color: rgb(30, 31, 47);
-	alternate-background-color: rgb(33, 39, 54);
-	color: rgb(118, 159, 240);
+	background-color: rgb(40, 40, 40);
+	
+	alternate-background-color: rgb(29, 32, 33);
+	
+	color: rgb(251, 241, 199);
 };
+
 </string>
      </property>
      <property name="frameShape">
@@ -158,12 +161,7 @@ color: rgb(38, 162, 105);</string>
       <item>
        <widget class="QTableWidget" name="contributorsTable">
         <property name="styleSheet">
-         <string notr="true">QTableWidget{
-font: bold 10pt &quot;JetBrains Mono&quot;;
-background-color: rgb(30, 31, 47);
-	alternate-background-color: rgb(33, 39, 54);
-	color: rgb(118, 159, 240);
-};</string>
+         <string notr="true">font: bold 10pt &quot;JetBrains Mono&quot;;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::Box</enum>
@@ -365,11 +363,7 @@ background-color: rgb(30, 31, 47);
            <string comment="Visit StratOS Github Repo" extracomment="Visit StratOS Github Repo"/>
           </property>
           <property name="styleSheet">
-           <string notr="true">QPushButton{
-background-color: rgb(30, 31, 47);
-	alternate-background-color: rgb(33, 39, 54);
-	color: rgb(118, 159, 240);
-}</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>Github Repo</string>
