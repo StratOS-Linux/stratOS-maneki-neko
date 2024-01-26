@@ -20,7 +20,7 @@ class welcomeScreen(QMainWindow):
         # init the class
         super(welcomeScreen,self).__init__()
         # load the ui file
-        loadUi("src/ui/TokyoNight-Dark/welcomeScreen.ui",self)
+        loadUi("/opt/maneki-neko/src/ui/TokyoNight-Dark/welcomeScreen.ui",self)
 
         # always init window to first page
         self.windowStackedWidget.setCurrentIndex(0)
@@ -32,7 +32,7 @@ class welcomeScreen(QMainWindow):
         self.distroInstallerButton.clicked.connect(self.runDistroInstallerScript)
         self.changeThemeButton.clicked.connect(self.runThemeChangerScript)
         self.browserInstallerButton.clicked.connect(self.runBrowserInstallerScript)
-        self.openLUGVITCbutton.clicked.connect(self.openLUGVITC_Website)
+        self.openLUGVITCbutton.clicked.connect(self.openWebsite)
         self.openFORUMbutton.clicked.connect(self.openFORUM_Website)
         self.autostartCheckBox.clicked.connect(self.setupAutostart)
         self.creditsButton.clicked.connect(self.openCreditsDialog)
@@ -115,7 +115,7 @@ class welcomeScreen(QMainWindow):
 
         # the command to execute
         # pls change this
-        command = ["gnome-terminal", "--", 'bash -c /home/kali/Desktop/stratOS_welcome/src/scripts/distroInstaller.sh']
+        command = ["gnome-terminal", "--", 'bash -c /usr/local/bin/StratOS-configure-distro']
 
         temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
 
@@ -132,7 +132,7 @@ class welcomeScreen(QMainWindow):
 
         # the command to execute
         # pls change this
-        command = ["gnome-terminal", "--", 'bash -c /home/kali/Desktop/stratOS_welcome/src/scripts/themeChanger.sh']
+        command = ["gnome-terminal", "--", '/usr/local/bin/StratOS-configure-theme']
 
         temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
 
@@ -150,7 +150,7 @@ class welcomeScreen(QMainWindow):
         # the command to execute
         # pls change this
 
-        command = ["gnome-terminal", "--", '$HOME/Desktop/stratOS_welcome/src/scripts/browserInstaller.sh']
+        command = ["gnome-terminal", "--", '/usr/local/bin/StratOS-configure-browser']
 
         temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
 
@@ -161,18 +161,18 @@ class welcomeScreen(QMainWindow):
 
         return
 
-    def openLUGVITC_Website(self):
+    def openWebsite(self):
         # command to open the URL
-        command = ["xdg-open", "www.lugvitc.org"]
+        command = ["xdg-open", "stratos-linux.github.io"]
         run = subprocess.Popen(command)
-        print("Opening LUGVITC website on default browser")
+        print("Opening StratOS website on default browser")
         return
     
     def openFORUM_Website(self):
         # command to open the URL
-        command = ["xdg-open", "https://forum.lugvitc.org"]
+        command = ["xdg-open", "https://matrix.to/#/#stratos:matrix.org"]
         run = subprocess.Popen(command)
-        print("Opening LUGVITC forum website on default browser")
+        print("Opening forum website on default browser")
 
         return
 
@@ -201,10 +201,10 @@ class welcomeScreen(QMainWindow):
 Type=Application
 Name=Maneki Neko
 Exec=python3 {pwd}/{thisScriptFileName}
-Icon={pwd}/src/png/logo.png
-Comment=stratOS welcome screen
+Icon=/opt/maneki-neko/src/png/logo.png
+Comment=StratOS welcome screen
 X-GNOME-Autostart-enabled=true
-Path={pwd}
+Path=/opt/maneki-neko/
 Terminal=false
 StartupNotify=false
                     """
@@ -241,7 +241,7 @@ def main():
     global app
     print("Program launch OK")
     mainScreen = welcomeScreen()
-    mainScreen.setWindowIcon(QtGui.QIcon("src/png/maneki_neko.png"))
+    mainScreen.setWindowIcon(QtGui.QIcon("/opt/maneki-neko/src/png/maneki_neko.png"))
     mainScreen.show()
     try:
         sys.exit(app.exec_())
@@ -256,10 +256,10 @@ class creditsWindow(QDialog):
     def __init__(self):
         # init the class and the ui file
         super(creditsWindow,self).__init__()
-        loadUi("src/ui/creditsDialog.ui",self)
+        loadUi("/opt/maneki-neko/src/ui/creditsDialog.ui",self)
 
         self.openBedrockSiteButton.clicked.connect(self.openBedrockWebsite)
-        self.openGithubRepo.clicked.connect(self.openLUGVITCrepo)
+        self.openGithubRepo.clicked.connect(self.openRepo)
 
         return
     
@@ -272,13 +272,13 @@ class creditsWindow(QDialog):
         print("Opening Bedrock Linux website on default browser.")
         return
 
-    def openLUGVITCrepo(self):
+    def openRepo(self):
         # the command to open the website
-        command = ['xdg-open', 'https://github.com/lugvitc']
+        command = ['xdg-open', 'https://github.com/stratos-linux']
 
         # run the command
         run = subprocess.Popen(command)
-        print("Opening LUGVITC Github repo on default browser.")
+        print("Opening StratOS Github repo on default browser.")
         return
 
 
