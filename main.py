@@ -200,7 +200,7 @@ class welcomeScreen(QMainWindow):
 [Desktop Entry]
 Type=Application
 Name=Maneki Neko
-Exec=python3 {pwd}/{thisScriptFileName}
+Exec=/usr/local/bin/maneki-neko
 Icon=/opt/maneki-neko/src/png/logo.png
 Comment=StratOS welcome screen
 X-GNOME-Autostart-enabled=true
