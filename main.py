@@ -115,7 +115,7 @@ class welcomeScreen(QMainWindow):
 
         # the command to execute
         # pls change this
-        command = ["gnome-terminal", "--", 'bash -c /usr/local/bin/StratOS-configure-distro']
+        command = ["gnome-terminal", "--", '/usr/local/bin/StratOS-configure-distro']
 
         temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
 
