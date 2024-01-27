@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
-    <height>800</height>
+    <width>973</width>
+    <height>731</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -40,7 +40,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow{
-	background-color: rgb(30, 31, 47);
+	background-color: rgb(26, 27, 38);
 
 	color: rgb(221, 221, 221);
 }</string>
@@ -48,9 +48,11 @@
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true">QWidget{
-	background-color: rgb(30, 31, 47);
-	alternate-background-color: rgb(33, 39, 54);
-	color: rgb(118, 159, 240);
+	background-color: rgb(40, 40, 40);
+	
+	alternate-background-color: rgb(29, 32, 33);
+	
+	color: rgb(251, 241, 199);
 };
 
 </string>

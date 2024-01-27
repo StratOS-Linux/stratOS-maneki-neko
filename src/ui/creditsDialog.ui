@@ -19,7 +19,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QDialog{
-background-color: rgb(30, 31, 47);
+background-color: rgb(26, 27, 38);
 	alternate-background-color: rgb(33, 39, 54);
 
 }</string>
@@ -29,7 +29,7 @@ background-color: rgb(30, 31, 47);
     <widget class="QFrame" name="frame">
      <property name="styleSheet">
       <string notr="true">QFrame{
-	background-color: rgb(30, 31, 47);
+	background-color: rgb(26, 27, 38);
 	alternate-background-color: rgb(33, 39, 54);
 	color: rgb(118, 159, 240);
 };
@@ -160,7 +160,7 @@ color: rgb(38, 162, 105);</string>
         <property name="styleSheet">
          <string notr="true">QTableWidget{
 font: bold 10pt &quot;JetBrains Mono&quot;;
-background-color: rgb(30, 31, 47);
+background-color: rgb(26, 27, 38);
 	alternate-background-color: rgb(33, 39, 54);
 	color: rgb(118, 159, 240);
 };</string>
@@ -366,7 +366,7 @@ background-color: rgb(30, 31, 47);
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton{
-background-color: rgb(30, 31, 47);
+background-color: rgb(26, 27, 38);
 	alternate-background-color: rgb(33, 39, 54);
 	color: rgb(118, 159, 240);
 }</string>
