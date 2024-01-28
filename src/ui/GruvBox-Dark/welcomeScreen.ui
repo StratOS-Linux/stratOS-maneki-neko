@@ -40,18 +40,14 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow{
-	background-color: rgb(30, 31, 47);
-
-	color: rgb(221, 221, 221);
+	background-color: rgb(40, 40, 40);
+	color: rgb(251, 241, 199);
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true">QWidget{
 	background-color: rgb(40, 40, 40);
-	
-	alternate-background-color: rgb(29, 32, 33);
-	
 	color: rgb(251, 241, 199);
 };
 
