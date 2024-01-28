@@ -2,8 +2,11 @@
 import sys
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets, QtCore, QtGui
-
-from PyQt5.QtWidgets import QMainWindow,  QApplication,  QDialog
+from PyQt5.QtCore import QUrl
+from PyQt5.QtNetwork import QNetworkRequest, QNetworkReply
+from PyQt5.QtWidgets import QMainWindow, QApplication, QDialog, QMessageBox
+from PyQt5.QtCore import qCritical
+from PyQt5.QtNetwork import QNetworkAccessManager
 
 from time import sleep
 
@@ -36,6 +39,7 @@ class welcomeScreen(QMainWindow):
         self.openFORUMbutton.clicked.connect(self.openFORUM_Website)
         self.autostartCheckBox.clicked.connect(self.setupAutostart)
         self.creditsButton.clicked.connect(self.openCreditsDialog)
+
 
 
         return
@@ -174,6 +178,7 @@ class welcomeScreen(QMainWindow):
         run = subprocess.Popen(command)
         print("Opening forum website on default browser")
 
+
         return
 
     def openCreditsDialog(self):
@@ -266,20 +271,40 @@ class creditsWindow(QDialog):
     def openBedrockWebsite(self):
         # the command to open the website
         command = ['xdg-open', 'https://bedrocklinux.org/']
+        try:
+            # run the command
+            run = subprocess.Popen(command)
+            print("Opening StratOS Github repo on default browser.")
+        except Exception as e:
+            print(f"Error opening GitHub repo: {e}")
+            # Display an error message to the user
+            self.showErrorMessageBox("Error", "An error occurred while opening the GitHub repo.")
 
-        # run the command
-        run = subprocess.Popen(command)
-        print("Opening Bedrock Linux website on default browser.")
-        return
+     
+        # ...
+
+    
 
     def openRepo(self):
         # the command to open the website
         command = ['xdg-open', 'https://github.com/stratos-linux']
 
-        # run the command
-        run = subprocess.Popen(command)
-        print("Opening StratOS Github repo on default browser.")
-        return
+        try:
+            # run the command
+            run = subprocess.Popen(command)
+            print("Opening StratOS Github repo on default browser.")
+        except Exception as e:
+            print(f"Error opening GitHub repo: {e}")
+            # Display an error message to the user
+            self.showErrorMessageBox("Error", "An error occurred while opening the GitHub repo.")
+
+    def showErrorMessageBox(self, title, message):
+        # Show an error message box
+        msg_box = QMessageBox()
+        msg_box.setIcon(QMessageBox.Critical)
+        msg_box.setWindowTitle(title)
+        msg_box.setText(message)
+        msg_box.exec_()
 
 
 
