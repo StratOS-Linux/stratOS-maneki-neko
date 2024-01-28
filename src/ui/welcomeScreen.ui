@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
-    <height>800</height>
+    <width>973</width>
+    <height>731</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -36,20 +36,20 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../png/maneki_neko.png</normaloff>../png/maneki_neko.png</iconset>
+	   <normaloff>/opt/maneki-neko/src/png/maneki_neko.png</normaloff>/opt/maneki-neko/src/png/maneki_neko.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow{
 	background-color: rgb(30, 31, 47);
 
-	color: rgb(221, 221, 221);
+	color: rgb(118, 159, 240);
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true">QWidget{
 	background-color: rgb(30, 31, 47);
-	alternate-background-color: rgb(33, 39, 54);
+	
 	color: rgb(118, 159, 240);
 };
 
@@ -171,7 +171,7 @@
                       <string/>
                      </property>
                      <property name="pixmap">
-                      <pixmap>../../png/logo.png</pixmap>
+						 <pixmap>/opt/maneki-neko/src/png/logo.png</pixmap>
                      </property>
                      <property name="scaledContents">
                       <bool>true</bool>
@@ -249,7 +249,7 @@
                   <string/>
                  </property>
                  <property name="pixmap">
-                  <pixmap>../../png/iceCreamCone.png</pixmap>
+					 <pixmap>/opt/maneki-neko/src/png/iceCreamCone.png</pixmap>
                  </property>
                  <property name="scaledContents">
                   <bool>true</bool>
@@ -272,7 +272,7 @@
                   <string/>
                  </property>
                  <property name="pixmap">
-                  <pixmap>../../png/StrataOS features images/both apt and pacman.png</pixmap>
+					 <pixmap>/opt/maneki-neko/src/png/StrataOS features images/both apt and pacman.png</pixmap>
                  </property>
                  <property name="scaledContents">
                   <bool>true</bool>
@@ -291,7 +291,7 @@
                   <string/>
                  </property>
                  <property name="pixmap">
-                  <pixmap>../../png/StrataOS features images/neovim config.png</pixmap>
+					 <pixmap>/opt/maneki-neko/src/png/StrataOS features images/neovim config.png</pixmap>
                  </property>
                  <property name="scaledContents">
                   <bool>true</bool>
@@ -457,7 +457,7 @@
                         <string/>
                        </property>
                        <property name="pixmap">
-                        <pixmap>../../png/logo.png</pixmap>
+						   <pixmap>/opt/maneki-neko/src/png/logo.png</pixmap>
                        </property>
                        <property name="scaledContents">
                         <bool>true</bool>
@@ -743,7 +743,7 @@ color: rgb(255, 0, 76);</string>
                         <string/>
                        </property>
                        <property name="pixmap">
-                        <pixmap>../../png/StrataOS features images/desktop setup.png</pixmap>
+						   <pixmap>/opt/maneki-neko/src/png/StrataOS features images/desktop setup.png</pixmap>
                        </property>
                        <property name="scaledContents">
                         <bool>true</bool>
@@ -771,7 +771,7 @@ color: rgb(255, 0, 76);</string>
                         <string/>
                        </property>
                        <property name="pixmap">
-                        <pixmap>../../png/StrataOS features images/lugfetch.png</pixmap>
+						   <pixmap>/opt/maneki-neko/src/png/StrataOS features images/lugfetch.png</pixmap>
                        </property>
                        <property name="scaledContents">
                         <bool>true</bool>

@@ -15,11 +15,11 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../png/maneki_neko.png</normaloff>../png/maneki_neko.png</iconset>
+	   <normaloff>/opt/maneki-neko/src/png/maneki_neko.png</normaloff>/opt/maneki-neko/src/png/maneki_neko.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QDialog{
-background-color: rgb(30, 31, 47);
+background-color: rgb(26, 27, 38);
 	alternate-background-color: rgb(33, 39, 54);
 
 }</string>
@@ -29,7 +29,7 @@ background-color: rgb(30, 31, 47);
     <widget class="QFrame" name="frame">
      <property name="styleSheet">
       <string notr="true">QFrame{
-	background-color: rgb(30, 31, 47);
+	background-color: rgb(26, 27, 38);
 	alternate-background-color: rgb(33, 39, 54);
 	color: rgb(118, 159, 240);
 };
@@ -95,7 +95,7 @@ background-color: rgb(30, 31, 47);
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>../../png/BedrockLinux (1).png</pixmap>
+				   <pixmap>/opt/maneki-neko/src/png/BedrockLinux (1).png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -160,7 +160,7 @@ color: rgb(38, 162, 105);</string>
         <property name="styleSheet">
          <string notr="true">QTableWidget{
 font: bold 10pt &quot;JetBrains Mono&quot;;
-background-color: rgb(30, 31, 47);
+background-color: rgb(26, 27, 38);
 	alternate-background-color: rgb(33, 39, 54);
 	color: rgb(118, 159, 240);
 };</string>
@@ -366,7 +366,7 @@ background-color: rgb(30, 31, 47);
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton{
-background-color: rgb(30, 31, 47);
+background-color: rgb(26, 27, 38);
 	alternate-background-color: rgb(33, 39, 54);
 	color: rgb(118, 159, 240);
 }</string>
@@ -376,7 +376,7 @@ background-color: rgb(30, 31, 47);
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../../png/GitHub-logo.png</normaloff>../../png/GitHub-logo.png</iconset>
+			   <normaloff>/opt/maneki-neko/src/png/GitHub-logo.png</normaloff>/opt/maneki-neko/src/png/GitHub-logo.png</iconset>
           </property>
           <property name="iconSize">
            <size>

@@ -22,5 +22,5 @@ The namesake `Maneki Neko` refers to the beckoning cat, to welcome the new users
 ## Quick Installation
 1. `git clone` this repo.
 2. make a `.venv` type virtual environment in the cloned local repository
-3. run `pip install -r requirements.txt`
+3. run `pip install pyqt5`
 4. run the python file `main.py` or the file `maneki_Neko`

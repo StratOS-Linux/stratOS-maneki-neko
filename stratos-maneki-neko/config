@@ -3,6 +3,6 @@
 	filemode = true
 	bare = true
 [remote "origin"]
-	url = https://github.com/lugvitc/stratos-maneki-neko.git
+	url = https://github.com/StratOS-Linux/stratos-maneki-neko.git
 	fetch = +refs/*:refs/*
 	mirror = true
