@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../png/maneki_neko.png</normaloff>../png/maneki_neko.png</iconset>
+	   <normaloff>/opt/maneki-neko/src/png/maneki_neko.png</normaloff>/opt/maneki-neko/src/png/maneki_neko.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QDialog{
@@ -95,7 +95,7 @@ background-color: rgb(26, 27, 38);
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap>../../png/BedrockLinux (1).png</pixmap>
+				   <pixmap>/opt/maneki-neko/src/png/BedrockLinux (1).png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -376,7 +376,7 @@ background-color: rgb(26, 27, 38);
           </property>
           <property name="icon">
            <iconset>
-            <normaloff>../../png/GitHub-logo.png</normaloff>../../png/GitHub-logo.png</iconset>
+			   <normaloff>/opt/maneki-neko/src/png/GitHub-logo.png</normaloff>/opt/maneki-neko/src/png/GitHub-logo.png</iconset>
           </property>
           <property name="iconSize">
            <size>
