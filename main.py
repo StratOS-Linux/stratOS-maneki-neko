@@ -20,7 +20,7 @@ class welcomeScreen(QMainWindow):
         # init the class
         super(welcomeScreen,self).__init__()
         # load the ui file
-        loadUi("/opt/maneki-neko/src/ui/TokyoNight-Dark/welcomeScreen.ui",self)
+        loadUi("/opt/maneki-neko/src/ui/welcomeScreen.ui",self)
 
         # always init window to first page
         self.windowStackedWidget.setCurrentIndex(0)
