@@ -48,11 +48,11 @@
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true">QWidget{
-	background-color: rgb(40, 40, 40);
+	background-color: rgb(27, 27, 38);
 	
-	alternate-background-color: rgb(29, 32, 33);
+	alternate-background-color: rgb(27, 27, 38);
 	
-	color: rgb(251, 241, 199);
+	color: rgb(221, 221, 221);
 };
 
 </string>
