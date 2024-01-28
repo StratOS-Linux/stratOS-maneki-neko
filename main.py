@@ -241,7 +241,7 @@ def main():
     global app
     print("Program launch OK")
     mainScreen = welcomeScreen()
-    mainScreen.setWindowIcon(QtGui.QIcon("/opt/maneki-neko/src/png/maneki_neko.png"))
+    mainScreen.setWindowIcon(QtGui.QIcon("/src/png/maneki_neko.png"))
     mainScreen.show()
     try:
         sys.exit(app.exec_())
@@ -256,7 +256,7 @@ class creditsWindow(QDialog):
     def __init__(self):
         # init the class and the ui file
         super(creditsWindow,self).__init__()
-        loadUi("/opt/maneki-neko/src/ui/creditsDialog.ui",self)
+        loadUi("/src/ui/creditsDialog.ui",self)
 
         self.openBedrockSiteButton.clicked.connect(self.openBedrockWebsite)
         self.openGithubRepo.clicked.connect(self.openRepo)
