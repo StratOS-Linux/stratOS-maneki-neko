@@ -169,14 +169,12 @@ class welcomeScreen(QMainWindow):
         # command to open the URL
         command = ["xdg-open", "stratos-linux.github.io"]
         run = subprocess.Popen(command)
-        print("Opening StratOS website on default browser")
         return
     
     def openMASTODON_Link(self):
         # command to open the URL
         command = ["xdg-open", "https://fosstodon.org/@StratOS"]
         run = subprocess.Popen(command)
-        print("Opening fosstodon link on default browser")
 
         return
 
@@ -184,7 +182,6 @@ class welcomeScreen(QMainWindow):
         # command to open the URL
         command = ["xdg-open", "https://matrix.to/#/#stratos:matrix.org"]
         run = subprocess.Popen(command)
-        print("Opening matrix link on default browser")
 
         return
     
@@ -192,7 +189,6 @@ class welcomeScreen(QMainWindow):
         # command to open the URL
         command = ["xdg-open", "https://discord.gg/8sysF4ex"]
         run = subprocess.Popen(command)
-        print("Opening discord server link on default browser")
 
         return
 
@@ -290,7 +286,6 @@ class creditsWindow(QDialog):
 
         # run the command
         run = subprocess.Popen(command)
-        print("Opening Bedrock Linux website on default browser.")
         return
 
     def openRepo(self):
@@ -299,7 +294,6 @@ class creditsWindow(QDialog):
 
         # run the command
         run = subprocess.Popen(command)
-        print("Opening StratOS Github repo on default browser.")
         return
 
 
