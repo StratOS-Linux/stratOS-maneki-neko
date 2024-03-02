@@ -14,6 +14,7 @@ app = QApplication(sys.argv)
 totalPages=3
 WORK_DIR = os.getcwd() # gets working directory of the python script
                        # at install location value shoulda be /opt/maneki-neko
+                       # to HARDCODE this , change WORK_DIR to /opt/maneki-neko
 
 class welcomeScreen(QMainWindow):
 
