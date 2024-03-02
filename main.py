@@ -12,7 +12,8 @@ import os, subprocess
 # globals
 app = QApplication(sys.argv)
 totalPages=3
-
+WORK_DIR = os.getcwd() # gets working directory of the python script
+                       # at install location value shoulda be /opt/maneki-neko
 
 class welcomeScreen(QMainWindow):
 
@@ -20,7 +21,7 @@ class welcomeScreen(QMainWindow):
         # init the class
         super(welcomeScreen,self).__init__()
         # load the ui file
-        loadUi("/opt/maneki-neko/src/ui/welcomeScreen.ui",self)
+        loadUi(WORK_DIR + "/src/ui/welcomeScreen.ui",self)
 
         # always init window to first page
         self.windowStackedWidget.setCurrentIndex(0)
@@ -30,10 +31,12 @@ class welcomeScreen(QMainWindow):
         self.nextButton.clicked.connect(self.moveForward)
         self.backButton.clicked.connect(self.moveBackward)
         self.distroInstallerButton.clicked.connect(self.runDistroInstallerScript)
-        self.changeThemeButton.clicked.connect(self.runThemeChangerScript)
-        self.browserInstallerButton.clicked.connect(self.runBrowserInstallerScript)
-        self.openLUGVITCbutton.clicked.connect(self.openWebsite)
-        self.openFORUMbutton.clicked.connect(self.openFORUM_Website)
+       # self.changeThemeButton.clicked.connect(self.runThemeChangerScript)
+     #   self.browserInstallerButton.clicked.connect(self.runBrowserInstallerScript)
+       # self.openLUGVITCbutton.clicked.connect(self.openWebsite)
+        self.openDISCORDbutton.clicked.connect(self.openDISCORD_Link)
+        self.openMASTODONbutton.clicked.connect(self.openMASTODON_Link)
+        self.openMATRIXbutton.clicked.connect(self.openMATRIX_Website)
         self.autostartCheckBox.clicked.connect(self.setupAutostart)
         self.creditsButton.clicked.connect(self.openCreditsDialog)
 
@@ -168,13 +171,31 @@ class welcomeScreen(QMainWindow):
         print("Opening StratOS website on default browser")
         return
     
-    def openFORUM_Website(self):
+    def openMASTODON_Link(self):
+        # command to open the URL
+        command = ["xdg-open", "https://fosstodon.org/@StratOS"]
+        run = subprocess.Popen(command)
+        print("Opening fosstodon link on default browser")
+
+        return
+
+    def openMATRIX_Website(self):
         # command to open the URL
         command = ["xdg-open", "https://matrix.to/#/#stratos:matrix.org"]
         run = subprocess.Popen(command)
-        print("Opening forum website on default browser")
+        print("Opening matrix link on default browser")
 
         return
+    
+    def openDISCORD_Link(self):
+        # command to open the URL
+        command = ["xdg-open", "https://discord.gg/8sysF4ex"]
+        run = subprocess.Popen(command)
+        print("Opening discord server link on default browser")
+
+        return
+
+    
 
     def openCreditsDialog(self):
         dialog = creditsWindow()
@@ -182,14 +203,13 @@ class welcomeScreen(QMainWindow):
             return
 
     def setupAutostart(self):
-        # define home and the full file path
+        # define home and hence the full file path for the DESKTOP FILE
         home = os.path.expanduser("~")
         filePath = home + "/.config/autostart/maneki_neko.desktop" # full path to desktop file
         
 
         # create the desktop file and save it in $HOME/.config/autostart when the checkBox is checked
         if self.autostartCheckBox.isChecked():
-            pwd = os.getcwd()
             # returns this running script's file name
             thisScriptFileName = os.path.basename(__file__)
 
@@ -201,7 +221,7 @@ class welcomeScreen(QMainWindow):
 Type=Application
 Name=Maneki Neko
 Exec=/usr/local/bin/maneki-neko
-Icon=/opt/maneki-neko/src/png/logo.png
+Icon={WORK_DIR}/src/png/logo.png
 Comment=StratOS welcome screen
 X-GNOME-Autostart-enabled=true
 Path=/opt/maneki-neko/
@@ -210,12 +230,12 @@ StartupNotify=false
                     """
                 f.write(fileContent)
                 # end of with block
-            print("setupAutostart():create desktop file:OK")
+            print("setupAutostart(): create desktop file: OK")
 
             #make file executable
             command = ["chmod", "+x", filePath] 
             run = subprocess.Popen(command)
-            print("setupAutostart():make desktop file executable:OK")
+            print("setupAutostart(): make desktop file executable: OK")
 
             print("Maneki Neko autostart Enabled")
 
@@ -227,11 +247,11 @@ StartupNotify=false
                 os.remove(filePath)
                 # update checkbox text for feedback
                 self.autostartCheckBox.setText("Autostart Maneki Neko (Disabled)")
-                print("Maneki Neko autostart Disabled")
+                print("setupAutostart(): remove: Maneki Neko autostart Disabled")
 
 
             except Exception as E:
-                print("setupAutostart():remove: desktop file was not found anyway")
+                print("setupAutostart(): remove: desktop file was not found anyway")
                 self.autostartCheckBox.setText("Autostart Maneki Neko")
 
         return
@@ -241,7 +261,7 @@ def main():
     global app
     print("Program launch OK")
     mainScreen = welcomeScreen()
-    mainScreen.setWindowIcon(QtGui.QIcon("/opt/maneki-neko/src/png/maneki_neko.png"))
+    mainScreen.setWindowIcon(QtGui.QIcon(WORK_DIR + "/src/png/maneki_neko.png"))
     mainScreen.show()
     try:
         sys.exit(app.exec_())
@@ -256,7 +276,7 @@ class creditsWindow(QDialog):
     def __init__(self):
         # init the class and the ui file
         super(creditsWindow,self).__init__()
-        loadUi("/opt/maneki-neko/src/ui/creditsDialog.ui",self)
+        loadUi(WORK_DIR + "/src/ui/creditsDialog.ui",self)
 
         self.openBedrockSiteButton.clicked.connect(self.openBedrockWebsite)
         self.openGithubRepo.clicked.connect(self.openRepo)
