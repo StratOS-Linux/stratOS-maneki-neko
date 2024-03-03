@@ -11,7 +11,11 @@ import os, subprocess
 
 # globals
 app = QApplication(sys.argv)
-totalPages=3
+
+lastPage=3  # the last page of the app is the 3rd page
+            # 1st-> welcome page    2nd-> overview on Stratos   3rd -> last page with buttons to install programs, distro etc
+            # 4th-> program installer
+
 WORK_DIR = os.getcwd() # gets working directory of the python script
                        # at install location value shoulda be /opt/maneki-neko
                        # to HARDCODE this , change WORK_DIR to /opt/maneki-neko
@@ -32,24 +36,114 @@ class welcomeScreen(QMainWindow):
         self.nextButton.clicked.connect(self.moveForward)
         self.backButton.clicked.connect(self.moveBackward)
         self.distroInstallerButton.clicked.connect(self.runDistroInstallerScript)
-       # self.changeThemeButton.clicked.connect(self.runThemeChangerScript)
-     #   self.browserInstallerButton.clicked.connect(self.runBrowserInstallerScript)
-       # self.openLUGVITCbutton.clicked.connect(self.openWebsite)
         self.openDISCORDbutton.clicked.connect(self.openDISCORD_Link)
         self.openMASTODONbutton.clicked.connect(self.openMASTODON_Link)
         self.openMATRIXbutton.clicked.connect(self.openMATRIX_Website)
         self.autostartCheckBox.clicked.connect(self.setupAutostart)
         self.creditsButton.clicked.connect(self.openCreditsDialog)
-
-
+        self.packageInstallerButton.clicked.connect(self.openPackageInstallerPage)
+        self.MISClistWidget.itemClicked.connect(self.setMISCDescription)
+        self.WEBlistWidget.itemClicked.connect(self.setWEBDescription)
+        self.TXTlistWidget.itemClicked.connect(self.setTXTDescription)
+        self.MEDIAlistWidget.itemClicked.connect(self.setMEDIADescription)
+        self.OFFICElistWidget.itemClicked.connect(self.setOFFICEDescription)
         return
+
+    def setMISCDescription(self):
+        # function that shows details of selected package on description widget of MISC category
+        refDict = { "atril"     : 11,    \
+                    "evince"    : 12,    \
+                    "github"    : 13,    \
+                    "obsidian"  : 14,    \
+                    "gsconnect" : 15
+                }
+        
+        # to determine the selected app
+        selectedApp = self.MISClistWidget.currentItem().text().lower().split()[0]
+        # EXPLANATION: suppose I selected "Atril PDF Document Viewer"
+        # 1. self.MISClistWidget.currentItem().text() = "Atril PDF Document Viewer"
+        # 2. self.MISClistWidget.currentItem().text().lower() = "atril pdf document viewer"
+        # 3. self.MISClistWidget.currentItem().text().lower().split() = ["atril", "pdf","document", "viewer"]
+        # 4. self.MISClistWidget.currentItem().text().lower().split()[0] = "atril"
+        self.packageDetailsStackedWidget.setCurrentIndex(refDict[selectedApp])
+        return
+
+    def setWEBDescription(self):
+        # function that shows details of selected package on description widget of WEB category
+        refDict = { "firefox"     : 0,    \
+                    "chromium"    : 1,    \
+                    "librewolf"   : 2,    \
+                    "brave"       : 3
+                }
+        
+        # to determine the selected app
+        selectedApp = self.WEBlistWidget.currentItem().text().lower().split()[0]
+        # EXPLANATION: suppose I selected "Atril PDF Document Viewer"
+        # 1. self.MISClistWidget.currentItem().text() = "Atril PDF Document Viewer"
+        # 2. self.MISClistWidget.currentItem().text().lower() = "atril pdf document viewer"
+        # 3. self.MISClistWidget.currentItem().text().lower().split() = ["atril", "pdf","document", "viewer"]
+        # 4. self.MISClistWidget.currentItem().text().lower().split()[0] = "atril"
+        self.packageDetailsStackedWidget.setCurrentIndex(refDict[selectedApp])
+        return
+
+    def setTXTDescription(self):
+        # function that shows details of selected package on description widget of TXT category
+        refDict = { "stratmacs"   : 8,    \
+                    "stratvim"    : 9,    \
+                    "vscodium"    : 10
+                }
+        
+        # to determine the selected app
+        selectedApp = self.TXTlistWidget.currentItem().text().lower().split()[0]
+        # EXPLANATION: suppose I selected "Atril PDF Document Viewer"
+        # 1. self.MISClistWidget.currentItem().text() = "Atril PDF Document Viewer"
+        # 2. self.MISClistWidget.currentItem().text().lower() = "atril pdf document viewer"
+        # 3. self.MISClistWidget.currentItem().text().lower().split() = ["atril", "pdf","document", "viewer"]
+        # 4. self.MISClistWidget.currentItem().text().lower().split()[0] = "atril"
+        self.packageDetailsStackedWidget.setCurrentIndex(refDict[selectedApp])
+        return
+
+    def setMEDIADescription(self):
+        # function that shows details of selected package on description widget of TXT category
+        refDict = { "vlc"   : 4,    \
+                    "mpv"   : 5
+                }
+        
+        # to determine the selected app
+        selectedApp = self.MEDIAlistWidget.currentItem().text().lower().split()[0]
+        # EXPLANATION: suppose I selected "Atril PDF Document Viewer"
+        # 1. self.MISClistWidget.currentItem().text() = "Atril PDF Document Viewer"
+        # 2. self.MISClistWidget.currentItem().text().lower() = "atril pdf document viewer"
+        # 3. self.MISClistWidget.currentItem().text().lower().split() = ["atril", "pdf","document", "viewer"]
+        # 4. self.MISClistWidget.currentItem().text().lower().split()[0] = "atril"
+        self.packageDetailsStackedWidget.setCurrentIndex(refDict[selectedApp])
+        return
+
+    def setOFFICEDescription(self):
+        # function that shows details of selected package on description widget of TXT category
+        refDict = { "onlyoffice"   : 6,    \
+                    "libreoffice"   : 7
+                }
+        
+        # to determine the selected app
+        selectedApp = self.OFFICElistWidget.currentItem().text().lower().split()[0]
+        # EXPLANATION: suppose I selected "Atril PDF Document Viewer"
+        # 1. self.MISClistWidget.currentItem().text() = "Atril PDF Document Viewer"
+        # 2. self.MISClistWidget.currentItem().text().lower() = "atril pdf document viewer"
+        # 3. self.MISClistWidget.currentItem().text().lower().split() = ["atril", "pdf","document", "viewer"]
+        # 4. self.MISClistWidget.currentItem().text().lower().split()[0] = "atril"
+        self.packageDetailsStackedWidget.setCurrentIndex(refDict[selectedApp])
+        return
+
+
+
 
     def updateAutostartCheckBoxState(self):
         # purpose of this function is to update the text of 
         # autostart checkbox to Enabled if the desktop file already exists
         home = os.path.expanduser("~")
         filePath = home + "/.config/autostart/maneki_neko.desktop"
-        print(filePath)
+        # print("updateAutostartCheckBoxState(): file path to autostart directory:",filePath)
 
         if os.path.isfile(filePath):
             # the file exists so update the checkbox text
@@ -66,11 +160,11 @@ class welcomeScreen(QMainWindow):
             return
 
     def moveForward(self):
-        global totalPages
+        global lastPage
         currentIndex = self.windowStackedWidget.currentIndex() #current index of the window
         
         # if already in last page then exit
-        if currentIndex+1 == totalPages:
+        if currentIndex+1 == lastPage:
             print("Exiting...")
             app.exec_()
             exit()
@@ -84,7 +178,7 @@ class welcomeScreen(QMainWindow):
 
         # morph the button to "Exit" button on last page
         currentIndex = self.windowStackedWidget.currentIndex() #updated index of the window
-        if currentIndex+1 == totalPages:
+        if currentIndex+1 == lastPage:
             self.morphNextButton()
         return
 
@@ -107,8 +201,14 @@ class welcomeScreen(QMainWindow):
         currentIndex = self.windowStackedWidget.currentIndex()
 
         # set button label to "Next" as long as it is not on last page
-        if currentIndex+1 != totalPages: 
+        # if at 1st, 2nd page, button says "Next"
+        if currentIndex+1 < lastPage: 
             self.nextButton.setText("Next")
+        
+        # if at the Package installer page, morph button to "Install"
+        elif currentIndex+1 == 4:
+            self.nextButton.setText("Install")
+        # if button at 3rd page, it says "exit"
         else:
             self.nextButton.setText("Exit")
 
@@ -129,6 +229,15 @@ class welcomeScreen(QMainWindow):
         #print(result)
 
         return
+
+    def openPackageInstallerPage(self):
+        # change the page
+        currentIndex = self.windowStackedWidget.currentIndex()
+        self.windowStackedWidget.setCurrentIndex(currentIndex+1)
+        # morph Next button to install button
+
+        self.morphNextButton()
+
 
     def runThemeChangerScript(self):
         # work need to be done
@@ -190,9 +299,7 @@ class welcomeScreen(QMainWindow):
         command = ["xdg-open", "https://discord.gg/8sysF4ex"]
         run = subprocess.Popen(command)
 
-        return
-
-    
+        return  
 
     def openCreditsDialog(self):
         dialog = creditsWindow()
@@ -256,8 +363,8 @@ StartupNotify=false
 
 def main():
     global app
-    print("Program launch OK")
     mainScreen = welcomeScreen()
+    print("Program launch OK")
     mainScreen.setWindowIcon(QtGui.QIcon(WORK_DIR + "/src/png/maneki_neko.png"))
     mainScreen.show()
     try:
@@ -295,8 +402,6 @@ class creditsWindow(QDialog):
         # run the command
         run = subprocess.Popen(command)
         return
-
-
 
 
 if __name__ == "__main__":

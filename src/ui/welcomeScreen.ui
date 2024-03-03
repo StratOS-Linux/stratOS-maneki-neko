@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>973</width>
-    <height>731</height>
+    <width>1000</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -36,7 +36,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../../../../../opt/maneki-neko/src/png/maneki_neko.png</normaloff>../../../../../../opt/maneki-neko/src/png/maneki_neko.png</iconset>
+    <normaloff>../../../../../../../../opt/maneki-neko/src/png/maneki_neko.png</normaloff>../../../../../../../../opt/maneki-neko/src/png/maneki_neko.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow{
@@ -684,7 +684,7 @@
                      <string>Install software</string>
                     </property>
                     <property name="description">
-                     <string>Install and setup your preferred software from the command line using &quot;lugpkg&quot;.</string>
+                     <string>Install and setup your preferred software from the command line using &quot;rock&quot;.</string>
                     </property>
                    </widget>
                   </item>
@@ -707,7 +707,7 @@
                      <string notr="true">font: bold 15pt &quot;JetBrains Mono&quot;;</string>
                     </property>
                     <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;==&amp;gt; Help and Support&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;==&amp;gt; Contact us at...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                    </widget>
                   </item>
@@ -955,576 +955,2794 @@ color: rgb(255, 0, 76);</string>
             </layout>
            </widget>
            <widget class="QWidget" name="thirdPage">
-            <widget class="QWidget" name="">
-             <property name="geometry">
-              <rect>
-               <x>40</x>
-               <y>90</y>
-               <width>821</width>
-               <height>511</height>
-              </rect>
-             </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_10">
-              <item>
-               <widget class="QToolBox" name="toolBox">
-                <property name="minimumSize">
-                 <size>
-                  <width>281</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>321</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="frameShape">
-                 <enum>QFrame::Box</enum>
-                </property>
-                <property name="currentIndex">
-                 <number>3</number>
-                </property>
-                <widget class="QWidget" name="miscPage">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>0</y>
-                   <width>319</width>
+            <layout class="QVBoxLayout" name="verticalLayout_25">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_11">
+               <item>
+                <widget class="QToolBox" name="toolBox">
+                 <property name="minimumSize">
+                  <size>
+                   <width>281</width>
                    <height>220</height>
-                  </rect>
+                  </size>
                  </property>
-                 <attribute name="label">
-                  <string>Miscellaneous</string>
-                 </attribute>
-                 <layout class="QVBoxLayout" name="verticalLayout_18">
-                  <item>
-                   <widget class="QFrame" name="frame_6">
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_17">
-                     <item>
-                      <widget class="QListWidget" name="listWidget_4">
-                       <property name="minimumSize">
-                        <size>
-                         <width>80</width>
-                         <height>180</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>16777215</width>
-                         <height>180</height>
-                        </size>
-                       </property>
-                       <property name="frameShape">
-                        <enum>QFrame::NoFrame</enum>
-                       </property>
-                       <item>
-                        <property name="text">
-                         <string>Atril PDF Viewer</string>
-                        </property>
-                        <property name="checkState">
-                         <enum>Checked</enum>
-                        </property>
-                        <property name="icon">
-                         <iconset>
-                          <normaloff>../png/app_icons/atril.png</normaloff>../png/app_icons/atril.png</iconset>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>VSCodium</string>
-                        </property>
-                        <property name="checkState">
-                         <enum>Unchecked</enum>
-                        </property>
-                        <property name="icon">
-                         <iconset>
-                          <normaloff>../png/app_icons/vscodium.png</normaloff>../png/app_icons/vscodium.png</iconset>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>Obsidian (as AppImage)</string>
-                        </property>
-                        <property name="checkState">
-                         <enum>Unchecked</enum>
-                        </property>
-                        <property name="icon">
-                         <iconset>
-                          <normaloff>../png/app_icons/obsidian.png</normaloff>../png/app_icons/obsidian.png</iconset>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>GSConnect</string>
-                        </property>
-                        <property name="checkState">
-                         <enum>Unchecked</enum>
-                        </property>
-                        <property name="icon">
-                         <iconset>
-                          <normaloff>../png/app_icons/gsconnect.png</normaloff>../png/app_icons/gsconnect.png</iconset>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string/>
-                        </property>
-                       </item>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-                <widget class="QWidget" name="officeSuitePage">
-                 <attribute name="label">
-                  <string>Office Suites</string>
-                 </attribute>
-                 <layout class="QVBoxLayout" name="verticalLayout_16">
-                  <item>
-                   <widget class="QFrame" name="frame_5">
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_15">
-                     <item>
-                      <widget class="QListWidget" name="listWidget_3">
-                       <property name="minimumSize">
-                        <size>
-                         <width>80</width>
-                         <height>180</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>16777215</width>
-                         <height>180</height>
-                        </size>
-                       </property>
-                       <property name="frameShape">
-                        <enum>QFrame::NoFrame</enum>
-                       </property>
-                       <item>
-                        <property name="text">
-                         <string>ONLYOFFICE</string>
-                        </property>
-                        <property name="checkState">
-                         <enum>Checked</enum>
-                        </property>
-                        <property name="icon">
-                         <iconset>
-                          <normaloff>../png/app_icons/onlyoffice.png</normaloff>../png/app_icons/onlyoffice.png</iconset>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>LibreOffice</string>
-                        </property>
-                        <property name="checkState">
-                         <enum>Unchecked</enum>
-                        </property>
-                        <property name="icon">
-                         <iconset>
-                          <normaloff>../png/app_icons/libreoffice.png</normaloff>../png/app_icons/libreoffice.png</iconset>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string/>
-                        </property>
-                       </item>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-                <widget class="QWidget" name="mediaPlayerPage">
-                 <attribute name="label">
-                  <string>Media Players</string>
-                 </attribute>
-                 <layout class="QVBoxLayout" name="verticalLayout_14">
-                  <item>
-                   <widget class="QFrame" name="frame_4">
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_13">
-                     <item>
-                      <widget class="QListWidget" name="listWidget_2">
-                       <property name="minimumSize">
-                        <size>
-                         <width>80</width>
-                         <height>180</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>16777215</width>
-                         <height>180</height>
-                        </size>
-                       </property>
-                       <property name="frameShape">
-                        <enum>QFrame::NoFrame</enum>
-                       </property>
-                       <item>
-                        <property name="text">
-                         <string>VLC</string>
-                        </property>
-                        <property name="checkState">
-                         <enum>Unchecked</enum>
-                        </property>
-                        <property name="icon">
-                         <iconset>
-                          <normaloff>../png/app_icons/vlc.png</normaloff>../png/app_icons/vlc.png</iconset>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>MPV</string>
-                        </property>
-                        <property name="checkState">
-                         <enum>Checked</enum>
-                        </property>
-                        <property name="icon">
-                         <iconset>
-                          <normaloff>../png/app_icons/mpv.png</normaloff>../png/app_icons/mpv.png</iconset>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string/>
-                        </property>
-                       </item>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-                <widget class="QWidget" name="webBrowserPage">
-                 <property name="geometry">
-                  <rect>
-                   <x>0</x>
-                   <y>0</y>
-                   <width>319</width>
-                   <height>383</height>
-                  </rect>
+                 <property name="maximumSize">
+                  <size>
+                   <width>321</width>
+                   <height>16777215</height>
+                  </size>
                  </property>
-                 <attribute name="label">
-                  <string>Web Browsers</string>
-                 </attribute>
-                 <layout class="QVBoxLayout" name="verticalLayout_12">
-                  <item>
-                   <widget class="QFrame" name="frame_3">
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_11">
-                     <item>
-                      <widget class="QListWidget" name="listWidget">
-                       <property name="minimumSize">
-                        <size>
-                         <width>80</width>
-                         <height>180</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>16777215</width>
-                         <height>180</height>
-                        </size>
-                       </property>
-                       <property name="frameShape">
-                        <enum>QFrame::NoFrame</enum>
-                       </property>
-                       <item>
-                        <property name="text">
-                         <string>Brave</string>
-                        </property>
-                        <property name="checkState">
-                         <enum>Unchecked</enum>
-                        </property>
-                        <property name="icon">
-                         <iconset>
-                          <normaloff>../png/app_icons/brave.png</normaloff>../png/app_icons/brave.png</iconset>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>Chromium</string>
-                        </property>
-                        <property name="checkState">
-                         <enum>Unchecked</enum>
-                        </property>
-                        <property name="icon">
-                         <iconset>
-                          <normaloff>../png/app_icons/chromium.png</normaloff>../png/app_icons/chromium.png</iconset>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>Firefox</string>
-                        </property>
-                        <property name="checkState">
-                         <enum>Unchecked</enum>
-                        </property>
-                        <property name="icon">
-                         <iconset>
-                          <normaloff>../png/app_icons/firefox.png</normaloff>../png/app_icons/firefox.png</iconset>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string>LibreWolf</string>
-                        </property>
-                        <property name="checkState">
-                         <enum>Checked</enum>
-                        </property>
-                        <property name="icon">
-                         <iconset>
-                          <normaloff>../png/app_icons/librewolf.png</normaloff>../png/app_icons/librewolf.png</iconset>
-                        </property>
-                       </item>
-                       <item>
-                        <property name="text">
-                         <string/>
-                        </property>
-                       </item>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                 </layout>
-                </widget>
-               </widget>
-              </item>
-              <item>
-               <widget class="QFrame" name="frame_8">
-                <property name="frameShape">
-                 <enum>QFrame::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Raised</enum>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_21">
-                 <item>
-                  <spacer name="verticalSpacer_2">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeType">
-                    <enum>QSizePolicy::Minimum</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                 <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_9">
+                 <property name="focusPolicy">
+                  <enum>Qt::TabFocus</enum>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QToolBox::tab {
+	
+background-color: rgb(20 ,21, 37);
+border-radius: 8px;
+color: rgb(255, 0, 76);
+qproperty-subcontrol-position: center;
+
+
+}
+QToolBox::tab:selected { 
+background-color: rgb(20 ,21, 57);
+border-radius: 8px;
+color: rgb(255, 0, 76);
+qproperty-subcontrol-position: center;
+
+}
+
+QToolBox{
+subcontrol-position: center;
+qproperty-subcontrol-position: center;
+qproperty-subcontrol-origin: center;
+
+
+}
+QWidget{
+	font: 57 10pt &quot;Noto Sans&quot;;
+}</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::Box</enum>
+                 </property>
+                 <property name="currentIndex">
+                  <number>0</number>
+                 </property>
+                 <widget class="QWidget" name="miscPage">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>319</width>
+                    <height>382</height>
+                   </rect>
+                  </property>
+                  <attribute name="label">
+                   <string>Miscellaneous</string>
+                  </attribute>
+                  <layout class="QVBoxLayout" name="verticalLayout_18">
                    <item>
-                    <layout class="QVBoxLayout" name="verticalLayout_19">
-                     <item>
-                      <widget class="QLabel" name="label">
-                       <property name="minimumSize">
-                        <size>
-                         <width>40</width>
-                         <height>50</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>16777215</width>
-                         <height>50</height>
-                        </size>
-                       </property>
-                       <property name="text">
-                        <string>TextLabel</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="label_2">
-                       <property name="text">
-                        <string>TextLabel</string>
-                       </property>
-                       <property name="wordWrap">
-                        <bool>true</bool>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </item>
-                   <item>
-                    <widget class="Line" name="line_5">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>85</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>16777215</width>
-                       <height>85</height>
-                      </size>
-                     </property>
-                     <property name="orientation">
-                      <enum>Qt::Vertical</enum>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QFrame" name="frame_7">
-                     <property name="minimumSize">
-                      <size>
-                       <width>90</width>
-                       <height>0</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>120</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
+                    <widget class="QFrame" name="frame_6">
                      <property name="frameShape">
-                      <enum>QFrame::StyledPanel</enum>
+                      <enum>QFrame::Box</enum>
                      </property>
                      <property name="frameShadow">
-                      <enum>QFrame::Raised</enum>
+                      <enum>QFrame::Plain</enum>
                      </property>
-                     <layout class="QVBoxLayout" name="verticalLayout_20">
+                     <layout class="QHBoxLayout" name="horizontalLayout_15">
                       <item>
-                       <widget class="QLabel" name="label_3">
+                       <widget class="QListWidget" name="MISClistWidget">
                         <property name="minimumSize">
                          <size>
-                          <width>90</width>
-                          <height>90</height>
+                          <width>80</width>
+                          <height>260</height>
                          </size>
                         </property>
                         <property name="maximumSize">
                          <size>
-                          <width>120</width>
-                          <height>120</height>
+                          <width>16777215</width>
+                          <height>300</height>
                          </size>
                         </property>
-                        <property name="sizeIncrement">
+                        <property name="frameShape">
+                         <enum>QFrame::NoFrame</enum>
+                        </property>
+                        <property name="iconSize">
                          <size>
-                          <width>1</width>
-                          <height>1</height>
+                          <width>36</width>
+                          <height>36</height>
                          </size>
                         </property>
-                        <property name="baseSize">
-                         <size>
-                          <width>100</width>
-                          <height>100</height>
-                         </size>
+                        <property name="isWrapping" stdset="0">
+                         <bool>true</bool>
                         </property>
-                        <property name="text">
-                         <string>TextLabel</string>
-                        </property>
+                        <item>
+                         <property name="text">
+                          <string>Atril PDF Viewer</string>
+                         </property>
+                         <property name="checkState">
+                          <enum>PartiallyChecked</enum>
+                         </property>
+                         <property name="icon">
+                          <iconset>
+                           <normaloff>../png/app_icons/atril.png</normaloff>../png/app_icons/atril.png</iconset>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Evince PDF Document Viewer</string>
+                         </property>
+                         <property name="checkState">
+                          <enum>PartiallyChecked</enum>
+                         </property>
+                         <property name="icon">
+                          <iconset>
+                           <normaloff>../png/app_icons/evince.png</normaloff>../png/app_icons/evince.png</iconset>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>GitHub Desktop</string>
+                         </property>
+                         <property name="checkState">
+                          <enum>PartiallyChecked</enum>
+                         </property>
+                         <property name="icon">
+                          <iconset>
+                           <normaloff>../png/app_icons/github.png</normaloff>../png/app_icons/github.png</iconset>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Obsidian (as AppImage)</string>
+                         </property>
+                         <property name="checkState">
+                          <enum>PartiallyChecked</enum>
+                         </property>
+                         <property name="icon">
+                          <iconset>
+                           <normaloff>../png/app_icons/obsidian.png</normaloff>../png/app_icons/obsidian.png</iconset>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>GSConnect</string>
+                         </property>
+                         <property name="checkState">
+                          <enum>PartiallyChecked</enum>
+                         </property>
+                         <property name="icon">
+                          <iconset>
+                           <normaloff>../png/app_icons/gsconnect.png</normaloff>../png/app_icons/gsconnect.png</iconset>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </item>
                        </widget>
                       </item>
                      </layout>
                     </widget>
                    </item>
                   </layout>
-                 </item>
-                 <item>
-                  <widget class="QTreeWidget" name="treeWidget">
-                   <column>
-                    <property name="text">
-                     <string>Programs to be Installed</string>
-                    </property>
-                   </column>
+                 </widget>
+                 <widget class="QWidget" name="textEditorPage">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>319</width>
+                    <height>382</height>
+                   </rect>
+                  </property>
+                  <attribute name="label">
+                   <string>Text Editors</string>
+                  </attribute>
+                  <layout class="QVBoxLayout" name="verticalLayout_27">
                    <item>
-                    <property name="text">
-                     <string>Web Browsers</string>
-                    </property>
-                    <item>
-                     <property name="text">
-                      <string>LibreWolf</string>
+                    <widget class="QFrame" name="frame_10">
+                     <property name="frameShape">
+                      <enum>QFrame::Box</enum>
                      </property>
-                    </item>
+                     <property name="frameShadow">
+                      <enum>QFrame::Plain</enum>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_26">
+                      <item>
+                       <widget class="QListWidget" name="TXTlistWidget">
+                        <property name="minimumSize">
+                         <size>
+                          <width>80</width>
+                          <height>160</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>300</height>
+                         </size>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::NoFrame</enum>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>36</width>
+                          <height>36</height>
+                         </size>
+                        </property>
+                        <item>
+                         <property name="text">
+                          <string>StratMacs for StratOS</string>
+                         </property>
+                         <property name="checkState">
+                          <enum>PartiallyChecked</enum>
+                         </property>
+                         <property name="icon">
+                          <iconset>
+                           <normaloff>../png/app_icons/stratmacs_symbolic.png</normaloff>../png/app_icons/stratmacs_symbolic.png</iconset>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>StratVIM for StratOS</string>
+                         </property>
+                         <property name="checkState">
+                          <enum>PartiallyChecked</enum>
+                         </property>
+                         <property name="icon">
+                          <iconset>
+                           <normaloff>../png/app_icons/stratvim_symbolic.png</normaloff>../png/app_icons/stratvim_symbolic.png</iconset>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>VSCodium</string>
+                         </property>
+                         <property name="checkState">
+                          <enum>PartiallyChecked</enum>
+                         </property>
+                         <property name="icon">
+                          <iconset>
+                           <normaloff>../png/app_icons/vscodium.png</normaloff>../png/app_icons/vscodium.png</iconset>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </item>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
                    </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="officeSuitePage">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>319</width>
+                    <height>382</height>
+                   </rect>
+                  </property>
+                  <attribute name="label">
+                   <string>Office Suites</string>
+                  </attribute>
+                  <layout class="QVBoxLayout" name="verticalLayout_16">
                    <item>
-                    <property name="text">
-                     <string>Media Players</string>
-                    </property>
-                    <item>
-                     <property name="text">
-                      <string>MPV</string>
+                    <widget class="QFrame" name="frame_5">
+                     <property name="frameShape">
+                      <enum>QFrame::Box</enum>
                      </property>
-                    </item>
+                     <property name="frameShadow">
+                      <enum>QFrame::Plain</enum>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_15">
+                      <item>
+                       <widget class="QListWidget" name="OFFICElistWidget">
+                        <property name="minimumSize">
+                         <size>
+                          <width>80</width>
+                          <height>155</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>300</height>
+                         </size>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::NoFrame</enum>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>36</width>
+                          <height>36</height>
+                         </size>
+                        </property>
+                        <item>
+                         <property name="text">
+                          <string>ONLYOFFICE</string>
+                         </property>
+                         <property name="checkState">
+                          <enum>PartiallyChecked</enum>
+                         </property>
+                         <property name="icon">
+                          <iconset>
+                           <normaloff>../png/app_icons/onlyoffice.png</normaloff>../png/app_icons/onlyoffice.png</iconset>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>LibreOffice</string>
+                         </property>
+                         <property name="checkState">
+                          <enum>PartiallyChecked</enum>
+                         </property>
+                         <property name="icon">
+                          <iconset>
+                           <normaloff>../png/app_icons/libreoffice.png</normaloff>../png/app_icons/libreoffice.png</iconset>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </item>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
                    </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="mediaPlayerPage">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>319</width>
+                    <height>382</height>
+                   </rect>
+                  </property>
+                  <attribute name="label">
+                   <string>Media Players</string>
+                  </attribute>
+                  <layout class="QVBoxLayout" name="verticalLayout_14">
                    <item>
-                    <property name="text">
-                     <string>Office Suites</string>
-                    </property>
-                    <item>
-                     <property name="text">
-                      <string>ONLYOFFICE</string>
+                    <widget class="QFrame" name="frame_4">
+                     <property name="frameShape">
+                      <enum>QFrame::Box</enum>
                      </property>
-                    </item>
+                     <property name="frameShadow">
+                      <enum>QFrame::Plain</enum>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_13">
+                      <item>
+                       <widget class="QListWidget" name="MEDIAlistWidget">
+                        <property name="minimumSize">
+                         <size>
+                          <width>80</width>
+                          <height>155</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>300</height>
+                         </size>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::NoFrame</enum>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>36</width>
+                          <height>36</height>
+                         </size>
+                        </property>
+                        <item>
+                         <property name="text">
+                          <string>VLC</string>
+                         </property>
+                         <property name="checkState">
+                          <enum>PartiallyChecked</enum>
+                         </property>
+                         <property name="icon">
+                          <iconset>
+                           <normaloff>../png/app_icons/vlc.png</normaloff>../png/app_icons/vlc.png</iconset>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>MPV</string>
+                         </property>
+                         <property name="checkState">
+                          <enum>PartiallyChecked</enum>
+                         </property>
+                         <property name="icon">
+                          <iconset>
+                           <normaloff>../png/app_icons/mpv.png</normaloff>../png/app_icons/mpv.png</iconset>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </item>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
                    </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="webBrowserPage">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>319</width>
+                    <height>382</height>
+                   </rect>
+                  </property>
+                  <attribute name="label">
+                   <string>Web Browsers</string>
+                  </attribute>
+                  <layout class="QVBoxLayout" name="verticalLayout_12">
                    <item>
-                    <property name="text">
-                     <string>Miscellaneous</string>
-                    </property>
-                    <item>
-                     <property name="text">
-                      <string>Atril PDF Viewer</string>
+                    <widget class="QFrame" name="frame_3">
+                     <property name="frameShape">
+                      <enum>QFrame::Box</enum>
                      </property>
-                    </item>
+                     <property name="frameShadow">
+                      <enum>QFrame::Plain</enum>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_11">
+                      <item>
+                       <widget class="QListWidget" name="WEBlistWidget">
+                        <property name="minimumSize">
+                         <size>
+                          <width>80</width>
+                          <height>230</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>300</height>
+                         </size>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::NoFrame</enum>
+                        </property>
+                        <property name="verticalScrollBarPolicy">
+                         <enum>Qt::ScrollBarAlwaysOff</enum>
+                        </property>
+                        <property name="autoScroll">
+                         <bool>true</bool>
+                        </property>
+                        <property name="autoScrollMargin">
+                         <number>25</number>
+                        </property>
+                        <property name="editTriggers">
+                         <set>QAbstractItemView::NoEditTriggers</set>
+                        </property>
+                        <property name="selectionMode">
+                         <enum>QAbstractItemView::SingleSelection</enum>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>36</width>
+                          <height>36</height>
+                         </size>
+                        </property>
+                        <property name="spacing">
+                         <number>3</number>
+                        </property>
+                        <property name="gridSize">
+                         <size>
+                          <width>0</width>
+                          <height>50</height>
+                         </size>
+                        </property>
+                        <property name="viewMode">
+                         <enum>QListView::ListMode</enum>
+                        </property>
+                        <property name="uniformItemSizes">
+                         <bool>false</bool>
+                        </property>
+                        <property name="selectionRectVisible">
+                         <bool>true</bool>
+                        </property>
+                        <item>
+                         <property name="text">
+                          <string>Brave</string>
+                         </property>
+                         <property name="checkState">
+                          <enum>PartiallyChecked</enum>
+                         </property>
+                         <property name="icon">
+                          <iconset>
+                           <normaloff>../png/app_icons/brave.png</normaloff>../png/app_icons/brave.png</iconset>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Chromium</string>
+                         </property>
+                         <property name="checkState">
+                          <enum>PartiallyChecked</enum>
+                         </property>
+                         <property name="icon">
+                          <iconset>
+                           <normaloff>../png/app_icons/chromium.png</normaloff>../png/app_icons/chromium.png</iconset>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>Firefox</string>
+                         </property>
+                         <property name="checkState">
+                          <enum>PartiallyChecked</enum>
+                         </property>
+                         <property name="icon">
+                          <iconset>
+                           <normaloff>../png/app_icons/firefox.png</normaloff>../png/app_icons/firefox.png</iconset>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string>LibreWolf</string>
+                         </property>
+                         <property name="checkState">
+                          <enum>PartiallyChecked</enum>
+                         </property>
+                         <property name="icon">
+                          <iconset>
+                           <normaloff>../png/app_icons/librewolf.png</normaloff>../png/app_icons/librewolf.png</iconset>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </item>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
                    </item>
-                  </widget>
-                 </item>
-                 <item>
-                  <spacer name="verticalSpacer_4">
-                   <property name="orientation">
-                    <enum>Qt::Vertical</enum>
-                   </property>
-                   <property name="sizeType">
-                    <enum>QSizePolicy::Minimum</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>20</width>
-                     <height>40</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-             </layout>
-            </widget>
+                  </layout>
+                 </widget>
+                </widget>
+               </item>
+               <item>
+                <widget class="QFrame" name="frame_8">
+                 <property name="minimumSize">
+                  <size>
+                   <width>610</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>627</width>
+                   <height>711</height>
+                  </size>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::Box</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Plain</enum>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_21">
+                  <item>
+                   <widget class="QLabel" name="label_4">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>40</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">font: bold 15pt &quot;JetBrains Mono&quot;;
+color: rgb(2, 240, 255);</string>
+                    </property>
+                    <property name="text">
+                     <string>==&gt; Install your favourite programs</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QStackedWidget" name="packageDetailsStackedWidget">
+                    <property name="maximumSize">
+                     <size>
+                      <width>613</width>
+                      <height>484</height>
+                     </size>
+                    </property>
+                    <property name="acceptDrops">
+                     <bool>false</bool>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::Box</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Plain</enum>
+                    </property>
+                    <property name="lineWidth">
+                     <number>1</number>
+                    </property>
+                    <property name="currentIndex">
+                     <number>12</number>
+                    </property>
+                    <widget class="QWidget" name="FIREFOX_0">
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+font: bold 11pt &quot;JetBrains Mono&quot;;
+}</string>
+                     </property>
+                     <layout class="QHBoxLayout" name="horizontalLayout_10">
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_9">
+                        <item>
+                         <layout class="QVBoxLayout" name="verticalLayout_19">
+                          <item>
+                           <widget class="QLabel" name="FIREFOXHeader">
+                            <property name="minimumSize">
+                             <size>
+                              <width>40</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">color: rgb(255, 255, 255);</string>
+                            </property>
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;==&amp;gt; &lt;span style=&quot; text-decoration: underline;&quot;&gt;Mozilla Firefox&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLabel" name="FIREFOXDesc">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mozilla Firefox is a cross-platform free &amp;amp; open-source web browser developed by the Mozilla Foundation and its subsidiary, the Mozilla Corporation, in 2004. Firefox uses the Gecko rendering engine to display web pages, which implements current and anticipated web standards. &lt;/p&gt;&lt;p&gt;- Free and Open Source Software&lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;mozilla.org/firefox&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;mozilla.org/firefox&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Source Code Repo: &lt;a href=&quot;firefox-source-docs.mozilla.org&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;firefox-source-docs.mozilla.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                            <property name="wordWrap">
+                             <bool>true</bool>
+                            </property>
+                            <property name="openExternalLinks">
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_5">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>185</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>385</height>
+                           </size>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_7">
+                          <property name="minimumSize">
+                           <size>
+                            <width>90</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>120</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::NoFrame</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_20">
+                           <item>
+                            <widget class="QLabel" name="label_3">
+                             <property name="minimumSize">
+                              <size>
+                               <width>90</width>
+                               <height>90</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>120</width>
+                               <height>120</height>
+                              </size>
+                             </property>
+                             <property name="sizeIncrement">
+                              <size>
+                               <width>1</width>
+                               <height>1</height>
+                              </size>
+                             </property>
+                             <property name="baseSize">
+                              <size>
+                               <width>100</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap>../png/app_icons/firefox.png</pixmap>
+                             </property>
+                             <property name="scaledContents">
+                              <bool>true</bool>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                    <widget class="QWidget" name="CHROMIUM_1">
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+font: bold 11pt &quot;JetBrains Mono&quot;;
+}</string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_24">
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_12">
+                        <item>
+                         <layout class="QVBoxLayout" name="verticalLayout_22">
+                          <item>
+                           <widget class="QLabel" name="CHROMIUMHeader">
+                            <property name="minimumSize">
+                             <size>
+                              <width>40</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">color: rgb(255, 255, 255);</string>
+                            </property>
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;==&amp;gt; &lt;span style=&quot; text-decoration: underline;&quot;&gt;Chromium Web Browser&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLabel" name="CHROMIUMDesc">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Chromium is a free, open-source web browser project, developed and maintained by Google and is the basis for many popular browsers, including Chrome, Microsoft Edge and Opera.&lt;/p&gt;&lt;p&gt;- It's basically Chrome but without additional tracking and fingerprinting from Google.&lt;/p&gt;&lt;p&gt;- Free and open-source software &lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;https://www.chromium.org/Home/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;www.chromium.org/Home/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Source Code Repo: &lt;a href=&quot;https://github.com/chromium/chromium&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;github.com/chromium/chromium&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                            <property name="wordWrap">
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_6">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>185</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>385</height>
+                           </size>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_9">
+                          <property name="minimumSize">
+                           <size>
+                            <width>90</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>120</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::NoFrame</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_23">
+                           <item>
+                            <widget class="QLabel" name="label_6">
+                             <property name="minimumSize">
+                              <size>
+                               <width>90</width>
+                               <height>90</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>120</width>
+                               <height>120</height>
+                              </size>
+                             </property>
+                             <property name="sizeIncrement">
+                              <size>
+                               <width>1</width>
+                               <height>1</height>
+                              </size>
+                             </property>
+                             <property name="baseSize">
+                              <size>
+                               <width>100</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap>../png/app_icons/chromium.png</pixmap>
+                             </property>
+                             <property name="scaledContents">
+                              <bool>true</bool>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                    <widget class="QWidget" name="LIBREWOLF_2">
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+font: bold 11pt &quot;JetBrains Mono&quot;;
+}</string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_30">
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_13">
+                        <item>
+                         <layout class="QVBoxLayout" name="verticalLayout_28">
+                          <item>
+                           <widget class="QLabel" name="LIBREWOLFHeader">
+                            <property name="minimumSize">
+                             <size>
+                              <width>40</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">color: rgb(255, 255, 255);</string>
+                            </property>
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;==&amp;gt; &lt;span style=&quot; text-decoration: underline;&quot;&gt;LibreWolf Web Browser&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLabel" name="LIBREWOLFDesc">
+                            <property name="text">
+                             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'JetBrains Mono'; font-size:11pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The LibreWolf project is a custom and independent version of Firefox, with the primary goals of privacy, security and user freedom.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- Built in ad-blocker &lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- Configured with privacy and security in mind.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- Free and open source software&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Website: &lt;a href=&quot;https://librewolf.net/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;librewolf.net&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Source Code Repo: &lt;a href=&quot;https://codeberg.org/librewolf&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;codeberg.org/librewolf&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                            <property name="wordWrap">
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_7">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>185</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>385</height>
+                           </size>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_11">
+                          <property name="minimumSize">
+                           <size>
+                            <width>90</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>120</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::NoFrame</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_29">
+                           <item>
+                            <widget class="QLabel" name="label_9">
+                             <property name="minimumSize">
+                              <size>
+                               <width>90</width>
+                               <height>90</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>120</width>
+                               <height>120</height>
+                              </size>
+                             </property>
+                             <property name="sizeIncrement">
+                              <size>
+                               <width>1</width>
+                               <height>1</height>
+                              </size>
+                             </property>
+                             <property name="baseSize">
+                              <size>
+                               <width>100</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap>../png/app_icons/librewolf.png</pixmap>
+                             </property>
+                             <property name="scaledContents">
+                              <bool>true</bool>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                    <widget class="QWidget" name="BRAVE_3">
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+font: bold 11pt &quot;JetBrains Mono&quot;;
+}</string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_33">
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_14">
+                        <item>
+                         <layout class="QVBoxLayout" name="verticalLayout_31">
+                          <item>
+                           <widget class="QLabel" name="BRAVEHeader_2">
+                            <property name="minimumSize">
+                             <size>
+                              <width>40</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">color: rgb(255, 255, 255);</string>
+                            </property>
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;==&amp;gt; &lt;span style=&quot; text-decoration: underline;&quot;&gt;Brave Browser&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLabel" name="BRAVEDesc">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Brave Web Browser is one of the most popular web browsers out there. Based on Chromium, it has several performance, privacy and security enhancement features which also includes support for Tor.&lt;/p&gt;&lt;p&gt;- Built in ad-blocker, crypto wallets manager and Tor support&lt;/p&gt;&lt;p&gt;- Open Source Software&lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;https://brave.com/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;brave.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Source Code Repo: &lt;a href=&quot;https://github.com/brave/brave-browser&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;github.com/brave/brave-browser&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                            <property name="wordWrap">
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_8">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>185</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>385</height>
+                           </size>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_12">
+                          <property name="minimumSize">
+                           <size>
+                            <width>90</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>120</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::NoFrame</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_32">
+                           <item>
+                            <widget class="QLabel" name="label_10">
+                             <property name="minimumSize">
+                              <size>
+                               <width>90</width>
+                               <height>90</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>120</width>
+                               <height>120</height>
+                              </size>
+                             </property>
+                             <property name="sizeIncrement">
+                              <size>
+                               <width>1</width>
+                               <height>1</height>
+                              </size>
+                             </property>
+                             <property name="baseSize">
+                              <size>
+                               <width>100</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap>../png/app_icons/brave.png</pixmap>
+                             </property>
+                             <property name="scaledContents">
+                              <bool>true</bool>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                    <widget class="QWidget" name="VLC_4">
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+font: bold 11pt &quot;JetBrains Mono&quot;;
+}</string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_37">
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_16">
+                        <item>
+                         <layout class="QVBoxLayout" name="verticalLayout_35">
+                          <item>
+                           <widget class="QLabel" name="VLCHeader_3">
+                            <property name="minimumSize">
+                             <size>
+                              <width>40</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">color: rgb(255, 255, 255);</string>
+                            </property>
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;==&amp;gt; &lt;span style=&quot; text-decoration: underline;&quot;&gt;VLC Media Player&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLabel" name="VLCDesc_2">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVDs, Audio CDs, VCDs, and various streaming protocols.&lt;/p&gt;&lt;p&gt;- Free and Open Source Software&lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;www.videolan.org/vlc/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;www.videolan.org/vlc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Source Code Repo: &lt;a href=&quot;https://github.com/videolan/vlc&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;https://github.com/videolan/vlc&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                            <property name="wordWrap">
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_9">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>185</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>385</height>
+                           </size>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_14">
+                          <property name="minimumSize">
+                           <size>
+                            <width>90</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>120</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::NoFrame</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_36">
+                           <item>
+                            <widget class="QLabel" name="label_11">
+                             <property name="minimumSize">
+                              <size>
+                               <width>90</width>
+                               <height>90</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>120</width>
+                               <height>120</height>
+                              </size>
+                             </property>
+                             <property name="sizeIncrement">
+                              <size>
+                               <width>1</width>
+                               <height>1</height>
+                              </size>
+                             </property>
+                             <property name="baseSize">
+                              <size>
+                               <width>100</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap>../png/app_icons/vlc.png</pixmap>
+                             </property>
+                             <property name="scaledContents">
+                              <bool>true</bool>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                    <widget class="QWidget" name="MPV_5">
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+font: bold 11pt &quot;JetBrains Mono&quot;;
+}</string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_40">
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_17">
+                        <item>
+                         <layout class="QVBoxLayout" name="verticalLayout_38">
+                          <item>
+                           <widget class="QLabel" name="MPVHeader_4">
+                            <property name="minimumSize">
+                             <size>
+                              <width>40</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">color: rgb(255, 255, 255);
+</string>
+                            </property>
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;==&amp;gt; &lt;span style=&quot; text-decoration: underline;&quot;&gt;MPV Media Player&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLabel" name="MPVDesc_3">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;mpv is a free (as in freedom) media player for the commandline. It supports a wide variety of media file formats, audio and video codecs, and subtitle types.&lt;/p&gt;&lt;p&gt;- supports hardware-accelerated encoding with HDR&lt;/p&gt;&lt;p&gt;- minimalist UI&lt;/p&gt;&lt;p&gt;- powerful scripting capabilities&lt;/p&gt;&lt;p&gt;- API for integration into other applications&lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;mpv.io&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;mpv.io&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Source Code Repo: &lt;a href=&quot;https://github.com/mpv-player/mpv&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;https://github.com/mpv-player/mpv &lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                            <property name="wordWrap">
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_10">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>185</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>385</height>
+                           </size>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_15">
+                          <property name="minimumSize">
+                           <size>
+                            <width>90</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>120</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::NoFrame</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_39">
+                           <item>
+                            <widget class="QLabel" name="label_12">
+                             <property name="minimumSize">
+                              <size>
+                               <width>90</width>
+                               <height>90</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>120</width>
+                               <height>120</height>
+                              </size>
+                             </property>
+                             <property name="sizeIncrement">
+                              <size>
+                               <width>1</width>
+                               <height>1</height>
+                              </size>
+                             </property>
+                             <property name="baseSize">
+                              <size>
+                               <width>100</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap>../png/app_icons/mpv.png</pixmap>
+                             </property>
+                             <property name="scaledContents">
+                              <bool>true</bool>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                    <widget class="QWidget" name="ONLYOFFICE_6">
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+font: bold 11pt &quot;JetBrains Mono&quot;;
+}</string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_43">
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_18">
+                        <item>
+                         <layout class="QVBoxLayout" name="verticalLayout_41">
+                          <item>
+                           <widget class="QLabel" name="ONLYOFFICEHeader_5">
+                            <property name="minimumSize">
+                             <size>
+                              <width>40</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">color: rgb(255, 255, 255);</string>
+                            </property>
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;==&amp;gt; &lt;span style=&quot; text-decoration: underline;&quot;&gt;ONLYOFFICE Desktop Editors&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLabel" name="ONLYOFFICEDesc_4">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;With ONLYOFFICE create, view and edit text documents, spreadsheets and presentations of any size and complexity. Work on documents of most popular formats: DOCX, ODT, XLSX, ODS, CSV, PPTX, ODP, etc. Deal with multiple files within one and the same window thanks to the tab-based user interface.&lt;/p&gt;&lt;p&gt;- Better support for Microsoft Office Document Formats than LibreOffice&lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;onlyoffice.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;onlyoffice.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                            <property name="wordWrap">
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_11">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>185</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>385</height>
+                           </size>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_16">
+                          <property name="minimumSize">
+                           <size>
+                            <width>90</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>120</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::NoFrame</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_42">
+                           <item>
+                            <widget class="QLabel" name="label_13">
+                             <property name="minimumSize">
+                              <size>
+                               <width>90</width>
+                               <height>90</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>120</width>
+                               <height>120</height>
+                              </size>
+                             </property>
+                             <property name="sizeIncrement">
+                              <size>
+                               <width>1</width>
+                               <height>1</height>
+                              </size>
+                             </property>
+                             <property name="baseSize">
+                              <size>
+                               <width>100</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap>../png/app_icons/onlyoffice.png</pixmap>
+                             </property>
+                             <property name="scaledContents">
+                              <bool>true</bool>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                    <widget class="QWidget" name="LIBREOFFICE_7">
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+font: bold 11pt &quot;JetBrains Mono&quot;;
+}</string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_46">
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_19">
+                        <item>
+                         <layout class="QVBoxLayout" name="verticalLayout_44">
+                          <item>
+                           <widget class="QLabel" name="LIBREOFFICEHeader_6">
+                            <property name="minimumSize">
+                             <size>
+                              <width>40</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">color: rgb(255, 255, 255);</string>
+                            </property>
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;==&amp;gt; &lt;span style=&quot; text-decoration: underline;&quot;&gt;LibreOffice&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLabel" name="LIBREOFFICEDesc_5">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;LibreOffice is a powerful office suite. Its clean interface and feature-rich tools help you unleash your creativity and enhance your productivity. &lt;/p&gt;&lt;p&gt;- Best Fully featured Free and Open Source Office suite.&lt;/p&gt;&lt;p&gt;- Well supported on Linux.&lt;/p&gt;&lt;p&gt;- Supports word processing, spreadsheets, presentations, vector graphics and flowcharts, databases, and math formula editing.&lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;https://www.libreoffice.org/discover/libreoffice/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;https://www.libreoffice.org/discover/libreoffice/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                            <property name="wordWrap">
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_12">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>185</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>385</height>
+                           </size>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_17">
+                          <property name="minimumSize">
+                           <size>
+                            <width>90</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>120</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::NoFrame</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_45">
+                           <item>
+                            <widget class="QLabel" name="label_14">
+                             <property name="minimumSize">
+                              <size>
+                               <width>90</width>
+                               <height>90</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>120</width>
+                               <height>120</height>
+                              </size>
+                             </property>
+                             <property name="sizeIncrement">
+                              <size>
+                               <width>1</width>
+                               <height>1</height>
+                              </size>
+                             </property>
+                             <property name="baseSize">
+                              <size>
+                               <width>100</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap>../png/app_icons/libreoffice.png</pixmap>
+                             </property>
+                             <property name="scaledContents">
+                              <bool>true</bool>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                    <widget class="QWidget" name="STRATMACS_8">
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+font: bold 11pt &quot;JetBrains Mono&quot;;
+}</string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_49">
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_20">
+                        <item>
+                         <layout class="QVBoxLayout" name="verticalLayout_47">
+                          <item>
+                           <widget class="QLabel" name="STRATMACSHeader_7">
+                            <property name="minimumSize">
+                             <size>
+                              <width>40</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">color: rgb(255, 255, 255);</string>
+                            </property>
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;==&amp;gt; &lt;span style=&quot; text-decoration: underline;&quot;&gt;StratMacs (GNU Emacs for StratOS)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLabel" name="STRATMACSDesc_6">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;StratMacs is a powerful spin of the infamous GNU Emacs terminal-based text editor. It comes built-in with plugins and extensions that enhance your development workflow with tight integration with the rest of StratOS. &lt;/p&gt;&lt;p&gt;- Easier for beginners to learn and use than Vim&lt;/p&gt;&lt;p&gt;- Free and Open Source Software&lt;/p&gt;&lt;p&gt;Source Code Repo: &lt;a href=&quot;https://github.com/StratOS-Linux/Stratmacs&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;https://github.com/StratOS-Linux/Stratmacs&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                            <property name="wordWrap">
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_13">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>185</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>385</height>
+                           </size>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_18">
+                          <property name="minimumSize">
+                           <size>
+                            <width>90</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>120</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::NoFrame</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_48">
+                           <item>
+                            <widget class="QLabel" name="label_15">
+                             <property name="minimumSize">
+                              <size>
+                               <width>90</width>
+                               <height>90</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>120</width>
+                               <height>120</height>
+                              </size>
+                             </property>
+                             <property name="sizeIncrement">
+                              <size>
+                               <width>1</width>
+                               <height>1</height>
+                              </size>
+                             </property>
+                             <property name="baseSize">
+                              <size>
+                               <width>100</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="frameShape">
+                              <enum>QFrame::Box</enum>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap>../png/app_icons/stratmacs.png</pixmap>
+                             </property>
+                             <property name="scaledContents">
+                              <bool>true</bool>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                    <widget class="QWidget" name="STRATVIM_9">
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+font: bold 11pt &quot;JetBrains Mono&quot;;
+}</string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_52">
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_21">
+                        <item>
+                         <layout class="QVBoxLayout" name="verticalLayout_50">
+                          <item>
+                           <widget class="QLabel" name="STRATVIMHeader_8">
+                            <property name="minimumSize">
+                             <size>
+                              <width>40</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">color: rgb(255, 255, 255);</string>
+                            </property>
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;==&amp;gt; &lt;span style=&quot; text-decoration: underline;&quot;&gt;StratVIM (NeoVim for StratOS)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLabel" name="STRATVIMDesc_7">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;StratVIM is a powerful spin of the infamous terminal-based Vim text editor for Unix systems. It uses NeoVim, a fork of Vim with support for plugins and extensions. It comes loaded with all the extensions you need to maximise your productivity as a developer on StratOS.&lt;/p&gt;&lt;p&gt;- Harder to use than Emacs but allows for vastly superior productivity.&lt;/p&gt;&lt;p&gt;- Free and open-source software&lt;/p&gt;&lt;p&gt;Source Code Repo: &lt;a href=&quot;https://github.com/StratOS-Linux/StratVIM&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;https://github.com/StratOS-Linux/StratVIM&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                            <property name="wordWrap">
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_14">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>185</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>385</height>
+                           </size>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_19">
+                          <property name="minimumSize">
+                           <size>
+                            <width>180</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>180</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::NoFrame</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_51">
+                           <item>
+                            <widget class="QLabel" name="label_16">
+                             <property name="minimumSize">
+                              <size>
+                               <width>163</width>
+                               <height>45</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>120</width>
+                               <height>45</height>
+                              </size>
+                             </property>
+                             <property name="sizeIncrement">
+                              <size>
+                               <width>1</width>
+                               <height>1</height>
+                              </size>
+                             </property>
+                             <property name="baseSize">
+                              <size>
+                               <width>100</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap>../png/app_icons/stratvim.png</pixmap>
+                             </property>
+                             <property name="scaledContents">
+                              <bool>true</bool>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                    <widget class="QWidget" name="VSCODIUM_10">
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+font: bold 11pt &quot;JetBrains Mono&quot;;
+}</string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_55">
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_22">
+                        <item>
+                         <layout class="QVBoxLayout" name="verticalLayout_53">
+                          <item>
+                           <widget class="QLabel" name="CODIUMHeader_9">
+                            <property name="minimumSize">
+                             <size>
+                              <width>40</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">color: rgb(255, 255, 255);
+</string>
+                            </property>
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;==&amp;gt; &lt;span style=&quot; text-decoration: underline;&quot;&gt;VSCodium&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLabel" name="CODIUMDesc_8">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;VSCodium is a community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code, including everything devs need from VSCode, minus the telemetry/tracking done by Microsoft.&lt;/p&gt;&lt;p&gt;- Vast pool of extensions to support any project and programming language.&lt;/p&gt;&lt;p&gt;- Very Easy to use and configure,&lt;/p&gt;&lt;p&gt;- Built-in terminal&lt;/p&gt;&lt;p&gt;- Free and Open Source Software&lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;vscodium.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;vscodium.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Source Code Repo: &lt;a href=&quot;https://github.com/VSCodium/vscodium&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;github.com/VSCodium/vscodium&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                            <property name="wordWrap">
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_15">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>185</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>385</height>
+                           </size>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_20">
+                          <property name="minimumSize">
+                           <size>
+                            <width>90</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>120</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::NoFrame</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_54">
+                           <item>
+                            <widget class="QLabel" name="label_17">
+                             <property name="minimumSize">
+                              <size>
+                               <width>90</width>
+                               <height>90</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>120</width>
+                               <height>120</height>
+                              </size>
+                             </property>
+                             <property name="sizeIncrement">
+                              <size>
+                               <width>1</width>
+                               <height>1</height>
+                              </size>
+                             </property>
+                             <property name="baseSize">
+                              <size>
+                               <width>100</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap>../png/app_icons/vscodium.png</pixmap>
+                             </property>
+                             <property name="scaledContents">
+                              <bool>true</bool>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                    <widget class="QWidget" name="ATRIL_11">
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+font: bold 11pt &quot;JetBrains Mono&quot;;
+}</string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_58">
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_23">
+                        <item>
+                         <layout class="QVBoxLayout" name="verticalLayout_56">
+                          <item>
+                           <widget class="QLabel" name="ATRILHeader_10">
+                            <property name="minimumSize">
+                             <size>
+                              <width>40</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">color: rgb(255, 255, 255);</string>
+                            </property>
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;==&amp;gt; &lt;span style=&quot; text-decoration: underline;&quot;&gt;Atril PDF Document Viewer&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLabel" name="ATRILDesc_9">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Atril is a simple multi-page document viewer.&lt;/p&gt;&lt;p&gt;It is a fork of Evince document viewer maintained by the MATE Desktop Environment Team.&lt;/p&gt;&lt;p&gt;- Supports PDF, PostScript, DJVU, DVI, XPS files&lt;/p&gt;&lt;p&gt;- Lightweight and Fast&lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;https://mate-desktop.org/#:~:text=of%C2%A0GNOME.-,Atril,-Atril%20is%20a&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;mate-desktop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                            <property name="wordWrap">
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_16">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>185</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>385</height>
+                           </size>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_21">
+                          <property name="minimumSize">
+                           <size>
+                            <width>90</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>120</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::NoFrame</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_57">
+                           <item>
+                            <widget class="QLabel" name="label_18">
+                             <property name="minimumSize">
+                              <size>
+                               <width>90</width>
+                               <height>90</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>120</width>
+                               <height>120</height>
+                              </size>
+                             </property>
+                             <property name="sizeIncrement">
+                              <size>
+                               <width>1</width>
+                               <height>1</height>
+                              </size>
+                             </property>
+                             <property name="baseSize">
+                              <size>
+                               <width>100</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap>../png/app_icons/atril.png</pixmap>
+                             </property>
+                             <property name="scaledContents">
+                              <bool>true</bool>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                    <widget class="QWidget" name="EVINCE_12">
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+font: bold 11pt &quot;JetBrains Mono&quot;;
+}</string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_71">
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_26">
+                        <item>
+                         <layout class="QVBoxLayout" name="verticalLayout_65">
+                          <item>
+                           <widget class="QLabel" name="EVINCEHeader_13">
+                            <property name="minimumSize">
+                             <size>
+                              <width>40</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">color: rgb(255, 255, 255);</string>
+                            </property>
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;==&amp;gt; &lt;span style=&quot; text-decoration: underline;&quot;&gt;Evince PDF Document Viewer for GNOME&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLabel" name="EVINCEDesc_12">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Evince is the codename for the official document viewer for the GNOME desktop. You can view, search or annotate documents in many different formats.&lt;/p&gt;&lt;p&gt;- Well supported by the GNOME desktop that StratOS is based on.&lt;/p&gt;&lt;p&gt;- Support for PDF, Postscript, djvu, tiff, dvi, XPS, SyncTex&lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;wiki.gnome.org/Evince&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;wiki.gnome.org/Evince&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                            <property name="wordWrap">
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_19">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>185</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>385</height>
+                           </size>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_24">
+                          <property name="minimumSize">
+                           <size>
+                            <width>90</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>120</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::NoFrame</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_66">
+                           <item>
+                            <widget class="QLabel" name="label_21">
+                             <property name="minimumSize">
+                              <size>
+                               <width>90</width>
+                               <height>90</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>120</width>
+                               <height>120</height>
+                              </size>
+                             </property>
+                             <property name="sizeIncrement">
+                              <size>
+                               <width>1</width>
+                               <height>1</height>
+                              </size>
+                             </property>
+                             <property name="baseSize">
+                              <size>
+                               <width>100</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap>../png/app_icons/evince.png</pixmap>
+                             </property>
+                             <property name="scaledContents">
+                              <bool>true</bool>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                    <widget class="QWidget" name="GITHUBdesktop_13">
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+font: bold 11pt &quot;JetBrains Mono&quot;;
+}</string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_73">
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_28">
+                        <item>
+                         <layout class="QVBoxLayout" name="verticalLayout_69">
+                          <item>
+                           <widget class="QLabel" name="github_desktopHeader_15">
+                            <property name="minimumSize">
+                             <size>
+                              <width>40</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">color: rgb(255, 255, 255);</string>
+                            </property>
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;==&amp;gt; &lt;span style=&quot; text-decoration: underline;&quot;&gt;GitHub Desktop for Linux&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLabel" name="github_desktop_Desc_14">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GitHub Desktop is a GUI application that help you as a developer to interact with your GitHub Repos seamlessly. It uses APIs that connect to GitHub and performs Git operations without the hassle of using the terminal.&lt;/p&gt;&lt;p&gt;- open-source software.&lt;/p&gt;&lt;p&gt;Source Code Link: &lt;a href=&quot;https://github.com/shiftkey/desktop#readme&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;https://github.com/shiftkey/desktop#readme&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                            <property name="wordWrap">
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_21">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>185</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>385</height>
+                           </size>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_26">
+                          <property name="minimumSize">
+                           <size>
+                            <width>90</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>120</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::NoFrame</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_70">
+                           <item>
+                            <widget class="QLabel" name="label_23">
+                             <property name="minimumSize">
+                              <size>
+                               <width>90</width>
+                               <height>90</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>120</width>
+                               <height>120</height>
+                              </size>
+                             </property>
+                             <property name="sizeIncrement">
+                              <size>
+                               <width>1</width>
+                               <height>1</height>
+                              </size>
+                             </property>
+                             <property name="baseSize">
+                              <size>
+                               <width>100</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap>../png/app_icons/github.png</pixmap>
+                             </property>
+                             <property name="scaledContents">
+                              <bool>true</bool>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                    <widget class="QWidget" name="OBSIDIAN_14">
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+font: bold 11pt &quot;JetBrains Mono&quot;;
+}</string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_61">
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_24">
+                        <item>
+                         <layout class="QVBoxLayout" name="verticalLayout_59">
+                          <item>
+                           <widget class="QLabel" name="BRAVEHeader_11">
+                            <property name="minimumSize">
+                             <size>
+                              <width>40</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">color: rgb(255, 255, 255);</string>
+                            </property>
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;==&amp;gt; &lt;span style=&quot; text-decoration: underline;&quot;&gt;Obsidian for Linux&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLabel" name="BRAVEDesc_10">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Obsidian is a powerful knowledge base that works on top of a local folder of plain text Markdown files. In Obsidian, making and following connections is frictionless, and with the connections in place, you can explore all of your knowledge in the interactive graph view. &lt;/p&gt;&lt;p&gt;- supports CommonMark and GitHub Flavored Markdown (GFM), tags, LaTeX, mermaid diagrams, footnotes, internal links and embedding files. &lt;/p&gt;&lt;p&gt;- proprietary software&lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;https://obsidian.md&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;obsidian.md&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                            <property name="wordWrap">
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_17">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>185</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>385</height>
+                           </size>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_22">
+                          <property name="minimumSize">
+                           <size>
+                            <width>90</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>120</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::NoFrame</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_60">
+                           <item>
+                            <widget class="QLabel" name="label_19">
+                             <property name="minimumSize">
+                              <size>
+                               <width>90</width>
+                               <height>90</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>120</width>
+                               <height>120</height>
+                              </size>
+                             </property>
+                             <property name="sizeIncrement">
+                              <size>
+                               <width>1</width>
+                               <height>1</height>
+                              </size>
+                             </property>
+                             <property name="baseSize">
+                              <size>
+                               <width>100</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap>../png/app_icons/obsidian.png</pixmap>
+                             </property>
+                             <property name="scaledContents">
+                              <bool>true</bool>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                    <widget class="QWidget" name="GSCONNECT_15">
+                     <property name="styleSheet">
+                      <string notr="true">QLabel{
+font: bold 11pt &quot;JetBrains Mono&quot;;
+}</string>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_64">
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_25">
+                        <item>
+                         <layout class="QVBoxLayout" name="verticalLayout_62">
+                          <item>
+                           <widget class="QLabel" name="BRAVEHeader_12">
+                            <property name="minimumSize">
+                             <size>
+                              <width>40</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">color: rgb(255, 255, 255);</string>
+                            </property>
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;==&amp;gt; &lt;span style=&quot; text-decoration: underline;&quot;&gt;GSConnect (KDE Connect for GNOME)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLabel" name="BRAVEDesc_11">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GSConnect is a complete implementation of KDE Connect for GNOME desktop. With GSConnect you can seamlessly connect your Linux computer to any other machine running Linux, BSD, Android, Sailfish, iOS, macOS or Windows on the same network, and securely share content like notifications or files and other features like SMS messaging and remote control.&lt;/p&gt;&lt;p&gt;- Highly recommended&lt;/p&gt;&lt;p&gt;- Free and Open Source Software &lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;https://github.com/GSConnect/gnome-shell-extension-gsconnect/wiki&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;github.com/GSConnect/gnome-shell-extension-gsconnect/wiki&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                            <property name="wordWrap">
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                        <item>
+                         <widget class="Line" name="line_18">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>185</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>385</height>
+                           </size>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Vertical</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_23">
+                          <property name="minimumSize">
+                           <size>
+                            <width>90</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>120</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::NoFrame</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                          <layout class="QVBoxLayout" name="verticalLayout_63">
+                           <item>
+                            <widget class="QLabel" name="label_20">
+                             <property name="minimumSize">
+                              <size>
+                               <width>90</width>
+                               <height>90</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>120</width>
+                               <height>120</height>
+                              </size>
+                             </property>
+                             <property name="sizeIncrement">
+                              <size>
+                               <width>1</width>
+                               <height>1</height>
+                              </size>
+                             </property>
+                             <property name="baseSize">
+                              <size>
+                               <width>100</width>
+                               <height>100</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string/>
+                             </property>
+                             <property name="pixmap">
+                              <pixmap>../png/app_icons/gsconnect.png</pixmap>
+                             </property>
+                             <property name="scaledContents">
+                              <bool>true</bool>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                     </layout>
+                    </widget>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QFrame" name="frame_13">
+               <property name="minimumSize">
+                <size>
+                 <width>140</width>
+                 <height>161</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>191</height>
+                </size>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Box</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Plain</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_34">
+                <item>
+                 <layout class="QVBoxLayout" name="verticalLayout_17">
+                  <item>
+                   <widget class="QLabel" name="label">
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>25</height>
+                     </size>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">
+border-radius: 8px;
+font: 11pt &quot;JetBrains Mono&quot;;
+color: rgb(255, 0, 243);
+background-color: rgb(20 ,21, 37);
+</string>
+                    </property>
+                    <property name="text">
+                     <string>==&gt; Programs to be Installed</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_2">
+                    <property name="text">
+                     <string>TextLabel</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                    <property name="wordWrap">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </widget>
          </item>

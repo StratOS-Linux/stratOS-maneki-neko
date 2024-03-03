@@ -142,8 +142,12 @@ background-color: rgb(26, 27, 38);
         <item>
          <widget class="QPushButton" name="openBedrockSiteButton">
           <property name="styleSheet">
-           <string notr="true">font: 11pt &quot;Liberation Mono&quot;;
-color: rgb(38, 162, 105);</string>
+           <string notr="true">
+font: 11pt &quot;Liberation Mono&quot;;
+color: rgb(38, 162, 105);
+border-color: rgb(38, 162, 105);
+
+</string>
           </property>
           <property name="text">
            <string>www.bedrocklinux.org</string>
@@ -257,7 +261,7 @@ background-color: rgb(26, 27, 38);
         </item>
         <item row="0" column="1">
          <property name="text">
-          <string>StratOS project lead, OS theming and configuration</string>
+          <string>Project lead, StratVIM and OS configuration</string>
          </property>
         </item>
         <item row="1" column="0">
@@ -267,7 +271,7 @@ background-color: rgb(26, 27, 38);
         </item>
         <item row="1" column="1">
          <property name="text">
-          <string>StratOS installer and maintainer, lugpkg</string>
+          <string>StratOS installer and maintainer, rock package manager</string>
          </property>
         </item>
         <item row="2" column="0">
@@ -277,7 +281,7 @@ background-color: rgb(26, 27, 38);
         </item>
         <item row="2" column="1">
          <property name="text">
-          <string>StratOS installer and maintainer</string>
+          <string>StratOS installer and maintainer, rock package manager</string>
          </property>
         </item>
         <item row="3" column="0">
@@ -297,7 +301,7 @@ background-color: rgb(26, 27, 38);
         </item>
         <item row="4" column="1">
          <property name="text">
-          <string>StratVIM configuration</string>
+          <string>StratVIM configuration, StratOS website</string>
          </property>
         </item>
         <item row="5" column="0">
@@ -307,7 +311,7 @@ background-color: rgb(26, 27, 38);
         </item>
         <item row="5" column="1">
          <property name="text">
-          <string>lugfetch</string>
+          <string>grab fetch script</string>
          </property>
         </item>
         <item row="6" column="0">
