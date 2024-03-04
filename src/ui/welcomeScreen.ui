@@ -77,13 +77,13 @@
        </size>
       </property>
       <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
+       <enum>QFrame::NoFrame</enum>
       </property>
       <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+       <enum>QFrame::Plain</enum>
       </property>
       <property name="lineWidth">
-       <number>5</number>
+       <number>1</number>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
@@ -994,21 +994,32 @@ qproperty-subcontrol-position: center;
 }
 
 QToolBox{
-subcontrol-position: center;
-qproperty-subcontrol-position: center;
-qproperty-subcontrol-origin: center;
 
+qproperty-subcontrol-position: center;
+
+font: 57 10pt &quot;Noto Sans&quot;;
 
 }
 QWidget{
+
 	font: 57 10pt &quot;Noto Sans&quot;;
-}</string>
+
+}
+
+QLabel{
+
+font: 57 10pt &quot;Noto Sans&quot;;
+}
+</string>
                  </property>
                  <property name="frameShape">
                   <enum>QFrame::Box</enum>
                  </property>
                  <property name="currentIndex">
-                  <number>0</number>
+                  <number>4</number>
+                 </property>
+                 <property name="tabSpacing">
+                  <number>5</number>
                  </property>
                  <widget class="QWidget" name="miscPage">
                   <property name="geometry">
@@ -1016,17 +1027,17 @@ QWidget{
                     <x>0</x>
                     <y>0</y>
                     <width>319</width>
-                    <height>382</height>
+                    <height>558</height>
                    </rect>
                   </property>
                   <attribute name="label">
-                   <string>Miscellaneous</string>
+                   <string>    Miscellaneous</string>
                   </attribute>
                   <layout class="QVBoxLayout" name="verticalLayout_18">
                    <item>
                     <widget class="QFrame" name="frame_6">
                      <property name="frameShape">
-                      <enum>QFrame::Box</enum>
+                      <enum>QFrame::NoFrame</enum>
                      </property>
                      <property name="frameShadow">
                       <enum>QFrame::Plain</enum>
@@ -1108,7 +1119,7 @@ QWidget{
                         </item>
                         <item>
                          <property name="text">
-                          <string>GSConnect</string>
+                          <string>GSConnect </string>
                          </property>
                          <property name="checkState">
                           <enum>PartiallyChecked</enum>
@@ -1136,17 +1147,17 @@ QWidget{
                     <x>0</x>
                     <y>0</y>
                     <width>319</width>
-                    <height>382</height>
+                    <height>558</height>
                    </rect>
                   </property>
                   <attribute name="label">
-                   <string>Text Editors</string>
+                   <string>    Text Editors</string>
                   </attribute>
                   <layout class="QVBoxLayout" name="verticalLayout_27">
                    <item>
                     <widget class="QFrame" name="frame_10">
                      <property name="frameShape">
-                      <enum>QFrame::Box</enum>
+                      <enum>QFrame::NoFrame</enum>
                      </property>
                      <property name="frameShadow">
                       <enum>QFrame::Plain</enum>
@@ -1201,7 +1212,7 @@ QWidget{
                         </item>
                         <item>
                          <property name="text">
-                          <string>VSCodium</string>
+                          <string>VSCodium </string>
                          </property>
                          <property name="checkState">
                           <enum>PartiallyChecked</enum>
@@ -1229,17 +1240,17 @@ QWidget{
                     <x>0</x>
                     <y>0</y>
                     <width>319</width>
-                    <height>382</height>
+                    <height>558</height>
                    </rect>
                   </property>
                   <attribute name="label">
-                   <string>Office Suites</string>
+                   <string>    Office Suites</string>
                   </attribute>
                   <layout class="QVBoxLayout" name="verticalLayout_16">
                    <item>
                     <widget class="QFrame" name="frame_5">
                      <property name="frameShape">
-                      <enum>QFrame::Box</enum>
+                      <enum>QFrame::NoFrame</enum>
                      </property>
                      <property name="frameShadow">
                       <enum>QFrame::Plain</enum>
@@ -1310,17 +1321,17 @@ QWidget{
                     <x>0</x>
                     <y>0</y>
                     <width>319</width>
-                    <height>382</height>
+                    <height>558</height>
                    </rect>
                   </property>
                   <attribute name="label">
-                   <string>Media Players</string>
+                   <string>    Media Players</string>
                   </attribute>
                   <layout class="QVBoxLayout" name="verticalLayout_14">
                    <item>
                     <widget class="QFrame" name="frame_4">
                      <property name="frameShape">
-                      <enum>QFrame::Box</enum>
+                      <enum>QFrame::NoFrame</enum>
                      </property>
                      <property name="frameShadow">
                       <enum>QFrame::Plain</enum>
@@ -1391,17 +1402,17 @@ QWidget{
                     <x>0</x>
                     <y>0</y>
                     <width>319</width>
-                    <height>382</height>
+                    <height>558</height>
                    </rect>
                   </property>
                   <attribute name="label">
-                   <string>Web Browsers</string>
+                   <string>    Web Browsers</string>
                   </attribute>
                   <layout class="QVBoxLayout" name="verticalLayout_12">
                    <item>
                     <widget class="QFrame" name="frame_3">
                      <property name="frameShape">
-                      <enum>QFrame::Box</enum>
+                      <enum>QFrame::NoFrame</enum>
                      </property>
                      <property name="frameShadow">
                       <enum>QFrame::Plain</enum>
@@ -1540,7 +1551,7 @@ QWidget{
                   </size>
                  </property>
                  <property name="frameShape">
-                  <enum>QFrame::Box</enum>
+                  <enum>QFrame::NoFrame</enum>
                  </property>
                  <property name="frameShadow">
                   <enum>QFrame::Plain</enum>
@@ -1558,6 +1569,9 @@ QWidget{
                      <string notr="true">font: bold 15pt &quot;JetBrains Mono&quot;;
 color: rgb(2, 240, 255);</string>
                     </property>
+                    <property name="frameShape">
+                     <enum>QFrame::Box</enum>
+                    </property>
                     <property name="text">
                      <string>==&gt; Install your favourite programs</string>
                     </property>
@@ -1571,7 +1585,7 @@ color: rgb(2, 240, 255);</string>
                     <property name="maximumSize">
                      <size>
                       <width>613</width>
-                      <height>484</height>
+                      <height>650</height>
                      </size>
                     </property>
                     <property name="acceptDrops">
@@ -1587,7 +1601,7 @@ color: rgb(2, 240, 255);</string>
                      <number>1</number>
                     </property>
                     <property name="currentIndex">
-                     <number>12</number>
+                     <number>2</number>
                     </property>
                     <widget class="QWidget" name="FIREFOX_0">
                      <property name="styleSheet">
@@ -1632,6 +1646,9 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             </property>
                             <property name="openExternalLinks">
                              <bool>true</bool>
+                            </property>
+                            <property name="textInteractionFlags">
+                             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
                             </property>
                            </widget>
                           </item>
@@ -1761,6 +1778,9 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             </property>
                             <property name="wordWrap">
                              <bool>true</bool>
+                            </property>
+                            <property name="textInteractionFlags">
+                             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
                             </property>
                            </widget>
                           </item>
@@ -1903,6 +1923,9 @@ p, li { white-space: pre-wrap; }
                             <property name="wordWrap">
                              <bool>true</bool>
                             </property>
+                            <property name="textInteractionFlags">
+                             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+                            </property>
                            </widget>
                           </item>
                          </layout>
@@ -2032,6 +2055,9 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             <property name="wordWrap">
                              <bool>true</bool>
                             </property>
+                            <property name="textInteractionFlags">
+                             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+                            </property>
                            </widget>
                           </item>
                          </layout>
@@ -2160,6 +2186,9 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             </property>
                             <property name="wordWrap">
                              <bool>true</bool>
+                            </property>
+                            <property name="textInteractionFlags">
+                             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
                             </property>
                            </widget>
                           </item>
@@ -2291,6 +2320,9 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             <property name="wordWrap">
                              <bool>true</bool>
                             </property>
+                            <property name="textInteractionFlags">
+                             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+                            </property>
                            </widget>
                           </item>
                          </layout>
@@ -2419,6 +2451,9 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             </property>
                             <property name="wordWrap">
                              <bool>true</bool>
+                            </property>
+                            <property name="textInteractionFlags">
+                             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
                             </property>
                            </widget>
                           </item>
@@ -2549,6 +2584,9 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             <property name="wordWrap">
                              <bool>true</bool>
                             </property>
+                            <property name="textInteractionFlags">
+                             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+                            </property>
                            </widget>
                           </item>
                          </layout>
@@ -2677,6 +2715,9 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             </property>
                             <property name="wordWrap">
                              <bool>true</bool>
+                            </property>
+                            <property name="textInteractionFlags">
+                             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
                             </property>
                            </widget>
                           </item>
@@ -2810,6 +2851,9 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             <property name="wordWrap">
                              <bool>true</bool>
                             </property>
+                            <property name="textInteractionFlags">
+                             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+                            </property>
                            </widget>
                           </item>
                          </layout>
@@ -2940,6 +2984,9 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             <property name="wordWrap">
                              <bool>true</bool>
                             </property>
+                            <property name="textInteractionFlags">
+                             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+                            </property>
                            </widget>
                           </item>
                          </layout>
@@ -3068,6 +3115,9 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             </property>
                             <property name="wordWrap">
                              <bool>true</bool>
+                            </property>
+                            <property name="textInteractionFlags">
+                             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
                             </property>
                            </widget>
                           </item>
@@ -3198,6 +3248,9 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             <property name="wordWrap">
                              <bool>true</bool>
                             </property>
+                            <property name="textInteractionFlags">
+                             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+                            </property>
                            </widget>
                           </item>
                          </layout>
@@ -3326,6 +3379,9 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             </property>
                             <property name="wordWrap">
                              <bool>true</bool>
+                            </property>
+                            <property name="textInteractionFlags">
+                             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
                             </property>
                            </widget>
                           </item>
@@ -3456,6 +3512,9 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             <property name="wordWrap">
                              <bool>true</bool>
                             </property>
+                            <property name="textInteractionFlags">
+                             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+                            </property>
                            </widget>
                           </item>
                          </layout>
@@ -3585,6 +3644,9 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             <property name="wordWrap">
                              <bool>true</bool>
                             </property>
+                            <property name="textInteractionFlags">
+                             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+                            </property>
                            </widget>
                           </item>
                          </layout>
@@ -3680,68 +3742,6 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                </item>
               </layout>
              </item>
-             <item>
-              <widget class="QFrame" name="frame_13">
-               <property name="minimumSize">
-                <size>
-                 <width>140</width>
-                 <height>161</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>191</height>
-                </size>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::Box</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Plain</enum>
-               </property>
-               <layout class="QVBoxLayout" name="verticalLayout_34">
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_17">
-                  <item>
-                   <widget class="QLabel" name="label">
-                    <property name="maximumSize">
-                     <size>
-                      <width>16777215</width>
-                      <height>25</height>
-                     </size>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">
-border-radius: 8px;
-font: 11pt &quot;JetBrains Mono&quot;;
-color: rgb(255, 0, 243);
-background-color: rgb(20 ,21, 37);
-</string>
-                    </property>
-                    <property name="text">
-                     <string>==&gt; Programs to be Installed</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label_2">
-                    <property name="text">
-                     <string>TextLabel</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                    <property name="wordWrap">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-               </layout>
-              </widget>
-             </item>
             </layout>
            </widget>
           </widget>
@@ -3771,6 +3771,12 @@ background-color: rgb(20 ,21, 37);
                <width>0</width>
                <height>35</height>
               </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton:!enabled {
+background-color: rgb(20 ,21, 37);
+	color: rgb(48, 89, 170);
+}</string>
              </property>
              <property name="text">
               <string>Back</string>
