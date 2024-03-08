@@ -79,7 +79,7 @@ class welcomeScreen(QMainWindow):
         # update values in program install queue
         WEBprogramInstallQueue = []
         # for every item listed in the listwidget
-        for i in range(0,self.WEBlistWidget.count()-1):
+        for i in range(0,self.WEBlistWidget.count()):
             item = self.WEBlistWidget.item(i)
             # if the current item is checked
             if item.checkState() == QtCore.Qt.Checked:
@@ -87,7 +87,7 @@ class welcomeScreen(QMainWindow):
                 WEBprogramInstallQueue.append(item.text().lower())
 
         MEDIAprogramInstallQueue = []
-        for i in range(0,self.MEDIAlistWidget.count()-1):
+        for i in range(0,self.MEDIAlistWidget.count()):
             item = self.MEDIAlistWidget.item(i)
             # if the current item is checked
             if item.checkState() == QtCore.Qt.Checked:
@@ -95,7 +95,7 @@ class welcomeScreen(QMainWindow):
                 MEDIAprogramInstallQueue.append(item.text().lower())
 
         OFFICEprogramInstallQueue = []
-        for i in range(0,self.OFFICElistWidget.count()-1):
+        for i in range(0,self.OFFICElistWidget.count()):
             item = self.OFFICElistWidget.item(i)
             # if the current item is checked
             if item.checkState() == QtCore.Qt.Checked:
@@ -103,7 +103,7 @@ class welcomeScreen(QMainWindow):
                 OFFICEprogramInstallQueue.append(item.text().lower())
 
         TXTprogramInstallQueue = []
-        for i in range(0,self.TXTlistWidget.count()-1):
+        for i in range(0,self.TXTlistWidget.count()):
             item = self.TXTlistWidget.item(i)
             # if the current item is checked
             if item.checkState() == QtCore.Qt.Checked:
@@ -111,7 +111,7 @@ class welcomeScreen(QMainWindow):
                 TXTprogramInstallQueue.append(item.text().lower().split()[0])
    
         MISCprogramInstallQueue = []
-        for i in range(0,self.MISClistWidget.count()-1):
+        for i in range(0,self.MISClistWidget.count()):
             item = self.MISClistWidget.item(i)
             # if the current item is checked
             if item.checkState() == QtCore.Qt.Checked:
@@ -141,14 +141,14 @@ class welcomeScreen(QMainWindow):
 
     def selectDefaultApps(self):
 
-        for i in range(0,self.WEBlistWidget.count()-1):
+        for i in range(0,self.WEBlistWidget.count()):
             item = self.WEBlistWidget.item(i)
             # check if the current list widget item (ie package) is in the list of default packages
             # marked for install
             if item.text().lower()in self.defaultWEBlist:
                 item.setCheckState(QtCore.Qt.Checked)
   
-        for i in range(0,self.MEDIAlistWidget.count()-1):
+        for i in range(0,self.MEDIAlistWidget.count()):
             item = self.MEDIAlistWidget.item(i)
             # check if the current list widget item (ie package) is in the list of default packages
             # marked for install
@@ -156,7 +156,7 @@ class welcomeScreen(QMainWindow):
                 item.setCheckState(QtCore.Qt.Checked)
      
 
-        for i in range(0,self.OFFICElistWidget.count()-1):
+        for i in range(0,self.OFFICElistWidget.count()):
             item = self.OFFICElistWidget.item(i)
             # check if the current list widget item (ie package) is in the list of default packages
             # marked for install
@@ -164,7 +164,7 @@ class welcomeScreen(QMainWindow):
                 item.setCheckState(QtCore.Qt.Checked)
   
 
-        for i in range(0,self.TXTlistWidget.count()-1):
+        for i in range(0,self.TXTlistWidget.count()):
             item = self.TXTlistWidget.item(i)
             # check if the current list widget item (ie package) is in the list of default packages
             # marked for install
@@ -172,7 +172,7 @@ class welcomeScreen(QMainWindow):
                 item.setCheckState(QtCore.Qt.Checked)
 
 
-        for i in range(0,self.MISClistWidget.count()-1):
+        for i in range(0,self.MISClistWidget.count()):
             item = self.MISClistWidget.item(i)
             # check if the current list widget item (ie package) is in the list of default packages
             # marked for install

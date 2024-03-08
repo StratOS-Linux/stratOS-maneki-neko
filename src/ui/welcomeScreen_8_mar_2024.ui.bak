@@ -1129,6 +1129,11 @@ font: 57 10pt &quot;Noto Sans&quot;;
                            <normaloff>../png/app_icons/gsconnect.png</normaloff>../png/app_icons/gsconnect.png</iconset>
                          </property>
                         </item>
+                        <item>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </item>
                        </widget>
                       </item>
                      </layout>
@@ -1217,6 +1222,11 @@ font: 57 10pt &quot;Noto Sans&quot;;
                            <normaloff>../png/app_icons/vscodium.png</normaloff>../png/app_icons/vscodium.png</iconset>
                          </property>
                         </item>
+                        <item>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </item>
                        </widget>
                       </item>
                      </layout>
@@ -1293,6 +1303,11 @@ font: 57 10pt &quot;Noto Sans&quot;;
                            <normaloff>../png/app_icons/libreoffice.png</normaloff>../png/app_icons/libreoffice.png</iconset>
                          </property>
                         </item>
+                        <item>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </item>
                        </widget>
                       </item>
                      </layout>
@@ -1367,6 +1382,11 @@ font: 57 10pt &quot;Noto Sans&quot;;
                          <property name="icon">
                           <iconset>
                            <normaloff>../png/app_icons/mpv.png</normaloff>../png/app_icons/mpv.png</iconset>
+                         </property>
+                        </item>
+                        <item>
+                         <property name="text">
+                          <string/>
                          </property>
                         </item>
                        </widget>
@@ -1502,6 +1522,11 @@ font: 57 10pt &quot;Noto Sans&quot;;
                            <normaloff>../png/app_icons/librewolf.png</normaloff>../png/app_icons/librewolf.png</iconset>
                          </property>
                         </item>
+                        <item>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </item>
                        </widget>
                       </item>
                      </layout>
@@ -1576,7 +1601,7 @@ color: rgb(2, 240, 255);</string>
                      <number>1</number>
                     </property>
                     <property name="currentIndex">
-                     <number>1</number>
+                     <number>2</number>
                     </property>
                     <widget class="QWidget" name="FIREFOX_0">
                      <property name="styleSheet">
@@ -1584,7 +1609,7 @@ color: rgb(2, 240, 255);</string>
 font: bold 11pt &quot;JetBrains Mono&quot;;
 }</string>
                      </property>
-                     <layout class="QVBoxLayout" name="verticalLayout_17">
+                     <layout class="QHBoxLayout" name="horizontalLayout_10">
                       <item>
                        <layout class="QHBoxLayout" name="horizontalLayout_9">
                         <item>
@@ -1625,78 +1650,6 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             <property name="textInteractionFlags">
                              <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
                             </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QFrame" name="firefoxSources">
-                            <property name="minimumSize">
-                             <size>
-                              <width>0</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>16777215</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <layout class="QHBoxLayout" name="horizontalLayout_33">
-                             <property name="sizeConstraint">
-                              <enum>QLayout::SetMinimumSize</enum>
-                             </property>
-                             <item>
-                              <widget class="QLabel" name="sourceLabel_6">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true">color: rgb(255, 255, 255);</string>
-                               </property>
-                               <property name="text">
-                                <string>Package Source:</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="firefoxPACMANButton_4">
-                               <property name="text">
-                                <string>pacman</string>
-                               </property>
-                               <property name="checked">
-                                <bool>true</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="firefoxFLATPAKButton_4">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>0</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>16777215</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="text">
-                                <string>Flatpak</string>
-                               </property>
-                              </widget>
-                             </item>
-                            </layout>
                            </widget>
                           </item>
                          </layout>
@@ -1821,7 +1774,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <item>
                            <widget class="QLabel" name="CHROMIUMDesc">
                             <property name="text">
-                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Chromium is a free, open-source web browser project, developed and maintained by Google and is the basis for many popular browsers, including Chrome, Microsoft Edge and Opera. It uses the blazing fast Blink engine to render webpages for fast web surfing.&lt;/p&gt;&lt;p&gt;- It's basically &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;Chrome&lt;/span&gt; but without any additional tracking and fingerprinting from Google&lt;/p&gt;&lt;p&gt;- Free and open-source software &lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;https://www.chromium.org/Home/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;www.chromium.org/Home/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Source Code Repo: &lt;a href=&quot;https://github.com/chromium/chromium&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;github.com/chromium/chromium&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Chromium is a free, open-source web browser project, developed and maintained by Google and is the basis for many popular browsers, including Chrome, Microsoft Edge and Opera.&lt;/p&gt;&lt;p&gt;- It's basically Chrome but without additional tracking and fingerprinting from Google.&lt;/p&gt;&lt;p&gt;- Free and open-source software &lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;https://www.chromium.org/Home/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;www.chromium.org/Home/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Source Code Repo: &lt;a href=&quot;https://github.com/chromium/chromium&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;github.com/chromium/chromium&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                             <property name="wordWrap">
                              <bool>true</bool>
@@ -1829,78 +1782,6 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             <property name="textInteractionFlags">
                              <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
                             </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QFrame" name="chromiumSources">
-                            <property name="minimumSize">
-                             <size>
-                              <width>0</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>16777215</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <layout class="QHBoxLayout" name="horizontalLayout_29">
-                             <property name="sizeConstraint">
-                              <enum>QLayout::SetMinimumSize</enum>
-                             </property>
-                             <item>
-                              <widget class="QLabel" name="sourceLabel_2">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true">color: rgb(255, 255, 255);</string>
-                               </property>
-                               <property name="text">
-                                <string>Package Source:</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="chromiumPACMANButton">
-                               <property name="text">
-                                <string>pacman</string>
-                               </property>
-                               <property name="checked">
-                                <bool>true</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="chromiumFLATPAKButton">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>0</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>16777215</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="text">
-                                <string>Flatpak</string>
-                               </property>
-                              </widget>
-                             </item>
-                            </layout>
                            </widget>
                           </item>
                          </layout>
@@ -2047,85 +1928,6 @@ p, li { white-space: pre-wrap; }
                             </property>
                            </widget>
                           </item>
-                          <item>
-                           <widget class="QFrame" name="librewolfSources">
-                            <property name="minimumSize">
-                             <size>
-                              <width>0</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>16777215</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <layout class="QHBoxLayout" name="horizontalLayout_27">
-                             <property name="sizeConstraint">
-                              <enum>QLayout::SetMinimumSize</enum>
-                             </property>
-                             <item>
-                              <widget class="QLabel" name="sourceLabel">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true">color: rgb(255, 255, 255);</string>
-                               </property>
-                               <property name="text">
-                                <string>Package Source:</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="librewolfAURButton">
-                               <property name="text">
-                                <string>AUR</string>
-                               </property>
-                               <property name="checked">
-                                <bool>true</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="librewolfFLATPAKButton">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>0</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>16777215</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="text">
-                                <string>Flatpak</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="librewolfAPTButton">
-                               <property name="text">
-                                <string>apt</string>
-                               </property>
-                              </widget>
-                             </item>
-                            </layout>
-                           </widget>
-                          </item>
                          </layout>
                         </item>
                         <item>
@@ -2258,85 +2060,6 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             </property>
                            </widget>
                           </item>
-                          <item>
-                           <widget class="QFrame" name="braveSources_2">
-                            <property name="minimumSize">
-                             <size>
-                              <width>0</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>16777215</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <layout class="QHBoxLayout" name="horizontalLayout_34">
-                             <property name="sizeConstraint">
-                              <enum>QLayout::SetMinimumSize</enum>
-                             </property>
-                             <item>
-                              <widget class="QLabel" name="sourceLabel_7">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true">color: rgb(255, 255, 255);</string>
-                               </property>
-                               <property name="text">
-                                <string>Package Source:</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="bravePACMANButton_2">
-                               <property name="text">
-                                <string>pacman</string>
-                               </property>
-                               <property name="checked">
-                                <bool>true</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="braveAURButton_2">
-                               <property name="text">
-                                <string>AUR</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="braveFLATPAKButton_2">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>0</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>16777215</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="text">
-                                <string>Flatpak</string>
-                               </property>
-                              </widget>
-                             </item>
-                            </layout>
-                           </widget>
-                          </item>
                          </layout>
                         </item>
                         <item>
@@ -2467,85 +2190,6 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             <property name="textInteractionFlags">
                              <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
                             </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QFrame" name="VLC_Sources_2">
-                            <property name="minimumSize">
-                             <size>
-                              <width>0</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>16777215</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <layout class="QHBoxLayout" name="horizontalLayout_35">
-                             <property name="sizeConstraint">
-                              <enum>QLayout::SetMinimumSize</enum>
-                             </property>
-                             <item>
-                              <widget class="QLabel" name="sourceLabel_8">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true">color: rgb(255, 255, 255);</string>
-                               </property>
-                               <property name="text">
-                                <string>Package Source:</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="vlcPACMANButton_2">
-                               <property name="text">
-                                <string>pacman</string>
-                               </property>
-                               <property name="checked">
-                                <bool>true</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="vlcAURButton_2">
-                               <property name="text">
-                                <string>AUR</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="vlcFLATPAKButton_2">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>0</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>16777215</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="text">
-                                <string>Flatpak</string>
-                               </property>
-                              </widget>
-                             </item>
-                            </layout>
                            </widget>
                           </item>
                          </layout>
@@ -2681,85 +2325,6 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             </property>
                            </widget>
                           </item>
-                          <item>
-                           <widget class="QFrame" name="MPV_Sources_2">
-                            <property name="minimumSize">
-                             <size>
-                              <width>0</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>16777215</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <layout class="QHBoxLayout" name="horizontalLayout_36">
-                             <property name="sizeConstraint">
-                              <enum>QLayout::SetMinimumSize</enum>
-                             </property>
-                             <item>
-                              <widget class="QLabel" name="sourceLabel_9">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true">color: rgb(255, 255, 255);</string>
-                               </property>
-                               <property name="text">
-                                <string>Package Source:</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="mpvPACMANButton_2">
-                               <property name="text">
-                                <string>pacman</string>
-                               </property>
-                               <property name="checked">
-                                <bool>true</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="mpvAURButton_2">
-                               <property name="text">
-                                <string>AUR</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="mpvFLATPAKButton_2">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>0</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>16777215</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="text">
-                                <string>Flatpak</string>
-                               </property>
-                              </widget>
-                             </item>
-                            </layout>
-                           </widget>
-                          </item>
                          </layout>
                         </item>
                         <item>
@@ -2882,7 +2447,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <item>
                            <widget class="QLabel" name="ONLYOFFICEDesc_4">
                             <property name="text">
-                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;With ONLYOFFICE create, view and edit text documents, spreadsheets and presentations of any size and complexity. Work on documents of most popular formats: DOCX, ODT, XLSX, ODS, CSV, PPTX, ODP, etc. Deal with multiple files within one and the same window thanks to the tab-based user interface.&lt;/p&gt;&lt;p&gt;- Better support for Microsoft Office Document Formats than LibreOffice&lt;/p&gt;&lt;p&gt;- Free and Open Source Software&lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;onlyoffice.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;onlyoffice.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;With ONLYOFFICE create, view and edit text documents, spreadsheets and presentations of any size and complexity. Work on documents of most popular formats: DOCX, ODT, XLSX, ODS, CSV, PPTX, ODP, etc. Deal with multiple files within one and the same window thanks to the tab-based user interface.&lt;/p&gt;&lt;p&gt;- Better support for Microsoft Office Document Formats than LibreOffice&lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;onlyoffice.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;onlyoffice.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                             <property name="wordWrap">
                              <bool>true</bool>
@@ -2890,88 +2455,6 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             <property name="textInteractionFlags">
                              <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
                             </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QFrame" name="onlyofficeSources">
-                            <property name="minimumSize">
-                             <size>
-                              <width>0</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>16777215</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <layout class="QHBoxLayout" name="horizontalLayout_37">
-                             <property name="sizeConstraint">
-                              <enum>QLayout::SetMinimumSize</enum>
-                             </property>
-                             <item>
-                              <widget class="QLabel" name="sourceLabel_10">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true">color: rgb(255, 255, 255);</string>
-                               </property>
-                               <property name="text">
-                                <string>Package Source:</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="onlyofficeAURButton">
-                               <property name="text">
-                                <string>AUR</string>
-                               </property>
-                               <property name="checked">
-                                <bool>true</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="onlyofficeAPTButton">
-                               <property name="text">
-                                <string>apt</string>
-                               </property>
-                               <property name="checked">
-                                <bool>false</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="onlyofficeFLATPAKButton">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>0</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>16777215</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="text">
-                                <string>Flatpak</string>
-                               </property>
-                              </widget>
-                             </item>
-                            </layout>
                            </widget>
                           </item>
                          </layout>
@@ -3104,88 +2587,6 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             <property name="textInteractionFlags">
                              <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
                             </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QFrame" name="libreoffice_Sources">
-                            <property name="minimumSize">
-                             <size>
-                              <width>0</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>16777215</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <layout class="QHBoxLayout" name="horizontalLayout_38">
-                             <property name="sizeConstraint">
-                              <enum>QLayout::SetMinimumSize</enum>
-                             </property>
-                             <item>
-                              <widget class="QLabel" name="sourceLabel_11">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true">color: rgb(255, 255, 255);</string>
-                               </property>
-                               <property name="text">
-                                <string>Package Source:</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="libreofficePACMANButton">
-                               <property name="text">
-                                <string>pacman</string>
-                               </property>
-                               <property name="checked">
-                                <bool>true</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="libreofficeAPTButton">
-                               <property name="text">
-                                <string>apt</string>
-                               </property>
-                               <property name="checked">
-                                <bool>false</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="libreofficeFLATPAKButton">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>0</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>16777215</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="text">
-                                <string>Flatpak</string>
-                               </property>
-                              </widget>
-                             </item>
-                            </layout>
                            </widget>
                           </item>
                          </layout>
@@ -3588,88 +2989,6 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             </property>
                            </widget>
                           </item>
-                          <item>
-                           <widget class="QFrame" name="codium_Sources">
-                            <property name="minimumSize">
-                             <size>
-                              <width>0</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>16777215</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <layout class="QHBoxLayout" name="horizontalLayout_39">
-                             <property name="sizeConstraint">
-                              <enum>QLayout::SetMinimumSize</enum>
-                             </property>
-                             <item>
-                              <widget class="QLabel" name="sourceLabel_12">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true">color: rgb(255, 255, 255);</string>
-                               </property>
-                               <property name="text">
-                                <string>Package Source:</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="vscodiumAURButton">
-                               <property name="text">
-                                <string>AUR</string>
-                               </property>
-                               <property name="checked">
-                                <bool>true</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="vsccodiumAPTButton">
-                               <property name="text">
-                                <string>apt</string>
-                               </property>
-                               <property name="checked">
-                                <bool>false</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="vscodiumFLATPAKButton">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>0</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>16777215</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="text">
-                                <string>Flatpak</string>
-                               </property>
-                              </widget>
-                             </item>
-                            </layout>
-                           </widget>
-                          </item>
                          </layout>
                         </item>
                         <item>
@@ -3800,69 +3119,6 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             <property name="textInteractionFlags">
                              <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
                             </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QFrame" name="atril_Sources">
-                            <property name="minimumSize">
-                             <size>
-                              <width>0</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>16777215</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <layout class="QHBoxLayout" name="horizontalLayout_40">
-                             <property name="sizeConstraint">
-                              <enum>QLayout::SetMinimumSize</enum>
-                             </property>
-                             <item>
-                              <widget class="QLabel" name="sourceLabel_13">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true">color: rgb(255, 255, 255);</string>
-                               </property>
-                               <property name="text">
-                                <string>Package Source:</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="atrilPACMANButton">
-                               <property name="text">
-                                <string>pacman</string>
-                               </property>
-                               <property name="checked">
-                                <bool>true</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="atrilAPTButton">
-                               <property name="text">
-                                <string>apt</string>
-                               </property>
-                               <property name="checked">
-                                <bool>false</bool>
-                               </property>
-                              </widget>
-                             </item>
-                            </layout>
                            </widget>
                           </item>
                          </layout>
@@ -3997,69 +3253,6 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             </property>
                            </widget>
                           </item>
-                          <item>
-                           <widget class="QFrame" name="evinceSources">
-                            <property name="minimumSize">
-                             <size>
-                              <width>0</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>16777215</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <layout class="QHBoxLayout" name="horizontalLayout_41">
-                             <property name="sizeConstraint">
-                              <enum>QLayout::SetMinimumSize</enum>
-                             </property>
-                             <item>
-                              <widget class="QLabel" name="sourceLabel_14">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true">color: rgb(255, 255, 255);</string>
-                               </property>
-                               <property name="text">
-                                <string>Package Source:</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="evincePACMANButton">
-                               <property name="text">
-                                <string>pacman</string>
-                               </property>
-                               <property name="checked">
-                                <bool>true</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="evinceAPTButton">
-                               <property name="text">
-                                <string>apt</string>
-                               </property>
-                               <property name="checked">
-                                <bool>false</bool>
-                               </property>
-                              </widget>
-                             </item>
-                            </layout>
-                           </widget>
-                          </item>
                          </layout>
                         </item>
                         <item>
@@ -4192,69 +3385,6 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             </property>
                            </widget>
                           </item>
-                          <item>
-                           <widget class="QFrame" name="githubDesktopSources">
-                            <property name="minimumSize">
-                             <size>
-                              <width>0</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>16777215</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <layout class="QHBoxLayout" name="horizontalLayout_42">
-                             <property name="sizeConstraint">
-                              <enum>QLayout::SetMinimumSize</enum>
-                             </property>
-                             <item>
-                              <widget class="QLabel" name="sourceLabel_15">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true">color: rgb(255, 255, 255);</string>
-                               </property>
-                               <property name="text">
-                                <string>Package Source:</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="githubDesktopAURButton">
-                               <property name="text">
-                                <string>AUR</string>
-                               </property>
-                               <property name="checked">
-                                <bool>true</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="githubDesktopAPTButton">
-                               <property name="text">
-                                <string>apt</string>
-                               </property>
-                               <property name="checked">
-                                <bool>false</bool>
-                               </property>
-                              </widget>
-                             </item>
-                            </layout>
-                           </widget>
-                          </item>
                          </layout>
                         </item>
                         <item>
@@ -4385,76 +3515,6 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             <property name="textInteractionFlags">
                              <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
                             </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QFrame" name="obsidianSources">
-                            <property name="minimumSize">
-                             <size>
-                              <width>0</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>16777215</width>
-                              <height>35</height>
-                             </size>
-                            </property>
-                            <layout class="QHBoxLayout" name="horizontalLayout_43">
-                             <property name="sizeConstraint">
-                              <enum>QLayout::SetMinimumSize</enum>
-                             </property>
-                             <item>
-                              <widget class="QLabel" name="sourceLabel_16">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>145</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true">color: rgb(255, 255, 255);</string>
-                               </property>
-                               <property name="text">
-                                <string>Package Source:</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="obsidianAURButton">
-                               <property name="text">
-                                <string>AUR</string>
-                               </property>
-                               <property name="checked">
-                                <bool>true</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="obsidianAPPIMAGEButton">
-                               <property name="text">
-                                <string>AppImage</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="obsidianAPTButton">
-                               <property name="text">
-                                <string>apt</string>
-                               </property>
-                               <property name="checked">
-                                <bool>false</bool>
-                               </property>
-                              </widget>
-                             </item>
-                            </layout>
                            </widget>
                           </item>
                          </layout>
