@@ -613,16 +613,16 @@ class welcomeScreen(QMainWindow):
         # define home and hence the full file path for the DESKTOP FILE
         home = os.path.expanduser("~")
 
-        EXEC_PATH = WORK_DIR + "/main.py"  # path of the EXECUTABLE
-                                            # to HARDCODE to /usr/local/bin/maneki-neko, just change the EXEC_PATH variable
+        # path of the EXECUTABLE in DESKTOP file
+        EXEC_PATH = WORK_DIR + "/main.py"   
+        # to HARDCODE to /usr/local/bin/maneki-neko, just change the EXEC_PATH variable
+        # ideal case is to just run this script from /opt/maneki-neko installation folder
+        # the same desktop file in autostart folder can be used to create MENU ENTRY for maneki neko
         
         filePath = home + "/.config/autostart/maneki_neko.desktop" # full path to desktop file
         
-
         # create the desktop file and save it in $HOME/.config/autostart when the checkBox is checked
         if self.autostartCheckBox.isChecked():
-         
-
             # opening the file in write mode
             with open(filePath,"w") as f:
 
