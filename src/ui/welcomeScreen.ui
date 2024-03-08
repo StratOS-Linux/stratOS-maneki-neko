@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1000</width>
-    <height>800</height>
+    <height>661</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -1027,7 +1027,7 @@ font: 57 10pt &quot;Noto Sans&quot;;
                     <x>0</x>
                     <y>0</y>
                     <width>319</width>
-                    <height>558</height>
+                    <height>419</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1142,7 +1142,7 @@ font: 57 10pt &quot;Noto Sans&quot;;
                     <x>0</x>
                     <y>0</y>
                     <width>319</width>
-                    <height>558</height>
+                    <height>419</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1230,7 +1230,7 @@ font: 57 10pt &quot;Noto Sans&quot;;
                     <x>0</x>
                     <y>0</y>
                     <width>319</width>
-                    <height>558</height>
+                    <height>419</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1306,7 +1306,7 @@ font: 57 10pt &quot;Noto Sans&quot;;
                     <x>0</x>
                     <y>0</y>
                     <width>319</width>
-                    <height>558</height>
+                    <height>419</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1382,7 +1382,7 @@ font: 57 10pt &quot;Noto Sans&quot;;
                     <x>0</x>
                     <y>0</y>
                     <width>319</width>
-                    <height>558</height>
+                    <height>419</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1409,7 +1409,7 @@ font: 57 10pt &quot;Noto Sans&quot;;
                         <property name="maximumSize">
                          <size>
                           <width>16777215</width>
-                          <height>300</height>
+                          <height>315</height>
                          </size>
                         </property>
                         <property name="frameShape">
@@ -1522,11 +1522,11 @@ font: 57 10pt &quot;Noto Sans&quot;;
                  <property name="maximumSize">
                   <size>
                    <width>627</width>
-                   <height>711</height>
+                   <height>724</height>
                   </size>
                  </property>
                  <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
+                  <enum>QFrame::Box</enum>
                  </property>
                  <property name="frameShadow">
                   <enum>QFrame::Plain</enum>
@@ -1567,7 +1567,7 @@ color: rgb(2, 240, 255);</string>
                      <bool>false</bool>
                     </property>
                     <property name="frameShape">
-                     <enum>QFrame::Box</enum>
+                     <enum>QFrame::NoFrame</enum>
                     </property>
                     <property name="frameShadow">
                      <enum>QFrame::Plain</enum>
@@ -1576,7 +1576,7 @@ color: rgb(2, 240, 255);</string>
                      <number>1</number>
                     </property>
                     <property name="currentIndex">
-                     <number>1</number>
+                     <number>5</number>
                     </property>
                     <widget class="QWidget" name="FIREFOX_0">
                      <property name="styleSheet">
@@ -1712,7 +1712,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <property name="maximumSize">
                            <size>
                             <width>16777215</width>
-                            <height>385</height>
+                            <height>515</height>
                            </size>
                           </property>
                           <property name="orientation">
@@ -1821,7 +1821,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <item>
                            <widget class="QLabel" name="CHROMIUMDesc">
                             <property name="text">
-                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Chromium is a free, open-source web browser project, developed and maintained by Google and is the basis for many popular browsers, including Chrome, Microsoft Edge and Opera. It uses the blazing fast Blink engine to render webpages for fast web surfing.&lt;/p&gt;&lt;p&gt;- It's basically &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;Chrome&lt;/span&gt; but without any additional tracking and fingerprinting from Google&lt;/p&gt;&lt;p&gt;- Free and open-source software &lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;https://www.chromium.org/Home/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;www.chromium.org/Home/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Source Code Repo: &lt;a href=&quot;https://github.com/chromium/chromium&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;github.com/chromium/chromium&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Chromium is a free, open-source web browser project, developed and maintained by Google and is the basis for many popular browsers, including Chrome, Microsoft Edge and Opera. It uses the blazing fast Blink engine to render webpages for fast web surfing.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;- It's basically &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; text-decoration: underline;&quot;&gt;Chrome&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; but without any additional tracking and fingerprinting from Google&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;- Free and open-source software &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Website: &lt;/span&gt;&lt;a href=&quot;https://www.chromium.org/Home/&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#06a284;&quot;&gt;www.chromium.org/Home/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Source Code Repo: &lt;/span&gt;&lt;a href=&quot;https://github.com/chromium/chromium&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#06a284;&quot;&gt;github.com/chromium/chromium&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                             <property name="wordWrap">
                              <bool>true</bool>
@@ -1916,7 +1916,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <property name="maximumSize">
                            <size>
                             <width>16777215</width>
-                            <height>385</height>
+                            <height>515</height>
                            </size>
                           </property>
                           <property name="orientation">
@@ -2029,15 +2029,15 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'JetBrains Mono'; font-size:11pt; font-weight:600; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The LibreWolf project is a custom and independent version of Firefox, with the primary goals of privacy, security and user freedom.&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- Built in ad-blocker &lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- Configured with privacy and security in mind.&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;- Free and open source software&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Website: &lt;a href=&quot;https://librewolf.net/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;librewolf.net&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Source Code Repo: &lt;a href=&quot;https://codeberg.org/librewolf&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;codeberg.org/librewolf&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The LibreWolf project is a custom and independent version of Firefox, with the primary goals of privacy, security and user freedom.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;- Built in ad-blocker &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;- Configured with privacy and security in mind.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;- Free and open source software&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Website: &lt;/span&gt;&lt;a href=&quot;https://librewolf.net/&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#06a284;&quot;&gt;librewolf.net&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Source Code Repo: &lt;/span&gt;&lt;a href=&quot;https://codeberg.org/librewolf&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#06a284;&quot;&gt;codeberg.org/librewolf&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                             <property name="wordWrap">
                              <bool>true</bool>
@@ -2139,7 +2139,7 @@ p, li { white-space: pre-wrap; }
                           <property name="maximumSize">
                            <size>
                             <width>16777215</width>
-                            <height>385</height>
+                            <height>515</height>
                            </size>
                           </property>
                           <property name="orientation">
@@ -2248,7 +2248,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <item>
                            <widget class="QLabel" name="BRAVEDesc">
                             <property name="text">
-                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Brave Web Browser is one of the most popular web browsers out there. Based on Chromium, it has several performance, privacy and security enhancement features which also includes support for Tor.&lt;/p&gt;&lt;p&gt;- Built in ad-blocker, crypto wallets manager and Tor support&lt;/p&gt;&lt;p&gt;- Open Source Software&lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;https://brave.com/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;brave.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Source Code Repo: &lt;a href=&quot;https://github.com/brave/brave-browser&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;github.com/brave/brave-browser&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Brave Web Browser is one of the most popular web browsers out there. Based on Chromium, it has several performance, privacy and security enhancement features which also includes support for Tor.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;- Built in ad-blocker, crypto wallets manager and Tor support&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;- Open Source Software&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Website: &lt;/span&gt;&lt;a href=&quot;https://brave.com/&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#06a284;&quot;&gt;brave.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Source Code Repo: &lt;/span&gt;&lt;a href=&quot;https://github.com/brave/brave-browser&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#06a284;&quot;&gt;github.com/brave/brave-browser&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                             <property name="wordWrap">
                              <bool>true</bool>
@@ -2299,7 +2299,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                               </widget>
                              </item>
                              <item>
-                              <widget class="QRadioButton" name="bravePACMANButton_2">
+                              <widget class="QRadioButton" name="bravePACMANButton">
                                <property name="text">
                                 <string>pacman</string>
                                </property>
@@ -2309,14 +2309,14 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                               </widget>
                              </item>
                              <item>
-                              <widget class="QRadioButton" name="braveAURButton_2">
+                              <widget class="QRadioButton" name="braveAURButton">
                                <property name="text">
                                 <string>AUR</string>
                                </property>
                               </widget>
                              </item>
                              <item>
-                              <widget class="QRadioButton" name="braveFLATPAKButton_2">
+                              <widget class="QRadioButton" name="braveFLATPAKButton">
                                <property name="minimumSize">
                                 <size>
                                  <width>0</width>
@@ -2350,7 +2350,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <property name="maximumSize">
                            <size>
                             <width>16777215</width>
-                            <height>385</height>
+                            <height>515</height>
                            </size>
                           </property>
                           <property name="orientation">
@@ -2510,7 +2510,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                               </widget>
                              </item>
                              <item>
-                              <widget class="QRadioButton" name="vlcPACMANButton_2">
+                              <widget class="QRadioButton" name="vlcPACMANButton">
                                <property name="text">
                                 <string>pacman</string>
                                </property>
@@ -2520,14 +2520,14 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                               </widget>
                              </item>
                              <item>
-                              <widget class="QRadioButton" name="vlcAURButton_2">
+                              <widget class="QRadioButton" name="vlcAURButton">
                                <property name="text">
                                 <string>AUR</string>
                                </property>
                               </widget>
                              </item>
                              <item>
-                              <widget class="QRadioButton" name="vlcFLATPAKButton_2">
+                              <widget class="QRadioButton" name="vlcFLATPAKButton">
                                <property name="minimumSize">
                                 <size>
                                  <width>0</width>
@@ -2561,7 +2561,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <property name="maximumSize">
                            <size>
                             <width>16777215</width>
-                            <height>385</height>
+                            <height>515</height>
                            </size>
                           </property>
                           <property name="orientation">
@@ -2671,7 +2671,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <item>
                            <widget class="QLabel" name="MPVDesc_3">
                             <property name="text">
-                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;mpv is a free (as in freedom) media player for the commandline. It supports a wide variety of media file formats, audio and video codecs, and subtitle types.&lt;/p&gt;&lt;p&gt;- supports hardware-accelerated encoding with HDR&lt;/p&gt;&lt;p&gt;- minimalist UI&lt;/p&gt;&lt;p&gt;- powerful scripting capabilities&lt;/p&gt;&lt;p&gt;- API for integration into other applications&lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;mpv.io&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;mpv.io&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Source Code Repo: &lt;a href=&quot;https://github.com/mpv-player/mpv&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;https://github.com/mpv-player/mpv &lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;mpv is a free (as in freedom) media player for the commandline. It supports a wide variety of media file formats, audio and video codecs, and subtitle types.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;- supports hardware-accelerated encoding with HDR&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;- minimalist UI&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;- powerful scripting capabilities&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;- API for integration into other applications&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Website: &lt;/span&gt;&lt;a href=&quot;mpv.io&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#06a284;&quot;&gt;mpv.io&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Source Code Repo: &lt;/span&gt;&lt;a href=&quot;https://github.com/mpv-player/mpv&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#06a284;&quot;&gt;https://github.com/mpv-player/mpv&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                             <property name="wordWrap">
                              <bool>true</bool>
@@ -2722,7 +2722,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                               </widget>
                              </item>
                              <item>
-                              <widget class="QRadioButton" name="mpvPACMANButton_2">
+                              <widget class="QRadioButton" name="mpvPACMANButton">
                                <property name="text">
                                 <string>pacman</string>
                                </property>
@@ -2732,14 +2732,14 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                               </widget>
                              </item>
                              <item>
-                              <widget class="QRadioButton" name="mpvAURButton_2">
+                              <widget class="QRadioButton" name="mpvAURButton">
                                <property name="text">
                                 <string>AUR</string>
                                </property>
                               </widget>
                              </item>
                              <item>
-                              <widget class="QRadioButton" name="mpvFLATPAKButton_2">
+                              <widget class="QRadioButton" name="mpvFLATPAKButton">
                                <property name="minimumSize">
                                 <size>
                                  <width>0</width>
@@ -2773,7 +2773,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <property name="maximumSize">
                            <size>
                             <width>16777215</width>
-                            <height>385</height>
+                            <height>515</height>
                            </size>
                           </property>
                           <property name="orientation">
@@ -2987,7 +2987,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <property name="maximumSize">
                            <size>
                             <width>16777215</width>
-                            <height>385</height>
+                            <height>515</height>
                            </size>
                           </property>
                           <property name="orientation">
@@ -3201,7 +3201,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <property name="maximumSize">
                            <size>
                             <width>16777215</width>
-                            <height>385</height>
+                            <height>515</height>
                            </size>
                           </property>
                           <property name="orientation">
@@ -3333,7 +3333,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <property name="maximumSize">
                            <size>
                             <width>16777215</width>
-                            <height>385</height>
+                            <height>515</height>
                            </size>
                           </property>
                           <property name="orientation">
@@ -3468,7 +3468,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <property name="maximumSize">
                            <size>
                             <width>16777215</width>
-                            <height>385</height>
+                            <height>515</height>
                            </size>
                           </property>
                           <property name="orientation">
@@ -3578,7 +3578,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <item>
                            <widget class="QLabel" name="CODIUMDesc_8">
                             <property name="text">
-                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;VSCodium is a community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code, including everything devs need from VSCode, minus the telemetry/tracking done by Microsoft.&lt;/p&gt;&lt;p&gt;- Vast pool of extensions to support any project and programming language.&lt;/p&gt;&lt;p&gt;- Very Easy to use and configure,&lt;/p&gt;&lt;p&gt;- Built-in terminal&lt;/p&gt;&lt;p&gt;- Free and Open Source Software&lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;vscodium.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;vscodium.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Source Code Repo: &lt;a href=&quot;https://github.com/VSCodium/vscodium&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;github.com/VSCodium/vscodium&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;VSCodium is a community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code, including everything devs need from VSCode, minus the telemetry/tracking done by Microsoft.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;- Vast pool of extensions to support any project and programming language.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;- Very Easy to use and configure,&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;- Built-in terminal&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;- Free and Open Source Software&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Website: &lt;/span&gt;&lt;a href=&quot;vscodium.com&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#06a284;&quot;&gt;vscodium.com&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Source Code Repo: &lt;/span&gt;&lt;a href=&quot;https://github.com/VSCodium/vscodium&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#06a284;&quot;&gt;github.com/VSCodium/vscodium&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                             <property name="wordWrap">
                              <bool>true</bool>
@@ -3639,7 +3639,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                               </widget>
                              </item>
                              <item>
-                              <widget class="QRadioButton" name="vsccodiumAPTButton">
+                              <widget class="QRadioButton" name="vscodiumAPTButton">
                                <property name="text">
                                 <string>apt</string>
                                </property>
@@ -3683,7 +3683,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <property name="maximumSize">
                            <size>
                             <width>16777215</width>
-                            <height>385</height>
+                            <height>515</height>
                            </size>
                           </property>
                           <property name="orientation">
@@ -3792,7 +3792,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <item>
                            <widget class="QLabel" name="ATRILDesc_9">
                             <property name="text">
-                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Atril is a simple multi-page document viewer.&lt;/p&gt;&lt;p&gt;It is a fork of Evince document viewer maintained by the MATE Desktop Environment Team.&lt;/p&gt;&lt;p&gt;- Supports PDF, PostScript, DJVU, DVI, XPS files&lt;/p&gt;&lt;p&gt;- Lightweight and Fast&lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;https://mate-desktop.org/#:~:text=of%C2%A0GNOME.-,Atril,-Atril%20is%20a&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;mate-desktop.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Atril is a simple multi-page document viewer.&lt;/p&gt;&lt;p&gt;It is a fork of Evince document viewer maintained by the MATE Desktop Environment Team.&lt;/p&gt;&lt;p&gt;- Supports PDF, PostScript, DJVU, DVI, XPS files&lt;/p&gt;&lt;p&gt;- Lightweight and Fast&lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;https://mate-desktop.org/#:~:text=of%C2%A0GNOME.-,Atril,-Atril%20is%20a&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;mate-desktop.org&lt;/span&gt;&lt;/a&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                             <property name="wordWrap">
                              <bool>true</bool>
@@ -3878,7 +3878,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <property name="maximumSize">
                            <size>
                             <width>16777215</width>
-                            <height>385</height>
+                            <height>515</height>
                            </size>
                           </property>
                           <property name="orientation">
@@ -4073,7 +4073,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <property name="maximumSize">
                            <size>
                             <width>16777215</width>
-                            <height>385</height>
+                            <height>515</height>
                            </size>
                           </property>
                           <property name="orientation">
@@ -4268,7 +4268,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <property name="maximumSize">
                            <size>
                             <width>16777215</width>
-                            <height>385</height>
+                            <height>515</height>
                            </size>
                           </property>
                           <property name="orientation">
@@ -4377,7 +4377,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <item>
                            <widget class="QLabel" name="BRAVEDesc_10">
                             <property name="text">
-                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Obsidian is a powerful knowledge base that works on top of a local folder of plain text Markdown files. In Obsidian, making and following connections is frictionless, and with the connections in place, you can explore all of your knowledge in the interactive graph view. &lt;/p&gt;&lt;p&gt;- supports CommonMark and GitHub Flavored Markdown (GFM), tags, LaTeX, mermaid diagrams, footnotes, internal links and embedding files. &lt;/p&gt;&lt;p&gt;- proprietary software&lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;https://obsidian.md&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;obsidian.md&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Obsidian is a powerful knowledge base that works on top of a local folder of plain text Markdown files. In Obsidian, making and following connections is frictionless, and with the connections in place, you can explore all of your knowledge in the interactive graph view. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;- supports CommonMark and GitHub Flavored Markdown (GFM), tags, LaTeX, mermaid diagrams, footnotes, internal links and embedding files. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;- proprietary software&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Website: &lt;/span&gt;&lt;a href=&quot;https://obsidian.md&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#06a284;&quot;&gt;obsidian.md&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                             <property name="wordWrap">
                              <bool>true</bool>
@@ -4470,7 +4470,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <property name="maximumSize">
                            <size>
                             <width>16777215</width>
-                            <height>385</height>
+                            <height>515</height>
                            </size>
                           </property>
                           <property name="orientation">
@@ -4579,7 +4579,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <item>
                            <widget class="QLabel" name="BRAVEDesc_11">
                             <property name="text">
-                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GSConnect is a complete implementation of KDE Connect for GNOME desktop. With GSConnect you can seamlessly connect your Linux computer to any other machine running Linux, BSD, Android, Sailfish, iOS, macOS or Windows on the same network, and securely share content like notifications or files and other features like SMS messaging and remote control.&lt;/p&gt;&lt;p&gt;- Highly recommended&lt;/p&gt;&lt;p&gt;- Free and Open Source Software &lt;/p&gt;&lt;p&gt;Website: &lt;a href=&quot;https://github.com/GSConnect/gnome-shell-extension-gsconnect/wiki&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#06a284;&quot;&gt;github.com/GSConnect/gnome-shell-extension-gsconnect/wiki&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;GSConnect is a complete implementation of KDE Connect for GNOME desktop. With GSConnect you can seamlessly connect your Linux computer to any other machine running Linux, BSD, Android, Sailfish, iOS, macOS or Windows on the same network, and securely share content like notifications or files and other features like SMS messaging and remote control.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;- Highly recommended&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;- Free and Open Source Software &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Website: &lt;/span&gt;&lt;a href=&quot;https://github.com/GSConnect/gnome-shell-extension-gsconnect/wiki&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#06a284;&quot;&gt;github.com/GSConnect/gnome-shell-extension-gsconnect/wiki&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                             <property name="wordWrap">
                              <bool>true</bool>
@@ -4602,7 +4602,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                           <property name="maximumSize">
                            <size>
                             <width>16777215</width>
-                            <height>385</height>
+                            <height>515</height>
                            </size>
                           </property>
                           <property name="orientation">

@@ -7,9 +7,33 @@ from PyQt5.QtWidgets import QMainWindow,  QApplication,  QDialog, QMessageBox
 from time import sleep
 import os, subprocess
 
+
+#LICENSE
+'''
+StratOS-Maneki-Neko: Welcome Screen GUI Application for StratOS-Linux, written in Python and PyQt5
+    Copyright (C) 2024  Adithya Sunil Kumar
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+'''
+
+
 # globals
 app = QApplication(sys.argv)
 
+
+programSRCPreference = {}   # list of all apps with the selected mode for installation
 programInstallQueue = []    # list of all apps selected for install
 programInstallQueueLen = 0  # number of all apps selected for install, 0 is temporary value and
                             # will be updated when proceeding to install
@@ -69,6 +93,135 @@ class welcomeScreen(QMainWindow):
         self.selectDefaultApps()
         return
 
+    def updateProgramSRCPreference(self):
+        global programSRCPreference
+
+        # for Brave
+        if self.braveAURButton.isChecked():
+            programSRCPreference['brave'] = 'aur'
+        
+        elif self.braveFLATPAKButton.isChecked():
+            programSRCPreference['brave'] = 'flatpak'
+        
+        elif self.bravePACMANButton.isChecked():
+            programSRCPreference['brave'] = 'pacman'
+        
+        # for Chromium
+        if self.chromiumFLATPAKButton.isChecked():
+            programSRCPreference['chromium'] = 'flatpak'
+        
+        elif self.chromiumPACMANButton.isChecked():
+            programSRCPreference['chromium'] = 'pacman'
+        
+        # for Firefox
+        if self.firefoxFLATPAKButton_4.isChecked():
+            programSRCPreference['firefox'] = 'flatpak'
+        
+        elif self.firefoxPACMANButton_4.isChecked():
+            programSRCPreference['firefox'] = 'pacman'
+        
+        # for LibreWolf
+        if self.librewolfAPTButton.isChecked():
+            programSRCPreference['librewolf'] = 'apt'
+        
+        elif self.librewolfAURButton.isChecked():
+            programSRCPreference['librewolf'] = 'aur'
+        
+        elif self.librewolfFLATPAKButton.isChecked():
+            programSRCPreference['librewolf'] = 'flatpak'
+
+        # for VLC
+        if self.vlcAURButton.isChecked():
+            programSRCPreference['vlc'] = 'aur'
+        
+        elif self.vlcFLATPAKButton.isChecked():
+            programSRCPreference['vlc'] = 'flatpak'
+        
+        elif self.vlcPACMANButton.isChecked():
+            programSRCPreference['vlc'] = 'pacman'
+
+        # for MPV
+        if self.mpvAURButton.isChecked():
+            programSRCPreference['mpv'] = 'aur'
+        
+        elif self.mpvFLATPAKButton.isChecked():
+            programSRCPreference['mpv'] = 'flatpak'
+        
+        elif self.mpvPACMANButton.isChecked():
+            programSRCPreference['mpv'] = 'pacman'
+
+        # for OnlyOffice
+        if self.onlyofficeAPTButton.isChecked():
+            programSRCPreference['onlyoffice'] = 'apt'
+        
+        elif self.onlyofficeAURButton.isChecked():
+            programSRCPreference['onlyoffice'] = 'aur'
+        
+        elif self.onlyofficeFLATPAKButton.isChecked():
+            programSRCPreference['onlyoffice'] = 'flatpak'
+        
+        # for LibreOffice
+        if self.libreofficeAPTButton.isChecked():
+            programSRCPreference['libreoffice'] = 'apt'
+
+        elif self.libreofficeFLATPAKButton.isChecked():
+            programSRCPreference['libreoffice'] = 'flatpak'
+        
+        elif self.libreofficePACMANButton.isChecked():
+            programSRCPreference['libreoffice'] = 'pacman'
+        
+        
+        # for VSCodium
+        if self.vscodiumAURButton.isChecked():
+            programSRCPreference['vscodium'] = 'aur'
+        
+        elif self.vscodiumFLATPAKButton.isChecked():
+            programSRCPreference['vscodium'] = 'flatpak'
+        
+        elif self.vscodiumAPTButton.isChecked():
+            programSRCPreference['vscodium'] = 'apt'
+
+
+        # for Atril
+        if self.atrilAPTButton.isChecked():
+            programSRCPreference['atril'] = 'apt'
+        
+        elif self.atrilPACMANButton.isChecked():
+            programSRCPreference['atril'] = 'pacman'
+
+        # for Evince
+        if self.evinceAPTButton.isChecked():
+            programSRCPreference['evince'] = 'apt'
+        
+        elif self.evincePACMANButton.isChecked():
+            programSRCPreference['evince'] = 'pacman'
+
+
+        # for Github Desktop
+        if self.githubDesktopAPTButton.isChecked():
+            programSRCPreference['github'] = 'apt'
+        
+        elif self.githubDesktopAURButton.isChecked():
+            programSRCPreference['github'] = 'aur'
+        
+        # for Obsidian
+        if self.obsidianAURButton.isChecked():
+            programSRCPreference['obsidian'] = 'aur'
+        
+        elif self.obsidianAPPIMAGEButton.isChecked():
+            programSRCPreference['vscodium'] = 'appimage'
+        
+        elif self.obsidianAPTButton.isChecked():
+            programSRCPreference['obsidian'] = 'apt'
+
+        # these programs have ONLY ONE software source so hence putting None
+        programSRCPreference['stratvim'] = None
+        programSRCPreference['stratmacs'] = None
+        programSRCPreference['gsconnect'] = None
+
+        return
+
+
     def proceedToInstall(self):
         global programInstallQueue, programInstallQueueLen
 
@@ -123,8 +276,7 @@ class welcomeScreen(QMainWindow):
             WEBprogramInstallQueue, MEDIAprogramInstallQueue, OFFICEprogramInstallQueue,    \
                     TXTprogramInstallQueue, MISCprogramInstallQueue 
         ]
-
-      
+     
 
         programInstallQueueLen = len(WEBprogramInstallQueue) + len(MEDIAprogramInstallQueue) + \
                                 len(OFFICEprogramInstallQueue) + len(TXTprogramInstallQueue) + len(MISCprogramInstallQueue)
@@ -134,6 +286,8 @@ class welcomeScreen(QMainWindow):
         if programInstallQueueLen == 0:
             message = QMessageBox.critical(self,"Cannot Install","No programs marked for install.")
             return
+        # now call function to determine selected sources
+        self.updateProgramSRCPreference()
         # now call the install dialog
         dialog = installDialog()
         if dialog.exec_():
@@ -209,6 +363,7 @@ class welcomeScreen(QMainWindow):
                     "librewolf"   : 2,    \
                     "brave"       : 3
                 }
+        # using try-except block to avoid error if user directly ticks the options without selecting the items fully
         try:
         # to determine the selected app
             selectedApp = self.WEBlistWidget.currentItem().text().lower()
@@ -228,6 +383,7 @@ class welcomeScreen(QMainWindow):
                     "stratvim"    : 9,    \
                     "vscodium"    : 10
                 }
+        # using try-except block to avoid error if user directly ticks the options without selecting the items fully
         try:
         # to determine the selected app
             selectedApp = self.TXTlistWidget.currentItem().text().lower().split()[0]
@@ -246,6 +402,7 @@ class welcomeScreen(QMainWindow):
         refDict = { "vlc"   : 4,    \
                     "mpv"   : 5
                 }
+        # using try-except block to avoid error if user directly ticks the options without selecting the items fully
         try:
         # to determine the selected app
             selectedApp = self.MEDIAlistWidget.currentItem().text().lower()
@@ -264,6 +421,7 @@ class welcomeScreen(QMainWindow):
         refDict = { "onlyoffice"    : 6,    \
                     "libreoffice"   : 7
                 }
+        # using try-except block to avoid error if user directly ticks the options without selecting the items fully
         try:
         # to determine the selected app
             selectedApp = self.OFFICElistWidget.currentItem().text().lower()
@@ -563,21 +721,13 @@ class installDialog(QDialog):
         self.proceedButton.clicked.connect(self.invokeInstallScript)
 
     def updateInstallQueueLabel(self):
-        global programInstallQueue
+        if programInstallQueueLen == 1:
+            self.headingLabel.setText("You're about to install 1 program.")
+            self.commentLabel.setText("The program you selected is:")
 
-        # update the OTHER labels
-        # if the user is going to install the defaults
-        if programInstallQueue == defaultAPPSList:
-            self.commentLabel.setText("These programs will be installed by default:")
-            self.headingLabel.setText("You haven't selected any programs to install!")
         else:
-            if programInstallQueueLen == 1:
-                self.headingLabel.setText("You're about to install 1 program.")
-                self.commentLabel.setText("The program you selected is:")
-
-            else:
-                self.headingLabel.setText(f"You're about to install {programInstallQueueLen} programs.")
-                self.commentLabel.setText("The programs you selected are:")
+            self.headingLabel.setText(f"You're about to install {programInstallQueueLen} programs.")
+            self.commentLabel.setText("The programs you selected are:")
 
 
         labelString = ""
@@ -592,19 +742,20 @@ class installDialog(QDialog):
         return
     
     def invokeInstallScript(self):
-        global programInstallQueue
+        global programInstallQueue, programSRCPreference
         # function that calls the external shell script to begin installation
         print("Installing programs....")
 
-        BrowserInstallQueue = programInstallQueue[0]
-        PlayerInstallQueue = programInstallQueue[1]
-        OfficeSuiteInstallQueue = programInstallQueue[2]
-        TextEditorInstallQueue = programInstallQueue[3]
-        MiscInstallQueue = programInstallQueue[4]
+        BrowserInstallQueue = {x : programSRCPreference[x] for x in programInstallQueue[0]}
+        PlayerInstallQueue =  {x : programSRCPreference[x] for x in programInstallQueue[1]}
+        OfficeSuiteInstallQueue =  {x : programSRCPreference[x] for x in programInstallQueue[2]}
+        TextEditorInstallQueue =  {x : programSRCPreference[x] for x in programInstallQueue[3]}
+        MiscInstallQueue =  {x : programSRCPreference[x] for x in programInstallQueue[4]}
 
-        print(programInstallQueue)
+        print([BrowserInstallQueue , PlayerInstallQueue , \
+             OfficeSuiteInstallQueue , TextEditorInstallQueue , MiscInstallQueue])
 
-    
+ 
         self.accept()
         return
 
