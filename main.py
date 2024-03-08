@@ -55,8 +55,8 @@ class welcomeScreen(QMainWindow):
     defaultWEBlist     = ['librewolf']                 # list of all Web browsers marked for install by DEFAULT
     defaultMEDIAlist   = ['vlc']                       # list of all Media players marked for install by DEFAULT
     defaultOFFICElist  = ['onlyoffice']                # list of all Office Suites marked for install by DEFAULT
-    defaultTXTlist     = ['stratmacs','stratvim']      # list of all Text Editors marked for install by DEFAULT
-    defaultMISClist    = ['evince','gsconnect']        # list of all Miscellaneous programs marked for install by DEFAULT
+    defaultTXTlist     = ['stratmacs']                 # list of all Text Editors marked for install by DEFAULT
+    defaultMISClist    = ['evince']                    # list of all Miscellaneous programs marked for install by DEFAULT
     
 
     def __init__(self):
@@ -220,7 +220,6 @@ class welcomeScreen(QMainWindow):
         programSRCPreference['gsconnect'] = None
 
         return
-
 
     def proceedToInstall(self):
         global programInstallQueue, programInstallQueueLen
@@ -613,13 +612,16 @@ class welcomeScreen(QMainWindow):
     def setupAutostart(self):
         # define home and hence the full file path for the DESKTOP FILE
         home = os.path.expanduser("~")
-        #filePath = home + "/.config/autostart/maneki_neko.desktop" # full path to desktop file
+
+        EXEC_PATH = WORK_DIR + "/main.py"  # path of the EXECUTABLE
+                                            # to HARDCODE to /usr/local/bin/maneki-neko, just change the EXEC_PATH variable
+        
+        filePath = home + "/.config/autostart/maneki_neko.desktop" # full path to desktop file
         
 
         # create the desktop file and save it in $HOME/.config/autostart when the checkBox is checked
         if self.autostartCheckBox.isChecked():
-            # returns this running script's file name
-          #  thisScriptFileName = os.path.basename(__file__)
+         
 
             # opening the file in write mode
             with open(filePath,"w") as f:
@@ -630,7 +632,7 @@ Type=Application
 Name=StratOS Maneki-Neko
 GenericName=Welcome Screen App
 Comment=Welcome Screen Application for StratOS
-Exec=/usr/local/bin/maneki-neko
+Exec={EXEC_PATH}
 Icon={WORK_DIR}/src/png/logo.png
 Comment=StratOS welcome screen
 X-GNOME-Autostart-enabled=true
