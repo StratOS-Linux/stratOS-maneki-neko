@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+
+#Modules
 import sys
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets, QtCore, QtGui
@@ -209,7 +211,7 @@ class welcomeScreen(QMainWindow):
             programSRCPreference['obsidian'] = 'aur'
         
         elif self.obsidianAPPIMAGEButton.isChecked():
-            programSRCPreference['vscodium'] = 'appimage'
+            programSRCPreference['obsidian'] = 'appimage'
         
         elif self.obsidianAPTButton.isChecked():
             programSRCPreference['obsidian'] = 'apt'
@@ -223,7 +225,7 @@ class welcomeScreen(QMainWindow):
 
     def proceedToInstall(self):
         global programInstallQueue, programInstallQueueLen
-
+        sleep(0.3)
         # clear list if not empty
         if programInstallQueue != []:
             programInstallQueue == []
@@ -271,14 +273,12 @@ class welcomeScreen(QMainWindow):
                 MISCprogramInstallQueue.append(item.text().lower().split()[0])
 
         # update the class variable
-        programInstallQueue =[ 
-            WEBprogramInstallQueue, MEDIAprogramInstallQueue, OFFICEprogramInstallQueue,    \
-                    TXTprogramInstallQueue, MISCprogramInstallQueue 
-        ]
-     
+        programInstallQueue =   \
+            WEBprogramInstallQueue + MEDIAprogramInstallQueue + OFFICEprogramInstallQueue +    \
+                    TXTprogramInstallQueue + MISCprogramInstallQueue 
+        
 
-        programInstallQueueLen = len(WEBprogramInstallQueue) + len(MEDIAprogramInstallQueue) + \
-                                len(OFFICEprogramInstallQueue) + len(TXTprogramInstallQueue) + len(MISCprogramInstallQueue)
+        programInstallQueueLen = len(programInstallQueue)
 
         # if programQueue is empty ie not filled
         # send popup message and exit function
@@ -458,7 +458,7 @@ class welcomeScreen(QMainWindow):
     def moveForward(self):
         global lastPage
         currentIndex = self.windowStackedWidget.currentIndex() #current index of the window
-        
+        sleep(0.1)
         # if already in last page then exit
         if currentIndex+1 == lastPage:
             print("Exiting...")
@@ -487,7 +487,7 @@ class welcomeScreen(QMainWindow):
 
     def moveBackward(self):
         currentIndex = self.windowStackedWidget.currentIndex()
-
+        sleep(0.1)
         # go back until currentIndex is 0
         if currentIndex >= 0:
             self.windowStackedWidget.setCurrentIndex(currentIndex-1)
@@ -599,12 +599,13 @@ class welcomeScreen(QMainWindow):
     
     def openDISCORD_Link(self):
         # command to open the URL
-        command = ["xdg-open", "https://discord.gg/8sysF4ex"]
+        command = ["xdg-open", "https://discord.com/invite/DVaXRCnCet"]
         run = subprocess.Popen(command)
 
         return  
 
     def openCreditsDialog(self):
+        sleep(0.1)
         dialog = creditsWindow()
         if dialog.exec_():
             return
@@ -733,9 +734,8 @@ class installDialog(QDialog):
 
 
         labelString = ""
-        for category in programInstallQueue:
-            for app in category:
-                labelString += app + ", " # append the app name to empty string
+        for app in programInstallQueue:
+            labelString += app + ", " # append the app name to empty string
         
         # remove trailing space and comma
         labelString = labelString[:-2]
@@ -748,14 +748,25 @@ class installDialog(QDialog):
         # function that calls the external shell script to begin installation
         print("Installing programs....")
 
-        BrowserInstallQueue = {x : programSRCPreference[x] for x in programInstallQueue[0]}
-        PlayerInstallQueue =  {x : programSRCPreference[x] for x in programInstallQueue[1]}
-        OfficeSuiteInstallQueue =  {x : programSRCPreference[x] for x in programInstallQueue[2]}
-        TextEditorInstallQueue =  {x : programSRCPreference[x] for x in programInstallQueue[3]}
-        MiscInstallQueue =  {x : programSRCPreference[x] for x in programInstallQueue[4]}
 
-        print([BrowserInstallQueue , PlayerInstallQueue , \
-             OfficeSuiteInstallQueue , TextEditorInstallQueue , MiscInstallQueue])
+        #BrowserInstallQueue     =  {x : programSRCPreference[x] for x in programInstallQueue[0]}
+        #PlayerInstallQueue      =  {x : programSRCPreference[x] for x in programInstallQueue[1]}
+        #OfficeSuiteInstallQueue =  {x : programSRCPreference[x] for x in programInstallQueue[2]}
+        #TextEditorInstallQueue  =  {x : programSRCPreference[x] for x in programInstallQueue[3]}
+        #MiscInstallQueue        =  {x : programSRCPreference[x] for x in programInstallQueue[4]}
+
+        AURInstallQueue      = {"aur"       : [p for p,v in programSRCPreference.items() if v == "aur"      and p in programInstallQueue ]}
+        APTInstallQueue      = {"apt"       : [p for p,v in programSRCPreference.items() if v == "apt"      and p in programInstallQueue ]}
+        FLATPAKInstallQueue  = {"flatpak"   : [p for p,v in programSRCPreference.items() if v == "flatpak"  and p in programInstallQueue ]}
+        PACMANInstallQueue   = {"pacman"    : [p for p,v in programSRCPreference.items() if v == "pacman"   and p in programInstallQueue ]}
+        APPIMAGEInstallQueue = {"appimage"  : [p for p,v in programSRCPreference.items() if v == "appimage" and p in programInstallQueue ]}
+
+        print(AURInstallQueue)
+        print(APTInstallQueue)
+        print(FLATPAKInstallQueue)
+        print(PACMANInstallQueue)
+        print(APPIMAGEInstallQueue)
+        
 
  
         self.accept()
