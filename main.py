@@ -34,6 +34,77 @@ StratOS-Maneki-Neko: Welcome Screen GUI Application for StratOS-Linux, written i
 # globals
 app = QApplication(sys.argv)
 
+packageSRCReference = { # PACKAGE source reference dictionary
+
+                        # IMP!! packageSRCReference != packageSRCPreference
+
+                        # {"source1" : {"program1":"com.source1.Program1", "program2":"com.source1.Program2"}
+                        # }
+
+                        # ===== ALL FLATPAKS =====
+                        "flatpak":{  # ======== BROWSERS ======== 
+                                    "brave": "com.brave.Browser",                   \
+                                    "firefox": "org.mozilla.Firefox",               \
+                                    "chromium": "org.chromium.Chromium",            \
+                                    "librewolf": "io.gitlab.librewolf-community",   \
+
+                                    # ======== MEDIA PLAYERS ========
+                                    "vlc" : "org.videolan.VLC",                     \
+                                    "mpv" : "io.mpv.Mpv",                           \
+
+                                    # ======== OFFICE PROGRAMS ========
+                                    "libreoffice": "org.libreoffice.LibreOffice",   \
+                                    "onlyoffice": "org.onlyoffice.desktopeditors",  \
+
+                                    # ======== TEXT EDITORS ========
+                                    "vscodium": "com.vscodium.codium"               \
+
+                                    # ======== MISCELLANEOUS ========
+                                    # ====> NONE <==== for FLATPAK
+                                }   ,                                               \
+                        
+                        # ====== ALL ARCH USER REPOSITORY PROGRAMS ======
+                        "aur" : {   # ======== BROWSERS ========
+                                    "brave" : "brave-bin",                          \
+                                    "librewolf" : "librewolf-bin",                  \
+                                    
+                                    # ======== MEDIA PLAYERS ========
+                                    "mpv": "mpv-full",                              \
+                                    "vlc": "vlc-git",                               \
+                                    
+                                    # ======== OFFICE PROGRAMS ========
+                                    "onlyoffice": "onlyoffice-bin",                 \
+                                    
+                                    # ======== TEXT EDITORS ========
+                                    "vscodium": "vscodium-bin",                     \
+                                    
+                                    # ======== MISCELLANEOUS ========
+                                    "github" : "github-desktop-bin",                \
+                                    "obsidian" : "obsidian-bin"             
+                                }   ,                                               \
+                        
+                        # ===== ALL PACMAN PROGRAMS ========
+                        "pacman":{  # ======= WEB BROWSERS ========
+                                    "chromium": "chromium",                         \
+                                    "firefox": "firefox",                           \
+
+                                    # ======= MEDIA PLAYERS ========
+                                    "vlc": "vlc",                                   \
+                                    "mpv": "mpv",                                   \
+                                    
+                                    # ======= OFFICE SUITES ========               
+                                    "libreoffice": "libreoffice-fresh",             \
+                                    
+                                    # ======= TEXT EDITORS =======
+                                    # ====> NONE <==== for PACMAN
+
+                                    # ======= MISCELLANEOUS =======
+                                    "atril": "atril",                               \
+                                    "evince": "evince",                             \
+                                    "obsidian": "obsidian"                          \
+                        }     
+                        
+        }
 
 programSRCPreference = {}   # list of all apps with the selected mode for installation
 programInstallQueue = []    # list of all apps selected for install
@@ -104,9 +175,7 @@ class welcomeScreen(QMainWindow):
         
         elif self.braveFLATPAKButton.isChecked():
             programSRCPreference['brave'] = 'flatpak'
-        
-        elif self.bravePACMANButton.isChecked():
-            programSRCPreference['brave'] = 'pacman'
+      
         
         # for Chromium
         if self.chromiumFLATPAKButton.isChecked():
@@ -123,10 +192,7 @@ class welcomeScreen(QMainWindow):
             programSRCPreference['firefox'] = 'pacman'
         
         # for LibreWolf
-        if self.librewolfAPTButton.isChecked():
-            programSRCPreference['librewolf'] = 'apt'
-        
-        elif self.librewolfAURButton.isChecked():
+        if self.librewolfAURButton.isChecked():
             programSRCPreference['librewolf'] = 'aur'
         
         elif self.librewolfFLATPAKButton.isChecked():
@@ -153,20 +219,14 @@ class welcomeScreen(QMainWindow):
             programSRCPreference['mpv'] = 'pacman'
 
         # for OnlyOffice
-        if self.onlyofficeAPTButton.isChecked():
-            programSRCPreference['onlyoffice'] = 'apt'
-        
-        elif self.onlyofficeAURButton.isChecked():
+        if self.onlyofficeAURButton.isChecked():
             programSRCPreference['onlyoffice'] = 'aur'
         
         elif self.onlyofficeFLATPAKButton.isChecked():
             programSRCPreference['onlyoffice'] = 'flatpak'
         
         # for LibreOffice
-        if self.libreofficeAPTButton.isChecked():
-            programSRCPreference['libreoffice'] = 'apt'
-
-        elif self.libreofficeFLATPAKButton.isChecked():
+        if self.libreofficeFLATPAKButton.isChecked():
             programSRCPreference['libreoffice'] = 'flatpak'
         
         elif self.libreofficePACMANButton.isChecked():
@@ -179,42 +239,29 @@ class welcomeScreen(QMainWindow):
         
         elif self.vscodiumFLATPAKButton.isChecked():
             programSRCPreference['vscodium'] = 'flatpak'
-        
-        elif self.vscodiumAPTButton.isChecked():
-            programSRCPreference['vscodium'] = 'apt'
+     
 
 
         # for Atril
-        if self.atrilAPTButton.isChecked():
-            programSRCPreference['atril'] = 'apt'
-        
-        elif self.atrilPACMANButton.isChecked():
+        if self.atrilPACMANButton.isChecked():
             programSRCPreference['atril'] = 'pacman'
 
         # for Evince
-        if self.evinceAPTButton.isChecked():
-            programSRCPreference['evince'] = 'apt'
-        
-        elif self.evincePACMANButton.isChecked():
+        if self.evincePACMANButton.isChecked():
             programSRCPreference['evince'] = 'pacman'
 
 
         # for Github Desktop
-        if self.githubDesktopAPTButton.isChecked():
-            programSRCPreference['github'] = 'apt'
-        
-        elif self.githubDesktopAURButton.isChecked():
+        if self.githubDesktopAURButton.isChecked():
             programSRCPreference['github'] = 'aur'
         
         # for Obsidian
         if self.obsidianAURButton.isChecked():
             programSRCPreference['obsidian'] = 'aur'
         
-        elif self.obsidianAPPIMAGEButton.isChecked():
-            programSRCPreference['obsidian'] = 'appimage'
-        
-        elif self.obsidianAPTButton.isChecked():
-            programSRCPreference['obsidian'] = 'apt'
+        elif self.obsidianPACMANButton.isChecked():
+            programSRCPreference['obsidian'] = 'pacman'
+
 
         # these programs have ONLY ONE software source so hence putting None
         programSRCPreference['stratvim'] = None
@@ -744,7 +791,7 @@ class installDialog(QDialog):
         return
     
     def invokeInstallScript(self):
-        global programInstallQueue, programSRCPreference
+        global programInstallQueue, programSRCPreference, packageSRCReference
         # function that calls the external shell script to begin installation
         print("Installing programs....")
 
@@ -755,22 +802,22 @@ class installDialog(QDialog):
         #TextEditorInstallQueue  =  {x : programSRCPreference[x] for x in programInstallQueue[3]}
         #MiscInstallQueue        =  {x : programSRCPreference[x] for x in programInstallQueue[4]}
 
-        AURInstallQueue      = {"aur"       : [p for p,v in programSRCPreference.items() if v == "aur"      and p in programInstallQueue ]}
-        APTInstallQueue      = {"apt"       : [p for p,v in programSRCPreference.items() if v == "apt"      and p in programInstallQueue ]}
-        FLATPAKInstallQueue  = {"flatpak"   : [p for p,v in programSRCPreference.items() if v == "flatpak"  and p in programInstallQueue ]}
-        PACMANInstallQueue   = {"pacman"    : [p for p,v in programSRCPreference.items() if v == "pacman"   and p in programInstallQueue ]}
-        APPIMAGEInstallQueue = {"appimage"  : [p for p,v in programSRCPreference.items() if v == "appimage" and p in programInstallQueue ]}
+        AURInstallQueue      = {"aur"       : [packageSRCReference["aur"][p]        for p,v in programSRCPreference.items() if v == "aur"      and p in programInstallQueue ]}
+        FLATPAKInstallQueue  = {"flatpak"   : [packageSRCReference["flatpak"][p]    for p,v in programSRCPreference.items() if v == "flatpak"  and p in programInstallQueue ]}
+        PACMANInstallQueue   = {"pacman"    : [packageSRCReference["pacman"][p]     for p,v in programSRCPreference.items() if v == "pacman"   and p in programInstallQueue ]}
 
         print(AURInstallQueue)
-        print(APTInstallQueue)
         print(FLATPAKInstallQueue)
         print(PACMANInstallQueue)
-        print(APPIMAGEInstallQueue)
         
 
  
         self.accept()
         return
+
+
+
+
 
 if __name__ == "__main__":
     main()

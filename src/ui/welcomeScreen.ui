@@ -1026,8 +1026,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>319</width>
-                    <height>419</height>
+                    <width>104</width>
+                    <height>284</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1141,8 +1141,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>319</width>
-                    <height>419</height>
+                    <width>104</width>
+                    <height>184</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1229,8 +1229,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>319</width>
-                    <height>419</height>
+                    <width>104</width>
+                    <height>179</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1305,8 +1305,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>319</width>
-                    <height>419</height>
+                    <width>104</width>
+                    <height>179</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1576,7 +1576,7 @@ color: rgb(2, 240, 255);</string>
                      <number>1</number>
                     </property>
                     <property name="currentIndex">
-                     <number>5</number>
+                     <number>3</number>
                     </property>
                     <widget class="QWidget" name="FIREFOX_0">
                      <property name="styleSheet">
@@ -2116,13 +2116,6 @@ p, li { white-space: pre-wrap; }
                                </property>
                               </widget>
                              </item>
-                             <item>
-                              <widget class="QRadioButton" name="librewolfAPTButton">
-                               <property name="text">
-                                <string>apt</string>
-                               </property>
-                              </widget>
-                             </item>
                             </layout>
                            </widget>
                           </item>
@@ -2299,19 +2292,12 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                               </widget>
                              </item>
                              <item>
-                              <widget class="QRadioButton" name="bravePACMANButton">
-                               <property name="text">
-                                <string>pacman</string>
-                               </property>
-                               <property name="checked">
-                                <bool>true</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
                               <widget class="QRadioButton" name="braveAURButton">
                                <property name="text">
                                 <string>AUR</string>
+                               </property>
+                               <property name="checked">
+                                <bool>true</bool>
                                </property>
                               </widget>
                              </item>
@@ -2933,26 +2919,6 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                               </widget>
                              </item>
                              <item>
-                              <widget class="QRadioButton" name="onlyofficeAURButton">
-                               <property name="text">
-                                <string>AUR</string>
-                               </property>
-                               <property name="checked">
-                                <bool>true</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="onlyofficeAPTButton">
-                               <property name="text">
-                                <string>apt</string>
-                               </property>
-                               <property name="checked">
-                                <bool>false</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
                               <widget class="QRadioButton" name="onlyofficeFLATPAKButton">
                                <property name="minimumSize">
                                 <size>
@@ -2968,6 +2934,19 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                                </property>
                                <property name="text">
                                 <string>Flatpak</string>
+                               </property>
+                               <property name="checked">
+                                <bool>true</bool>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QRadioButton" name="onlyofficeAURButton">
+                               <property name="text">
+                                <string>AUR</string>
+                               </property>
+                               <property name="checked">
+                                <bool>false</bool>
                                </property>
                               </widget>
                              </item>
@@ -3153,16 +3132,6 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                                </property>
                                <property name="checked">
                                 <bool>true</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="libreofficeAPTButton">
-                               <property name="text">
-                                <string>apt</string>
-                               </property>
-                               <property name="checked">
-                                <bool>false</bool>
                                </property>
                               </widget>
                              </item>
@@ -3639,16 +3608,6 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                               </widget>
                              </item>
                              <item>
-                              <widget class="QRadioButton" name="vscodiumAPTButton">
-                               <property name="text">
-                                <string>apt</string>
-                               </property>
-                               <property name="checked">
-                                <bool>false</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
                               <widget class="QRadioButton" name="vscodiumFLATPAKButton">
                                <property name="minimumSize">
                                 <size>
@@ -3852,16 +3811,6 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                                </property>
                               </widget>
                              </item>
-                             <item>
-                              <widget class="QRadioButton" name="atrilAPTButton">
-                               <property name="text">
-                                <string>apt</string>
-                               </property>
-                               <property name="checked">
-                                <bool>false</bool>
-                               </property>
-                              </widget>
-                             </item>
                             </layout>
                            </widget>
                           </item>
@@ -4044,16 +3993,6 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                                </property>
                                <property name="checked">
                                 <bool>true</bool>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="evinceAPTButton">
-                               <property name="text">
-                                <string>apt</string>
-                               </property>
-                               <property name="checked">
-                                <bool>false</bool>
                                </property>
                               </widget>
                              </item>
@@ -4242,16 +4181,6 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                                </property>
                               </widget>
                              </item>
-                             <item>
-                              <widget class="QRadioButton" name="githubDesktopAPTButton">
-                               <property name="text">
-                                <string>apt</string>
-                               </property>
-                               <property name="checked">
-                                <bool>false</bool>
-                               </property>
-                              </widget>
-                             </item>
                             </layout>
                            </widget>
                           </item>
@@ -4428,9 +4357,9 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                               </widget>
                              </item>
                              <item>
-                              <widget class="QRadioButton" name="obsidianAURButton">
+                              <widget class="QRadioButton" name="obsidianPACMANButton">
                                <property name="text">
-                                <string>AUR</string>
+                                <string>pacman</string>
                                </property>
                                <property name="checked">
                                 <bool>true</bool>
@@ -4438,16 +4367,9 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                               </widget>
                              </item>
                              <item>
-                              <widget class="QRadioButton" name="obsidianAPPIMAGEButton">
+                              <widget class="QRadioButton" name="obsidianAURButton">
                                <property name="text">
-                                <string>AppImage</string>
-                               </property>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QRadioButton" name="obsidianAPTButton">
-                               <property name="text">
-                                <string>apt</string>
+                                <string>AUR</string>
                                </property>
                                <property name="checked">
                                 <bool>false</bool>
