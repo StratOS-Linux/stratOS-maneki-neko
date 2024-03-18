@@ -116,9 +116,9 @@ lastPage=3  # the last page of the app is the 3rd page
             # 1st-> welcome page    2nd-> overview on Stratos   3rd -> last page with buttons to install programs, distro etc
             # 4th-> program installer
 
-def runInTerm(cmd:str,mesg:str):
+def runInTerm(cmd:str,mesg:str=None):
     if mesg: print(mesg)
-    result = subprocess.Popen(["kgx", "--", cmd], stdout=subprocess.PIPE)
+    result = subprocess.Popen(["gnome-terminal", "--", cmd], stdout=subprocess.PIPE)
     out = result.communicate()
     return
 
@@ -128,8 +128,8 @@ class welcomeScreen(QMainWindow):
     # CLASS variables
     defBrowsers = ['librewolf']                 # list of all Web browsers marked for install by DEFAULT
     defPlayers  = []                            # list of all Media players marked for install by DEFAULT
-    defOffice   = ['onlyoffice']                # list of all Office Suites marked for install by DEFAULT
-    defEditors  = ['stratmacs']                 # list of all Text Editors marked for install by DEFAULT
+    defOffice   = []                # list of all Office Suites marked for install by DEFAULT
+    defEditors  = []                 # list of all Text Editors marked for install by DEFAULT
     defMisc     = []                            # list of all Miscellaneous programs marked for install by DEFAULT
     
 
@@ -624,10 +624,18 @@ class installDialog(QDialog):
         FLATPAKInstallQueue  = {"flatpak"   : [packageSRCReference["flatpak"][p]    for p,v in progSource.items() if v == "flatpak"  and p in programInstallQueue ]}
         PACMANInstallQueue   = {"pacman"    : [packageSRCReference["pacman"][p]     for p,v in progSource.items() if v == "pacman"   and p in programInstallQueue ]}
 
-        print(AURInstallQueue)
-        print(FLATPAKInstallQueue)
-        print(PACMANInstallQueue)
+        aurString = ""
+        for i in AURInstallQueue["aur"]: aurString += f"{i} "
 
+        flatpakString = ""
+        for i in FLATPAKInstallQueue["flatpak"]: flatpakString += f"{i} "
+
+        pacmanString = ""
+        for i in PACMANInstallQueue["pacman"]: pacmanString += f"{i} "
+
+        if pacmanString: runInTerm(f"~/Git/StratOS/StratOS-iso/airootfs/usr/local/bin/install-using-pacman {pacmanString}")
+        if aurString: runInTerm(f"~/Git/StratOS/StratOS-iso/airootfs/usr/local/bin/install-using-yay {aurString}")
+        if flatpakString: runInTerm(f"~/Git/StratOS/StratOS-iso/airootfs/usr/local/bin/install-using-flatpak {flatpakString}")
         self.accept()
         return
 
