@@ -3,12 +3,12 @@
 #Modules
 import sys
 from PyQt5.uic import loadUi
-from PyQt5 import QtWidgets, QtCore, QtGui
-
+from PyQt5 import QtCore, QtGui
 from PyQt5.QtWidgets import QMainWindow,  QApplication,  QDialog, QMessageBox
 from time import sleep
 import os, subprocess
-
+HOME=os.path.expanduser("~")
+WORK_DIR=os.path.dirname(os.path.abspath(__file__)) # the directory where the main.py file is located
 
 #LICENSE
 '''
@@ -43,102 +43,103 @@ packageSRCReference = { # PACKAGE source reference dictionary
 
                         # ===== ALL FLATPAKS =====
                         "flatpak":{  # ======== BROWSERS ======== 
-                                    "brave": "com.brave.Browser",                   \
-                                    "firefox": "org.mozilla.Firefox",               \
-                                    "chromium": "org.chromium.Chromium",            \
-                                    "librewolf": "io.gitlab.librewolf-community",   \
+                                    "brave": "com.brave.Browser",                   
+                                    "firefox": "org.mozilla.Firefox",               
+                                    "chromium": "org.chromium.Chromium",            
+                                    "librewolf": "io.gitlab.librewolf-community",   
 
                                     # ======== MEDIA PLAYERS ========
-                                    "vlc" : "org.videolan.VLC",                     \
-                                    "mpv" : "io.mpv.Mpv",                           \
+                                    "vlc" : "org.videolan.VLC",                     
+                                    "mpv" : "io.mpv.Mpv",                           
 
                                     # ======== OFFICE PROGRAMS ========
-                                    "libreoffice": "org.libreoffice.LibreOffice",   \
-                                    "onlyoffice": "org.onlyoffice.desktopeditors",  \
+                                    "libreoffice": "org.libreoffice.LibreOffice",   
+                                    "onlyoffice": "org.onlyoffice.desktopeditors",  
 
                                     # ======== TEXT EDITORS ========
-                                    "vscodium": "com.vscodium.codium"               \
+                                    "vscodium": "com.vscodium.codium"               
 
                                     # ======== MISCELLANEOUS ========
                                     # ====> NONE <==== for FLATPAK
-                                }   ,                                               \
+                                }   ,                                               
                         
                         # ====== ALL ARCH USER REPOSITORY PROGRAMS ======
                         "aur" : {   # ======== BROWSERS ========
-                                    "brave" : "brave-bin",                          \
-                                    "librewolf" : "librewolf-bin",                  \
+                                    "brave" : "brave-bin",                          
+                                    "librewolf" : "librewolf-bin",                  
                                     
                                     # ======== MEDIA PLAYERS ========
-                                    "mpv": "mpv-full",                              \
-                                    "vlc": "vlc-git",                               \
+                                    "mpv": "mpv-full",                              
+                                    "vlc": "vlc-git",                               
                                     
                                     # ======== OFFICE PROGRAMS ========
-                                    "onlyoffice": "onlyoffice-bin",                 \
+                                    "onlyoffice": "onlyoffice-bin",                 
                                     
                                     # ======== TEXT EDITORS ========
-                                    "vscodium": "vscodium-bin",                     \
+                                    "vscodium": "vscodium-bin",                     
                                     
                                     # ======== MISCELLANEOUS ========
-                                    "github" : "github-desktop-bin",                \
+                                    "github" : "github-desktop-bin",                
                                     "obsidian" : "obsidian-bin"             
-                                }   ,                                               \
+                                }   ,                                               
                         
                         # ===== ALL PACMAN PROGRAMS ========
                         "pacman":{  # ======= WEB BROWSERS ========
-                                    "chromium": "chromium",                         \
-                                    "firefox": "firefox",                           \
+                                    "chromium": "chromium",                         
+                                    "firefox": "firefox",                           
 
                                     # ======= MEDIA PLAYERS ========
-                                    "vlc": "vlc",                                   \
-                                    "mpv": "mpv",                                   \
+                                    "vlc": "vlc",                                   
+                                    "mpv": "mpv",                                   
                                     
                                     # ======= OFFICE SUITES ========               
-                                    "libreoffice": "libreoffice-fresh",             \
+                                    "libreoffice": "libreoffice-fresh",             
                                     
                                     # ======= TEXT EDITORS =======
                                     # ====> NONE <==== for PACMAN
 
                                     # ======= MISCELLANEOUS =======
-                                    "atril": "atril",                               \
-                                    "evince": "evince",                             \
-                                    "obsidian": "obsidian"                          \
+                                    "atril": "atril",                               
+                                    "evince": "evince",                             
+                                    "obsidian": "obsidian"                          
                         }     
                         
         }
 
-programSRCPreference = {}   # list of all apps with the selected mode for installation
+progSource = {}   # list of all apps with the selected mode for installation
 programInstallQueue = []    # list of all apps selected for install
 programInstallQueueLen = 0  # number of all apps selected for install, 0 is temporary value and
                             # will be updated when proceeding to install
-defaultAPPSList = []
+defApps = []
 
 lastPage=3  # the last page of the app is the 3rd page
             # 1st-> welcome page    2nd-> overview on Stratos   3rd -> last page with buttons to install programs, distro etc
             # 4th-> program installer
 
+def runInTerm(cmd:str,mesg:str):
+    if mesg: print(mesg)
+    result = subprocess.Popen(["kgx", "--", cmd], stdout=subprocess.PIPE)
+    out = result.communicate()
+    return
 
-
-WORK_DIR = os.getcwd() # gets working directory of the python script
-                       # at install location value shoulda be /opt/maneki-neko
-                       # to HARDCODE this , change WORK_DIR to /opt/maneki-neko
 
 class welcomeScreen(QMainWindow):
 
     # CLASS variables
-    defaultWEBlist     = ['librewolf']                 # list of all Web browsers marked for install by DEFAULT
-    defaultMEDIAlist   = ['vlc']                       # list of all Media players marked for install by DEFAULT
-    defaultOFFICElist  = ['onlyoffice']                # list of all Office Suites marked for install by DEFAULT
-    defaultTXTlist     = ['stratmacs']                 # list of all Text Editors marked for install by DEFAULT
-    defaultMISClist    = ['evince']                    # list of all Miscellaneous programs marked for install by DEFAULT
+    defBrowsers = ['librewolf']                 # list of all Web browsers marked for install by DEFAULT
+    defPlayers  = []                            # list of all Media players marked for install by DEFAULT
+    defOffice   = ['onlyoffice']                # list of all Office Suites marked for install by DEFAULT
+    defEditors  = ['stratmacs']                 # list of all Text Editors marked for install by DEFAULT
+    defMisc     = []                            # list of all Miscellaneous programs marked for install by DEFAULT
     
 
     def __init__(self):
-        global defaultAPPSList
+        global defApps
         # init the class
         super(welcomeScreen,self).__init__()
         # load the ui file
-        loadUi(WORK_DIR + "/src/ui/welcomeScreen.ui",self)
-        defaultAPPSList = self.defaultWEBlist + self.defaultMEDIAlist + self.defaultOFFICElist + self.defaultTXTlist + self.defaultMISClist
+        loadUi(f"{WORK_DIR}/src/ui/welcomeScreen.ui",self)
+        defApps = self.defBrowsers + self.defPlayers + self.defOffice + self.defEditors + self.defMisc
         # always init window to first page
         self.windowStackedWidget.setCurrentIndex(0)
         # if AUTOSTART already enabled, then update the text of the autostartCheckBox
@@ -147,176 +148,121 @@ class welcomeScreen(QMainWindow):
         # Buttons
         self.nextButton.clicked.connect(self.moveForward)   # also self.proceedToInstall
         self.backButton.clicked.connect(self.moveBackward)  
-        self.distroInstallerButton.clicked.connect(self.runDistroInstallerScript)
-        self.openDISCORDbutton.clicked.connect(self.openDISCORD_Link)
-        self.openMASTODONbutton.clicked.connect(self.openMASTODON_Link)
-        self.openMATRIXbutton.clicked.connect(self.openMATRIX_Website)
+        self.distroInstallerButton.clicked.connect(self.runDistroInstaller)
+        self.openDISCORDbutton.clicked.connect(self.openDiscord)
+        self.openMASTODONbutton.clicked.connect(self.openMastodon)
+        self.openMATRIXbutton.clicked.connect(self.openMatrix)
         self.autostartCheckBox.clicked.connect(self.setupAutostart)
-        self.creditsButton.clicked.connect(self.openCreditsDialog)
+        self.creditsButton.clicked.connect(self.openCredits)
 
         # package-installer page related-stuffs
         self.packageInstallerButton.clicked.connect(self.openPackageInstallerPage)
-        self.MISClistWidget.itemClicked.connect(self.setMISCDescription)
-        self.WEBlistWidget.itemClicked.connect(self.setWEBDescription)
-        self.TXTlistWidget.itemClicked.connect(self.setTXTDescription)
-        self.MEDIAlistWidget.itemClicked.connect(self.setMEDIADescription)
-        self.OFFICElistWidget.itemClicked.connect(self.setOFFICEDescription)
+        self.MISClistWidget.itemClicked.connect(self.setMiscDesc)
+        self.WEBlistWidget.itemClicked.connect(self.setWebDesc)
+        self.TXTlistWidget.itemClicked.connect(self.setEdDesc)
+        self.MEDIAlistWidget.itemClicked.connect(self.setMediaDesc)
+        self.OFFICElistWidget.itemClicked.connect(self.setOfficeDesc)
         
         # functions to auto select default apps to be installed in UI
         self.selectDefaultApps()
         return
 
-    def updateProgramSRCPreference(self):
-        global programSRCPreference
+    def updateprogSource(self):
+        global progSource
 
         # for Brave
-        if self.braveAURButton.isChecked():
-            programSRCPreference['brave'] = 'aur'
-        
-        elif self.braveFLATPAKButton.isChecked():
-            programSRCPreference['brave'] = 'flatpak'
+        if self.braveAURButton.isChecked(): progSource['brave'] = 'aur'
+        elif self.braveFLATPAKButton.isChecked(): progSource['brave'] = 'flatpak'
       
         
         # for Chromium
-        if self.chromiumFLATPAKButton.isChecked():
-            programSRCPreference['chromium'] = 'flatpak'
-        
-        elif self.chromiumPACMANButton.isChecked():
-            programSRCPreference['chromium'] = 'pacman'
+        if self.chromiumFLATPAKButton.isChecked(): progSource['chromium'] = 'flatpak'
+        elif self.chromiumPACMANButton.isChecked(): progSource['chromium'] = 'pacman'
         
         # for Firefox
-        if self.firefoxFLATPAKButton_4.isChecked():
-            programSRCPreference['firefox'] = 'flatpak'
-        
-        elif self.firefoxPACMANButton_4.isChecked():
-            programSRCPreference['firefox'] = 'pacman'
+        if self.firefoxFLATPAKButton_4.isChecked(): progSource['firefox'] = 'flatpak'
+        elif self.firefoxPACMANButton_4.isChecked(): progSource['firefox'] = 'pacman'
         
         # for LibreWolf
-        if self.librewolfAURButton.isChecked():
-            programSRCPreference['librewolf'] = 'aur'
-        
-        elif self.librewolfFLATPAKButton.isChecked():
-            programSRCPreference['librewolf'] = 'flatpak'
+        if self.librewolfAURButton.isChecked(): progSource['librewolf'] = 'aur'
+        elif self.librewolfFLATPAKButton.isChecked(): progSource['librewolf'] = 'flatpak'
 
         # for VLC
-        if self.vlcAURButton.isChecked():
-            programSRCPreference['vlc'] = 'aur'
-        
-        elif self.vlcFLATPAKButton.isChecked():
-            programSRCPreference['vlc'] = 'flatpak'
-        
-        elif self.vlcPACMANButton.isChecked():
-            programSRCPreference['vlc'] = 'pacman'
+        if self.vlcAURButton.isChecked(): progSource['vlc'] = 'aur'
+        elif self.vlcFLATPAKButton.isChecked(): progSource['vlc'] = 'flatpak'
+        elif self.vlcPACMANButton.isChecked(): progSource['vlc'] = 'pacman'
 
         # for MPV
-        if self.mpvAURButton.isChecked():
-            programSRCPreference['mpv'] = 'aur'
-        
-        elif self.mpvFLATPAKButton.isChecked():
-            programSRCPreference['mpv'] = 'flatpak'
-        
-        elif self.mpvPACMANButton.isChecked():
-            programSRCPreference['mpv'] = 'pacman'
+        if self.mpvAURButton.isChecked(): progSource['mpv'] = 'aur'
+        elif self.mpvFLATPAKButton.isChecked(): progSource['mpv'] = 'flatpak'
+        elif self.mpvPACMANButton.isChecked(): progSource['mpv'] = 'pacman'
 
         # for OnlyOffice
-        if self.onlyofficeAURButton.isChecked():
-            programSRCPreference['onlyoffice'] = 'aur'
-        
-        elif self.onlyofficeFLATPAKButton.isChecked():
-            programSRCPreference['onlyoffice'] = 'flatpak'
+        if self.onlyofficeAURButton.isChecked(): progSource['onlyoffice'] = 'aur'
+        elif self.onlyofficeFLATPAKButton.isChecked(): progSource['onlyoffice'] = 'flatpak'
         
         # for LibreOffice
-        if self.libreofficeFLATPAKButton.isChecked():
-            programSRCPreference['libreoffice'] = 'flatpak'
-        
-        elif self.libreofficePACMANButton.isChecked():
-            programSRCPreference['libreoffice'] = 'pacman'
-        
-        
+        if self.libreofficeFLATPAKButton.isChecked(): progSource['libreoffice'] = 'flatpak'
+        elif self.libreofficePACMANButton.isChecked(): progSource['libreoffice'] = 'pacman'
+
         # for VSCodium
-        if self.vscodiumAURButton.isChecked():
-            programSRCPreference['vscodium'] = 'aur'
-        
-        elif self.vscodiumFLATPAKButton.isChecked():
-            programSRCPreference['vscodium'] = 'flatpak'
+        if self.vscodiumAURButton.isChecked(): progSource['vscodium'] = 'aur'
+        elif self.vscodiumFLATPAKButton.isChecked(): progSource['vscodium'] = 'flatpak'
      
 
-
         # for Atril
-        if self.atrilPACMANButton.isChecked():
-            programSRCPreference['atril'] = 'pacman'
-
+        if self.atrilPACMANButton.isChecked(): progSource['atril'] = 'pacman'
         # for Evince
-        if self.evincePACMANButton.isChecked():
-            programSRCPreference['evince'] = 'pacman'
-
-
+        if self.evincePACMANButton.isChecked(): progSource['evince'] = 'pacman'
         # for Github Desktop
-        if self.githubDesktopAURButton.isChecked():
-            programSRCPreference['github'] = 'aur'
+        if self.githubDesktopAURButton.isChecked(): progSource['github'] = 'aur'
         
         # for Obsidian
-        if self.obsidianAURButton.isChecked():
-            programSRCPreference['obsidian'] = 'aur'
-        
-        elif self.obsidianPACMANButton.isChecked():
-            programSRCPreference['obsidian'] = 'pacman'
+        if self.obsidianAURButton.isChecked(): progSource['obsidian'] = 'aur'
+        elif self.obsidianPACMANButton.isChecked(): progSource['obsidian'] = 'pacman'
 
 
         # these programs have ONLY ONE software source so hence putting None
-        programSRCPreference['stratvim'] = None
-        programSRCPreference['stratmacs'] = None
-        programSRCPreference['gsconnect'] = None
+        progSource['stratvim'] = None
+        progSource['stratmacs'] = None
+        progSource['gsconnect'] = None
 
         return
 
     def proceedToInstall(self):
         global programInstallQueue, programInstallQueueLen
         sleep(0.3)
-        # clear list if not empty
-        if programInstallQueue != []:
-            programInstallQueue == []
+        if programInstallQueue != []: programInstallQueue == []
 
         # update values in program install queue
         WEBprogramInstallQueue = []
-        # for every item listed in the listwidget
         for i in range(0,self.WEBlistWidget.count()):
             item = self.WEBlistWidget.item(i)
-            # if the current item is checked
             if item.checkState() == QtCore.Qt.Checked:
-                # append the program name to the list
                 WEBprogramInstallQueue.append(item.text().lower())
 
         MEDIAprogramInstallQueue = []
         for i in range(0,self.MEDIAlistWidget.count()):
             item = self.MEDIAlistWidget.item(i)
-            # if the current item is checked
             if item.checkState() == QtCore.Qt.Checked:
-                # append the program name to the list
                 MEDIAprogramInstallQueue.append(item.text().lower())
 
         OFFICEprogramInstallQueue = []
         for i in range(0,self.OFFICElistWidget.count()):
             item = self.OFFICElistWidget.item(i)
-            # if the current item is checked
             if item.checkState() == QtCore.Qt.Checked:
-                # append the program name to the list
                 OFFICEprogramInstallQueue.append(item.text().lower())
 
         TXTprogramInstallQueue = []
         for i in range(0,self.TXTlistWidget.count()):
             item = self.TXTlistWidget.item(i)
-            # if the current item is checked
             if item.checkState() == QtCore.Qt.Checked:
-                # append the program name to the list
                 TXTprogramInstallQueue.append(item.text().lower().split()[0])
    
         MISCprogramInstallQueue = []
         for i in range(0,self.MISClistWidget.count()):
             item = self.MISClistWidget.item(i)
-            # if the current item is checked
             if item.checkState() == QtCore.Qt.Checked:
-                # append the program name to the list
                 MISCprogramInstallQueue.append(item.text().lower().split()[0])
 
         # update the class variable
@@ -326,15 +272,10 @@ class welcomeScreen(QMainWindow):
         
 
         programInstallQueueLen = len(programInstallQueue)
-
-        # if programQueue is empty ie not filled
-        # send popup message and exit function
         if programInstallQueueLen == 0:
             message = QMessageBox.critical(self,"Cannot Install","No programs marked for install.")
             return
-        # now call function to determine selected sources
-        self.updateProgramSRCPreference()
-        # now call the install dialog
+        self.updateprogSource()
         dialog = installDialog()
         if dialog.exec_():
             return
@@ -343,52 +284,41 @@ class welcomeScreen(QMainWindow):
 
         for i in range(0,self.WEBlistWidget.count()):
             item = self.WEBlistWidget.item(i)
-            # check if the current list widget item (ie package) is in the list of default packages
-            # marked for install
-            if item.text().lower()in self.defaultWEBlist:
+            if item.text().lower()in self.defBrowsers:
                 item.setCheckState(QtCore.Qt.Checked)
   
         for i in range(0,self.MEDIAlistWidget.count()):
             item = self.MEDIAlistWidget.item(i)
-            # check if the current list widget item (ie package) is in the list of default packages
-            # marked for install
-            if item.text().lower()in self.defaultMEDIAlist:
+            if item.text().lower()in self.defPlayers:
                 item.setCheckState(QtCore.Qt.Checked)
      
-
         for i in range(0,self.OFFICElistWidget.count()):
             item = self.OFFICElistWidget.item(i)
-            # check if the current list widget item (ie package) is in the list of default packages
-            # marked for install
-            if item.text().lower()in self.defaultOFFICElist:
+            if item.text().lower()in self.defOffice:
                 item.setCheckState(QtCore.Qt.Checked)
   
 
         for i in range(0,self.TXTlistWidget.count()):
             item = self.TXTlistWidget.item(i)
-            # check if the current list widget item (ie package) is in the list of default packages
-            # marked for install
-            if item.text().lower().split()[0] in self.defaultTXTlist:
+            if item.text().lower().split()[0] in self.defEditors:
                 item.setCheckState(QtCore.Qt.Checked)
 
 
         for i in range(0,self.MISClistWidget.count()):
             item = self.MISClistWidget.item(i)
-            # check if the current list widget item (ie package) is in the list of default packages
-            # marked for install
-            if item.text().lower().split()[0] in self.defaultMISClist:
+            if item.text().lower().split()[0] in self.defMisc:
                 item.setCheckState(QtCore.Qt.Checked)
         return
 
-    def setMISCDescription(self):
-        # function that shows details of selected package on description widget of MISC category
-        refDict = { "atril"     : 11,    \
-                    "evince"    : 12,    \
-                    "github"    : 13,    \
-                    "obsidian"  : 14,    \
+    def setMiscDesc(self):
+        # function that shows details of selected package on description widget of MISC catego
+        refDict = { "atril"     : 11,    
+                    "evince"    : 12,    
+                    "github"    : 13,    
+                    "obsidian"  : 14,    
                     "gsconnect" : 15
                 }
-        # using try-except block to avoid error if user directly ticks the options without selecting the items fully
+        # using try-except block to avoid error if user directly ticks the options without selecting the items ful
         try:
         # to determine the selected app
             selectedApp = self.MISClistWidget.currentItem().text().lower().split()[0]
@@ -402,80 +332,48 @@ class welcomeScreen(QMainWindow):
             pass
         return
 
-    def setWEBDescription(self):
-        # function that shows details of selected package on description widget of WEB category
-        refDict = { "firefox"     : 0,    \
-                    "chromium"    : 1,    \
-                    "librewolf"   : 2,    \
+    def setWebDesc(self):
+        refDict = { "firefox"     : 0,    
+                    "chromium"    : 1,    
+                    "librewolf"   : 2,    
                     "brave"       : 3
                 }
-        # using try-except block to avoid error if user directly ticks the options without selecting the items fully
         try:
-        # to determine the selected app
             selectedApp = self.WEBlistWidget.currentItem().text().lower()
-        # EXPLANATION: suppose I selected "Atril PDF Document Viewer"
-        # 1. self.MISClistWidget.currentItem().text() = "Atril PDF Document Viewer"
-        # 2. self.MISClistWidget.currentItem().text().lower() = "atril pdf document viewer"
-        # 3. self.MISClistWidget.currentItem().text().lower().split() = ["atril", "pdf","document", "viewer"]
-        # 4. self.MISClistWidget.currentItem().text().lower().split()[0] = "atril"
             self.packageDetailsStackedWidget.setCurrentIndex(refDict[selectedApp])
         except AttributeError:
             pass
         return
 
-    def setTXTDescription(self):
-        # function that shows details of selected package on description widget of TXT category
-        refDict = { "stratmacs"   : 8,    \
-                    "stratvim"    : 9,    \
+    def setEdDesc(self):
+        refDict = { "stratmacs"   : 8,    
+                    "stratvim"    : 9,    
                     "vscodium"    : 10
                 }
-        # using try-except block to avoid error if user directly ticks the options without selecting the items fully
         try:
-        # to determine the selected app
             selectedApp = self.TXTlistWidget.currentItem().text().lower().split()[0]
-        # EXPLANATION: suppose I selected "Atril PDF Document Viewer"
-        # 1. self.MISClistWidget.currentItem().text() = "Atril PDF Document Viewer"
-        # 2. self.MISClistWidget.currentItem().text().lower() = "atril pdf document viewer"
-        # 3. self.MISClistWidget.currentItem().text().lower().split() = ["atril", "pdf","document", "viewer"]
-        # 4. self.MISClistWidget.currentItem().text().lower().split()[0] = "atril"
             self.packageDetailsStackedWidget.setCurrentIndex(refDict[selectedApp])
         except AttributeError:
             pass
         return
 
-    def setMEDIADescription(self):
-        # function that shows details of selected package on description widget of TXT category
-        refDict = { "vlc"   : 4,    \
+    def setMediaDesc(self):
+        refDict = { "vlc"   : 4,    
                     "mpv"   : 5
                 }
-        # using try-except block to avoid error if user directly ticks the options without selecting the items fully
         try:
-        # to determine the selected app
             selectedApp = self.MEDIAlistWidget.currentItem().text().lower()
-        # EXPLANATION: suppose I selected "Atril PDF Document Viewer"
-        # 1. self.MISClistWidget.currentItem().text() = "Atril PDF Document Viewer"
-        # 2. self.MISClistWidget.currentItem().text().lower() = "atril pdf document viewer"
-        # 3. self.MISClistWidget.currentItem().text().lower().split() = ["atril", "pdf","document", "viewer"]
-        # 4. self.MISClistWidget.currentItem().text().lower().split()[0] = "atril"
             self.packageDetailsStackedWidget.setCurrentIndex(refDict[selectedApp])
         except AttributeError:
             pass
         return
 
-    def setOFFICEDescription(self):
-        # function that shows details of selected package on description widget of TXT category
-        refDict = { "onlyoffice"    : 6,    \
+    def setOfficeDesc(self):
+        refDict = { "onlyoffice"    : 6,  
                     "libreoffice"   : 7
                 }
-        # using try-except block to avoid error if user directly ticks the options without selecting the items fully
         try:
-        # to determine the selected app
             selectedApp = self.OFFICElistWidget.currentItem().text().lower()
-        # EXPLANATION: suppose I selected "Atril PDF Document Viewer"
-        # 1. self.MISClistWidget.currentItem().text() = "Atril PDF Document Viewer"
-        # 2. self.MISClistWidget.currentItem().text().lower() = "atril pdf document viewer"
-        # 3. self.MISClistWidget.currentItem().text().lower().split() = ["atril", "pdf","document", "viewer"]
-        # 4. self.MISClistWidget.currentItem().text().lower().split()[0] = "atril"
             self.packageDetailsStackedWidget.setCurrentIndex(refDict[selectedApp])
         except AttributeError:
             pass
@@ -504,7 +402,7 @@ class welcomeScreen(QMainWindow):
 
     def moveForward(self):
         global lastPage
-        currentIndex = self.windowStackedWidget.currentIndex() #current index of the window
+        currentIndex = self.windowStackedWidget.currentIndex()
         sleep(0.1)
         # if already in last page then exit
         if currentIndex+1 == lastPage:
@@ -519,10 +417,7 @@ class welcomeScreen(QMainWindow):
             self.proceedToInstall()
             return
 
-        # change page by one forward
         self.windowStackedWidget.setCurrentIndex(currentIndex+1)
-
-        # now enable back button
         self.backButton.setEnabled(True)
 
 
@@ -535,7 +430,6 @@ class welcomeScreen(QMainWindow):
     def moveBackward(self):
         currentIndex = self.windowStackedWidget.currentIndex()
         sleep(0.1)
-        # go back until currentIndex is 0
         if currentIndex >= 0:
             self.windowStackedWidget.setCurrentIndex(currentIndex-1)
         
@@ -562,22 +456,8 @@ class welcomeScreen(QMainWindow):
         else:
             self.nextButton.setText("Exit")
 
-    def runDistroInstallerScript(self):
-
-        # work need to be done
-        print("executing the installer script")
-
-        # the command to execute
-        # pls change this
-        command = ["gnome-terminal", "--", '/usr/local/bin/StratOS-configure-distro']
-
-        temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
-
-        # get the STDOUT
-        result=temporary.communicate()
-
-        #print(result)
-
+    def runDistroInstaller(self):
+        runInTerm("/usr/local/bin/StratOS-configure-distro","Running the distro installer")
         return
 
     def openPackageInstallerPage(self):
@@ -590,84 +470,37 @@ class welcomeScreen(QMainWindow):
         return
 
     def runThemeChangerScript(self):
-        # work need to be done
-        print("executing the installer script")
-
-        # the command to execute
-        # pls change this
-        command = ["gnome-terminal", "--", '/usr/local/bin/StratOS-configure-theme']
-
-        temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
-
-        # get the STDOUT
-        result=temporary.communicate()
-
-        #print(result)
-
+        runInTerm("/usr/local/bin/StratOS-configure-theme","Running the theme changer")
         return
 
     def runBrowserInstallerScript(self):
-        # work need to be done
-        print("executing the installer script")
-
-        # the command to execute
-        # pls change this
-
-        command = ["gnome-terminal", "--", '/usr/local/bin/StratOS-configure-browser']
-
-        temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
-
-        # get the STDOUT
-        result=temporary.communicate()
-
-        #print(result)
-
+        runInTerm("/usr/local/bin/StratOS-configure-browser","Running the browser installer")
         return
 
     def openWebsite(self):
-        # command to open the URL
-        command = ["xdg-open", "stratos-linux.github.io"]
-        run = subprocess.Popen(command)
+        runInTerm("xdg-open https://stratos-linux.github.io","Opening the website")
         return
     
-    def openMASTODON_Link(self):
-        # command to open the URL
-        command = ["xdg-open", "https://fosstodon.org/@StratOS"]
-        run = subprocess.Popen(command)
-
+    def openMastodon(self):
+        runInTerm("xdg-open https://fosstodon.org/@stratos","Opening the Mastodon page")
         return
 
-    def openMATRIX_Website(self):
-        # command to open the URL
-        command = ["xdg-open", "https://matrix.to/#/#stratos:matrix.org"]
-        run = subprocess.Popen(command)
-
+    def openMatrix(self):
+        runInTerm("xdg-open https://matrix.to/#/#stratos:matrix.org","Opening the Matrix page")
         return
     
-    def openDISCORD_Link(self):
-        # command to open the URL
-        command = ["xdg-open", "https://discord.com/invite/DVaXRCnCet"]
-        run = subprocess.Popen(command)
-
+    def openDiscord(self):
+        runInTerm("xdg-open https://discord.com/invite/DVaXRCnCet","Opening the Discord page")
         return  
 
-    def openCreditsDialog(self):
+    def openCredits(self):
         sleep(0.1)
         dialog = creditsWindow()
         if dialog.exec_():
             return
 
     def setupAutostart(self):
-        # define home and hence the full file path for the DESKTOP FILE
-        home = os.path.expanduser("~")
-
-        # path of the EXECUTABLE in DESKTOP file
-        EXEC_PATH = WORK_DIR + "/main.py"   
-        # to HARDCODE to /usr/local/bin/maneki-neko, just change the EXEC_PATH variable
-        # ideal case is to just run this script from /opt/maneki-neko installation folder
-        # the same desktop file in autostart folder can be used to create MENU ENTRY for maneki neko
-        
-        filePath = home + "/.config/autostart/maneki_neko.desktop" # full path to desktop file
+        filePath = f"{HOME}/.config/autostart/maneki_neko.desktop" # full path to desktop file
         
         # create the desktop file and save it in $HOME/.config/autostart when the checkBox is checked
         if self.autostartCheckBox.isChecked():
@@ -680,7 +513,7 @@ Type=Application
 Name=StratOS Maneki-Neko
 GenericName=Welcome Screen App
 Comment=Welcome Screen Application for StratOS
-Exec={EXEC_PATH}
+Exec={WORK_DIR}/main.py
 Icon={WORK_DIR}/src/png/logo.png
 Comment=StratOS welcome screen
 X-GNOME-Autostart-enabled=true
@@ -721,7 +554,7 @@ def main():
     global app
     mainScreen = welcomeScreen()
     print("Program launch OK")
-    mainScreen.setWindowIcon(QtGui.QIcon(WORK_DIR + "/src/png/maneki_neko.png"))
+    mainScreen.setWindowIcon(QtGui.QIcon(f"{WORK_DIR}/src/png/maneki_neko.png"))
     mainScreen.show()
     try:
         sys.exit(app.exec_())
@@ -736,7 +569,7 @@ class creditsWindow(QDialog):
     def __init__(self):
         # init the class and the ui file
         super(creditsWindow,self).__init__()
-        loadUi(WORK_DIR + "/src/ui/creditsDialog.ui",self)
+        loadUi(f"{WORK_DIR}/src/ui/creditsDialog.ui",self)
 
         self.openBedrockSiteButton.clicked.connect(self.openBedrockWebsite)
         self.openGithubRepo.clicked.connect(self.openRepo)
@@ -744,19 +577,11 @@ class creditsWindow(QDialog):
         return
     
     def openBedrockWebsite(self):
-        # the command to open the website
-        command = ['xdg-open', 'https://bedrocklinux.org/']
-
-        # run the command
-        run = subprocess.Popen(command)
+        runInTerm("xdg-open https://bedrocklinux.org/","Opening the Bedrock Linux website")
         return
 
     def openRepo(self):
-        # the command to open the website
-        command = ['xdg-open', 'https://github.com/stratos-linux']
-
-        # run the command
-        run = subprocess.Popen(command)
+        runInTerm("xdg-open https://github.com/StratOS-Linux/StratOS-iso","Opening the StratOS GitHub repository")
         return
 
 
@@ -791,32 +616,20 @@ class installDialog(QDialog):
         return
     
     def invokeInstallScript(self):
-        global programInstallQueue, programSRCPreference, packageSRCReference
+        global programInstallQueue, progSource, packageSRCReference
         # function that calls the external shell script to begin installation
         print("Installing programs....")
 
-
-        #BrowserInstallQueue     =  {x : programSRCPreference[x] for x in programInstallQueue[0]}
-        #PlayerInstallQueue      =  {x : programSRCPreference[x] for x in programInstallQueue[1]}
-        #OfficeSuiteInstallQueue =  {x : programSRCPreference[x] for x in programInstallQueue[2]}
-        #TextEditorInstallQueue  =  {x : programSRCPreference[x] for x in programInstallQueue[3]}
-        #MiscInstallQueue        =  {x : programSRCPreference[x] for x in programInstallQueue[4]}
-
-        AURInstallQueue      = {"aur"       : [packageSRCReference["aur"][p]        for p,v in programSRCPreference.items() if v == "aur"      and p in programInstallQueue ]}
-        FLATPAKInstallQueue  = {"flatpak"   : [packageSRCReference["flatpak"][p]    for p,v in programSRCPreference.items() if v == "flatpak"  and p in programInstallQueue ]}
-        PACMANInstallQueue   = {"pacman"    : [packageSRCReference["pacman"][p]     for p,v in programSRCPreference.items() if v == "pacman"   and p in programInstallQueue ]}
+        AURInstallQueue      = {"aur"       : [packageSRCReference["aur"][p]        for p,v in progSource.items() if v == "aur"      and p in programInstallQueue ]}
+        FLATPAKInstallQueue  = {"flatpak"   : [packageSRCReference["flatpak"][p]    for p,v in progSource.items() if v == "flatpak"  and p in programInstallQueue ]}
+        PACMANInstallQueue   = {"pacman"    : [packageSRCReference["pacman"][p]     for p,v in progSource.items() if v == "pacman"   and p in programInstallQueue ]}
 
         print(AURInstallQueue)
         print(FLATPAKInstallQueue)
         print(PACMANInstallQueue)
-        
 
- 
         self.accept()
         return
-
-
-
 
 
 if __name__ == "__main__":
