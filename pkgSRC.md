@@ -31,6 +31,6 @@ For review and reference.
 | Atril PDF      | apt, pacman                                                                                                                                                                                             |
 | Evince PDF     | apt, pacman                                                                                                                                                                                             |
 | GitHub Desktop | apt, (wget .deb file and install), AUR                                                                                                                                                                  |
-| Obsidian       | apt (wget .deb file and install), AUR, AppImage                                                                                                                                                         |
+| Obsidian       | apt (wget .deb file and install), AUR, pacman                                                                                                                                                         |
 | GSConnect      | https://github.com/GSConnect/gnome-shell-extension-gsconnect/wiki/Installation#standard _gnome shell extensions program must be preinstalled_ also _browser extensions have to be installed seperately_ |
 

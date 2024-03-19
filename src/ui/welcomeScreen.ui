@@ -97,7 +97,7 @@
             <enum>QFrame::Plain</enum>
            </property>
            <property name="currentIndex">
-            <number>3</number>
+            <number>0</number>
            </property>
            <widget class="QWidget" name="zerothPage">
             <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -181,7 +181,7 @@
                       <enum>Qt::Vertical</enum>
                      </property>
                      <property name="sizeType">
-                      <enum>QSizePolicy::Minimum</enum>
+                      <enum>QSizePolicy::Expanding</enum>
                      </property>
                      <property name="sizeHint" stdset="0">
                       <size>
@@ -193,6 +193,18 @@
                    </item>
                    <item>
                     <widget class="QLabel" name="title">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>68</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>70</height>
+                      </size>
+                     </property>
                      <property name="font">
                       <font>
                        <family>JetBrains Mono</family>
@@ -232,31 +244,49 @@
                       </spacer>
                      </item>
                      <item>
-                      <widget class="Line" name="line_4">
+                      <widget class="QFrame" name="logoFrame">
                        <property name="minimumSize">
                         <size>
-                         <width>80</width>
-                         <height>0</height>
+                         <width>60</width>
+                         <height>60</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>100</width>
-                         <height>16777215</height>
+                         <width>60</width>
+                         <height>60</height>
                         </size>
                        </property>
-                       <property name="sizeIncrement">
-                        <size>
-                         <width>2</width>
-                         <height>2</height>
-                        </size>
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
                        </property>
-                       <property name="layoutDirection">
-                        <enum>Qt::LeftToRight</enum>
+                       <property name="frameShadow">
+                        <enum>QFrame::Sunken</enum>
                        </property>
-                       <property name="orientation">
-                        <enum>Qt::Horizontal</enum>
-                       </property>
+                       <layout class="QHBoxLayout" name="horizontalLayout_10">
+                        <item>
+                         <widget class="QLabel" name="manekiLogoLabel">
+                          <property name="maximumSize">
+                           <size>
+                            <width>48</width>
+                            <height>48</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::NoFrame</enum>
+                          </property>
+                          <property name="text">
+                           <string/>
+                          </property>
+                          <property name="pixmap">
+                           <pixmap>../png/maneki_neko.png</pixmap>
+                          </property>
+                          <property name="scaledContents">
+                           <bool>true</bool>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                      <item>
@@ -335,7 +365,7 @@
                       <enum>Qt::Vertical</enum>
                      </property>
                      <property name="sizeType">
-                      <enum>QSizePolicy::Minimum</enum>
+                      <enum>QSizePolicy::Expanding</enum>
                      </property>
                      <property name="sizeHint" stdset="0">
                       <size>
@@ -1576,7 +1606,7 @@ color: rgb(2, 240, 255);</string>
                      <number>1</number>
                     </property>
                     <property name="currentIndex">
-                     <number>3</number>
+                     <number>2</number>
                     </property>
                     <widget class="QWidget" name="FIREFOX_0">
                      <property name="styleSheet">

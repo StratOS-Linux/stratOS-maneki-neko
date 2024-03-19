@@ -106,17 +106,17 @@ packageSRCReference = { # PACKAGE source reference dictionary
                         
         }
 
-programSRCPreference = {}   # list of all apps with the selected mode for installation
+programSRCPreference = {}   # list of all apps with the selected source for installation
 programInstallQueue = []    # list of all apps selected for install
 programInstallQueueLen = 0  # number of all apps selected for install, 0 is temporary value and
                             # will be updated when proceeding to install
-defaultAPPSList = []
+
+defaultAPPSList = []        # list of all the default apps marked for installation
+                            # these defaults can be changed inside the welcomeScreen() class
 
 lastPage=3  # the last page of the app is the 3rd page
             # 1st-> welcome page    2nd-> overview on Stratos   3rd -> last page with buttons to install programs, distro etc
             # 4th-> program installer
-
-
 
 WORK_DIR = os.getcwd() # gets working directory of the python script
                        # at install location value shoulda be /opt/maneki-neko
@@ -162,7 +162,7 @@ class welcomeScreen(QMainWindow):
         self.MEDIAlistWidget.itemClicked.connect(self.setMEDIADescription)
         self.OFFICElistWidget.itemClicked.connect(self.setOFFICEDescription)
         
-        # functions to auto select default apps to be installed in UI
+        # functions to tell GUI to auto select default apps to be installed
         self.selectDefaultApps()
         return
 
@@ -239,8 +239,6 @@ class welcomeScreen(QMainWindow):
         
         elif self.vscodiumFLATPAKButton.isChecked():
             programSRCPreference['vscodium'] = 'flatpak'
-     
-
 
         # for Atril
         if self.atrilPACMANButton.isChecked():
@@ -505,7 +503,6 @@ class welcomeScreen(QMainWindow):
     def moveForward(self):
         global lastPage
         currentIndex = self.windowStackedWidget.currentIndex() #current index of the window
-        sleep(0.1)
         # if already in last page then exit
         if currentIndex+1 == lastPage:
             print("Exiting...")
@@ -534,7 +531,6 @@ class welcomeScreen(QMainWindow):
 
     def moveBackward(self):
         currentIndex = self.windowStackedWidget.currentIndex()
-        sleep(0.1)
         # go back until currentIndex is 0
         if currentIndex >= 0:
             self.windowStackedWidget.setCurrentIndex(currentIndex-1)
@@ -652,7 +648,6 @@ class welcomeScreen(QMainWindow):
         return  
 
     def openCreditsDialog(self):
-        sleep(0.1)
         dialog = creditsWindow()
         if dialog.exec_():
             return
@@ -681,7 +676,7 @@ Name=StratOS Maneki-Neko
 GenericName=Welcome Screen App
 Comment=Welcome Screen Application for StratOS
 Exec={EXEC_PATH}
-Icon={WORK_DIR}/src/png/logo.png
+Icon={WORK_DIR}/src/png/maneki_neko.png
 Comment=StratOS welcome screen
 X-GNOME-Autostart-enabled=true
 Path={WORK_DIR}
