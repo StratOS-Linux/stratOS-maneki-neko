@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1000</width>
-    <height>661</height>
+    <height>620</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -97,7 +97,7 @@
             <enum>QFrame::Plain</enum>
            </property>
            <property name="currentIndex">
-            <number>0</number>
+            <number>3</number>
            </property>
            <widget class="QWidget" name="zerothPage">
             <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -258,10 +258,10 @@
                         </size>
                        </property>
                        <property name="frameShape">
-                        <enum>QFrame::StyledPanel</enum>
+                        <enum>QFrame::NoFrame</enum>
                        </property>
                        <property name="frameShadow">
-                        <enum>QFrame::Sunken</enum>
+                        <enum>QFrame::Plain</enum>
                        </property>
                        <layout class="QHBoxLayout" name="horizontalLayout_10">
                         <item>
@@ -1027,12 +1027,12 @@ QToolBox{
 
 qproperty-subcontrol-position: center;
 
-font: 57 10pt &quot;Noto Sans&quot;;
+	font: 9pt &quot;JetBrains Mono&quot;;
 
 }
 QWidget{
 
-	font: 57 10pt &quot;Noto Sans&quot;;
+	font: 9pt &quot;JetBrains Mono&quot;;
 
 }
 
@@ -1056,12 +1056,12 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>104</width>
-                    <height>284</height>
+                    <width>305</width>
+                    <height>437</height>
                    </rect>
                   </property>
                   <attribute name="label">
-                   <string>    Miscellaneous</string>
+                   <string> =&gt; Miscellaneous</string>
                   </attribute>
                   <layout class="QVBoxLayout" name="verticalLayout_18">
                    <item>
@@ -1171,12 +1171,12 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>104</width>
-                    <height>184</height>
+                    <width>305</width>
+                    <height>437</height>
                    </rect>
                   </property>
                   <attribute name="label">
-                   <string>    Text Editors</string>
+                   <string> =&gt; Text Editors</string>
                   </attribute>
                   <layout class="QVBoxLayout" name="verticalLayout_27">
                    <item>
@@ -1259,12 +1259,12 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>104</width>
-                    <height>179</height>
+                    <width>305</width>
+                    <height>437</height>
                    </rect>
                   </property>
                   <attribute name="label">
-                   <string>    Office Suites</string>
+                   <string> =&gt; Office Suites</string>
                   </attribute>
                   <layout class="QVBoxLayout" name="verticalLayout_16">
                    <item>
@@ -1335,12 +1335,12 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>104</width>
-                    <height>179</height>
+                    <width>305</width>
+                    <height>437</height>
                    </rect>
                   </property>
                   <attribute name="label">
-                   <string>    Media Players</string>
+                   <string> =&gt; Media Players</string>
                   </attribute>
                   <layout class="QVBoxLayout" name="verticalLayout_14">
                    <item>
@@ -1411,12 +1411,12 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>319</width>
-                    <height>419</height>
+                    <width>305</width>
+                    <height>365</height>
                    </rect>
                   </property>
                   <attribute name="label">
-                   <string>    Web Browsers</string>
+                   <string> =&gt; Web Browsers</string>
                   </attribute>
                   <layout class="QVBoxLayout" name="verticalLayout_12">
                    <item>
@@ -1578,7 +1578,7 @@ color: rgb(2, 240, 255);</string>
                      <enum>QFrame::Box</enum>
                     </property>
                     <property name="text">
-                     <string>==&gt; Install your favourite programs</string>
+                     <string> Install your favourite programs</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>

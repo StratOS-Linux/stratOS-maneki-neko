@@ -791,12 +791,6 @@ class installDialog(QDialog):
         print("Installing programs....")
 
 
-        #BrowserInstallQueue     =  {x : programSRCPreference[x] for x in programInstallQueue[0]}
-        #PlayerInstallQueue      =  {x : programSRCPreference[x] for x in programInstallQueue[1]}
-        #OfficeSuiteInstallQueue =  {x : programSRCPreference[x] for x in programInstallQueue[2]}
-        #TextEditorInstallQueue  =  {x : programSRCPreference[x] for x in programInstallQueue[3]}
-        #MiscInstallQueue        =  {x : programSRCPreference[x] for x in programInstallQueue[4]}
-
         AURInstallQueue      = {"aur"       : [packageSRCReference["aur"][p]        for p,v in programSRCPreference.items() if v == "aur"      and p in programInstallQueue ]}
         FLATPAKInstallQueue  = {"flatpak"   : [packageSRCReference["flatpak"][p]    for p,v in programSRCPreference.items() if v == "flatpak"  and p in programInstallQueue ]}
         PACMANInstallQueue   = {"pacman"    : [packageSRCReference["pacman"][p]     for p,v in programSRCPreference.items() if v == "pacman"   and p in programInstallQueue ]}
