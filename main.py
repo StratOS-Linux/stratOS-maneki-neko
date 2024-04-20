@@ -34,6 +34,7 @@ StratOS-Maneki-Neko: Welcome Screen GUI Application for StratOS-Linux, written i
 # globals
 app = QApplication(sys.argv)
 
+
 packageSRCReference = { # PACKAGE source reference dictionary
 
                         # IMP!! packageSRCReference != packageSRCPreference
@@ -122,6 +123,22 @@ WORK_DIR = os.getcwd() # gets working directory of the python script
                        # at install location value shoulda be /opt/maneki-neko
                        # to HARDCODE this , change WORK_DIR to /opt/maneki-neko
 
+# ===============================================================================================================
+
+#  __  __                  _    _   _   _      _         
+# |  \/  | __ _ _ __   ___| | _(_) | \ | | ___| | _____  
+# | |\/| |/ _` | '_ \ / _ \ |/ / | |  \| |/ _ \ |/ / _ \ 
+# | |  | | (_| | | | |  __/   <| | | |\  |  __/   < (_) |
+# |_|  |_|\__,_|_| |_|\___|_|\_\_| |_| \_|\___|_|\_\___/ 
+                                                       
+#     _                _ _           _   _             
+#    / \   _ __  _ __ | (_) ___ __ _| |_(_) ___  _ __  
+#   / _ \ | '_ \| '_ \| | |/ __/ _` | __| |/ _ \| '_ \ 
+#  / ___ \| |_) | |_) | | | (_| (_| | |_| | (_) | | | |
+# /_/   \_\ .__/| .__/|_|_|\___\__,_|\__|_|\___/|_| |_|
+#         |_|   |_|                                      
+
+
 class welcomeScreen(QMainWindow):
 
     # CLASS variables
@@ -153,6 +170,7 @@ class welcomeScreen(QMainWindow):
         self.openMATRIXbutton.clicked.connect(self.openMATRIX_Website)
         self.autostartCheckBox.clicked.connect(self.setupAutostart)
         self.creditsButton.clicked.connect(self.openCreditsDialog)
+        self.changeSettingsButton.clicked.connect(self.openchangeDefaultSettingsDialog)
 
         # package-installer page related-stuffs
         self.packageInstallerButton.clicked.connect(self.openPackageInstallerPage)
@@ -163,6 +181,7 @@ class welcomeScreen(QMainWindow):
         self.OFFICElistWidget.itemClicked.connect(self.setOFFICEDescription)
         
         # functions to tell GUI to auto select default apps to be installed
+        # refers to the ABOVE DEFINED CLASS VARIABLES
         self.selectDefaultApps()
         return
 
@@ -328,7 +347,8 @@ class welcomeScreen(QMainWindow):
         # if programQueue is empty ie not filled
         # send popup message and exit function
         if programInstallQueueLen == 0:
-            message = QMessageBox.critical(self,"Cannot Install","No programs marked for install.")
+            message = QMessageBox.about(self,"Cannot Install","No programs marked for install.")
+            #message.setStyleSheet("QMessageBox{ background-color: rgb(30, 31, 47);	color: rgb(118, 159, 240);	font: 9pt \"JetBrains Mono\";}")
             return
         # now call function to determine selected sources
         self.updateProgramSRCPreference()
@@ -625,7 +645,18 @@ class welcomeScreen(QMainWindow):
         command = ["xdg-open", "stratos-linux.github.io"]
         run = subprocess.Popen(command)
         return
-    
+
+    def openchangeDefaultSettingsDialog(self):
+        dialog = changeDefaultSettingsDialog()
+        
+        if dialog.exec_():
+            programInstallerOpened = dialog.programInstallerOpened
+            print(programInstallerOpened)
+            if programInstallerOpened == True:
+                self.windowStackedWidget.setCurrentIndex(3)
+                self.morphNextButton()
+            return
+
     def openMASTODON_Link(self):
         # command to open the URL
         command = ["xdg-open", "https://fosstodon.org/@StratOS"]
@@ -712,20 +743,15 @@ StartupNotify=false
         return
 
 
-def main():
-    global app
-    mainScreen = welcomeScreen()
-    print("Program launch OK")
-    mainScreen.setWindowIcon(QtGui.QIcon(WORK_DIR + "/src/png/maneki_neko.png"))
-    mainScreen.show()
-    try:
-        sys.exit(app.exec_())
-    except:
-        print("Exiting...")
-    
-    return
 
+# =================================================================================================
 
+#  ____                          __        ___           _                   
+# |  _ \ ___  _ __  _   _ _ __   \ \      / (_)_ __   __| | _____      _____ 
+# | |_) / _ \| '_ \| | | | '_ \   \ \ /\ / /| | '_ \ / _` |/ _ \ \ /\ / / __|
+# |  __/ (_) | |_) | |_| | |_) |   \ V  V / | | | | | (_| | (_) \ V  V /\__ \
+# |_|   \___/| .__/ \__,_| .__/     \_/\_/  |_|_| |_|\__,_|\___/ \_/\_/ |___/
+#            |_|         |_|                                                 
 
 class creditsWindow(QDialog):
     def __init__(self):
@@ -805,7 +831,72 @@ class installDialog(QDialog):
         return
 
 
+class changeDefaultSettingsDialog(QDialog):
 
+    programInstallerOpened = False
+
+    def __init__(self):
+        
+
+        super(changeDefaultSettingsDialog,self).__init__()
+        loadUi(WORK_DIR + "/src/ui/changeDefaultSettingsDialog.ui",self)
+        
+        # set dialog to ALWAYS SHOW THE MAIN PAGE OF DIALOG
+        self.dialogStackedWidget.setCurrentIndex(0)
+        
+        self.primaryDialogButtonBox.rejected.connect(self.reject)
+        self.primaryDialogButtonBox.accepted.connect(self.accept)
+        self.primaryDialogButtonBox.helpRequested.connect(lambda: \
+                                                                    self.dialogStackedWidget.setCurrentIndex(1))
+        
+        self.previousButton.clicked.connect(lambda: \
+                                                    self.dialogStackedWidget.setCurrentIndex(0))
+        
+        self.helpPageButtonBox.accepted.connect(self.accept)
+        self.helpPageButtonBox.rejected.connect(self.reject)
+
+        self.openProgramInstallerButton.clicked.connect(self.closeDialogAndOpenInstaller)
+
+       
+
+    def showHelp(self):
+        currentIndex = self.dialogStackedWidget.currentIndex()
+        if currentIndex == 0:
+            self.dialogStackedWidget.setCurrentIndex(currentIndex+1)
+
+    def closeDialogAndOpenInstaller(self):
+       
+        self.programInstallerOpened = True
+        self.accept()
+        return
+    
+
+
+
+# ========================================================================================================
+
+#                             _                  
+#             _ __ ___   __ _(_)_ __             
+#            | '_ ` _ \ / _` | | '_ \            
+#            | | | | | | (_| | | | | |           
+#  _____ ____|_| |_| |_|\__,_|_|_| |_|____ _____ 
+# |_____|_____|                     |_____|_____|
+
+# globals
+mainScreen = welcomeScreen()
+
+def main():
+    global app
+    global mainScreen
+    print("Program launch OK")
+    mainScreen.setWindowIcon(QtGui.QIcon(WORK_DIR + "/src/png/maneki_neko.png"))
+    mainScreen.show()
+    try:
+        sys.exit(app.exec_())
+    except:
+        print("Exiting...")
+    
+    return
 
 
 if __name__ == "__main__":

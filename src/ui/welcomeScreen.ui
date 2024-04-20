@@ -43,7 +43,16 @@
 	background-color: rgb(30, 31, 47);
 
 	color: rgb(118, 159, 240);
-}</string>
+}
+
+QMessageBox{
+	background-color: rgb(30, 31, 47);
+	
+	font: 9pt &quot;JetBrains Mono&quot;;
+	color: rgb(118, 159, 240);
+
+};
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -97,7 +106,7 @@
             <enum>QFrame::Plain</enum>
            </property>
            <property name="currentIndex">
-            <number>3</number>
+            <number>2</number>
            </property>
            <widget class="QWidget" name="zerothPage">
             <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -1056,8 +1065,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>305</width>
-                    <height>437</height>
+                    <width>116</width>
+                    <height>296</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1171,8 +1180,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>305</width>
-                    <height>437</height>
+                    <width>116</width>
+                    <height>196</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1259,8 +1268,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>305</width>
-                    <height>437</height>
+                    <width>116</width>
+                    <height>191</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1335,8 +1344,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>305</width>
-                    <height>437</height>
+                    <width>116</width>
+                    <height>191</height>
                    </rect>
                   </property>
                   <attribute name="label">

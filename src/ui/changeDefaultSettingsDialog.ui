@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>724</width>
-    <height>470</height>
+    <width>808</width>
+    <height>525</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,7 +18,7 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>509</width>
+    <width>534</width>
     <height>427</height>
    </size>
   </property>
@@ -29,13 +29,28 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Change Default Settings</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../png/maneki_neko.png</normaloff>../png/maneki_neko.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">
+   <string notr="true">QWidget{
+background-color: rgb(30, 31, 47);
+	
+	font: 9pt &quot;JetBrains Mono&quot;;
+	color: rgb(118, 159, 240);
+
+}
+	
+QMessageBox{
 	background-color: rgb(30, 31, 47);
 	
+	font: 9pt &quot;JetBrains Mono&quot;;
+	color: rgb(118, 159, 240);
 
+};
 </string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -45,6 +60,7 @@
       <string notr="true">QWidget{
 	background-color: rgb(30, 31, 47);
 	
+	font: 9pt &quot;JetBrains Mono&quot;;
 	color: rgb(118, 159, 240);
 };
 
@@ -55,7 +71,7 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="QStackedWidget" name="stackedWidget">
+       <widget class="QStackedWidget" name="dialogStackedWidget">
         <property name="currentIndex">
          <number>0</number>
         </property>
@@ -73,7 +89,7 @@
               </property>
               <property name="maximumSize">
                <size>
-                <width>250</width>
+                <width>235</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -94,7 +110,7 @@
                  </property>
                  <property name="minimumSize">
                   <size>
-                   <width>150</width>
+                   <width>80</width>
                    <height>0</height>
                   </size>
                  </property>
@@ -170,13 +186,13 @@
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>135</width>
+                  <width>156</width>
                   <height>0</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>135</width>
+                  <width>156</width>
                   <height>16777215</height>
                  </size>
                 </property>
@@ -186,7 +202,7 @@
                </widget>
               </item>
               <item row="0" column="1">
-               <widget class="QComboBox" name="comboBox">
+               <widget class="QComboBox" name="browserComboBox">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -226,13 +242,13 @@
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>135</width>
+                  <width>156</width>
                   <height>0</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>135</width>
+                  <width>156</width>
                   <height>16777215</height>
                  </size>
                 </property>
@@ -242,7 +258,7 @@
                </widget>
               </item>
               <item row="1" column="1">
-               <widget class="QComboBox" name="comboBox_2">
+               <widget class="QComboBox" name="textEditorComboBox">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -272,13 +288,13 @@
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>135</width>
+                  <width>156</width>
                   <height>0</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>135</width>
+                  <width>156</width>
                   <height>16777215</height>
                  </size>
                 </property>
@@ -288,7 +304,7 @@
                </widget>
               </item>
               <item row="2" column="1">
-               <widget class="QComboBox" name="comboBox_3">
+               <widget class="QComboBox" name="officeComboBox">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -318,13 +334,13 @@
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>135</width>
+                  <width>156</width>
                   <height>0</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>135</width>
+                  <width>156</width>
                   <height>16777215</height>
                  </size>
                 </property>
@@ -334,7 +350,7 @@
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QComboBox" name="comboBox_4">
+               <widget class="QComboBox" name="mediaComboBox">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -380,7 +396,7 @@
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="QComboBox" name="comboBox_5">
+               <widget class="QComboBox" name="pdfComboBox">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -410,13 +426,13 @@
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>135</width>
+                  <width>156</width>
                   <height>0</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>135</width>
+                  <width>156</width>
                   <height>16777215</height>
                  </size>
                 </property>
@@ -426,7 +442,7 @@
                </widget>
               </item>
               <item row="5" column="1">
-               <widget class="QComboBox" name="comboBox_6">
+               <widget class="QComboBox" name="imageComboBox">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
                   <horstretch>1</horstretch>
@@ -456,13 +472,13 @@
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>135</width>
+                  <width>156</width>
                   <height>29</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>135</width>
+                  <width>156</width>
                   <height>16777215</height>
                  </size>
                 </property>
@@ -472,7 +488,7 @@
                </widget>
               </item>
               <item row="6" column="1">
-               <widget class="QPushButton" name="pushButton">
+               <widget class="QPushButton" name="openGNOMETweaksButton">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -495,18 +511,282 @@
            </layout>
           </item>
           <item>
-           <widget class="QDialogButtonBox" name="buttonBox">
+           <widget class="QDialogButtonBox" name="primaryDialogButtonBox">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
             <property name="standardButtons">
-             <set>QDialogButtonBox::Apply|QDialogButtonBox::Close|QDialogButtonBox::Ok</set>
+             <set>QDialogButtonBox::Apply|QDialogButtonBox::Close|QDialogButtonBox::Help|QDialogButtonBox::Ok</set>
             </property>
            </widget>
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="page_2"/>
+        <widget class="QWidget" name="page_2">
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QFrame" name="frame_4">
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Plain</enum>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_6">
+               <item>
+                <widget class="QLabel" name="label_9">
+                 <property name="minimumSize">
+                  <size>
+                   <width>81</width>
+                   <height>81</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>81</width>
+                   <height>81</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap>../png/maneki_neko.png</pixmap>
+                 </property>
+                 <property name="scaledContents">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QScrollArea" name="scrollArea">
+              <property name="frameShape">
+               <enum>QFrame::Box</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Sunken</enum>
+              </property>
+              <property name="widgetResizable">
+               <bool>true</bool>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>0</y>
+                 <width>627</width>
+                 <height>775</height>
+                </rect>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_5">
+                <item>
+                 <spacer name="verticalSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeType">
+                   <enum>QSizePolicy::Minimum</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>83</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_10">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>70</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">font: 26pt &quot;JetBrains Mono&quot;;</string>
+                  </property>
+                  <property name="text">
+                   <string>Help Page</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="Line" name="line">
+                  <property name="frameShadow">
+                   <enum>QFrame::Plain</enum>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_11">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>100</height>
+                   </size>
+                  </property>
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;=&amp;gt; Select the default applications for opening common file types.&lt;/p&gt;&lt;p&gt;=&amp;gt; Select your preferred system theme using GNOME Tweaks tool.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="Line" name="line_4">
+                  <property name="frameShadow">
+                   <enum>QFrame::Plain</enum>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="verticalSpacer_2">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>92</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_12">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>131</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">font: 22pt &quot;JetBrains Mono&quot;;</string>
+                  </property>
+                  <property name="text">
+                   <string>Why can't I find any application?</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="Line" name="line_2">
+                  <property name="frameShadow">
+                   <enum>QFrame::Plain</enum>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_13">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>138</height>
+                   </size>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Sunken</enum>
+                  </property>
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;=&amp;gt; Maneki Neko fetches only preinstalled programs that could be set as default.&lt;/p&gt;&lt;p&gt;=&amp;gt; If you don't see any programs, it's probably not yet installed.&lt;/p&gt;&lt;p&gt;=&amp;gt; You may use the Program Installer to install what you may need.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+                  </property>
+                  <property name="wordWrap">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="verticalSpacer_3">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="Line" name="line_5">
+                  <property name="frameShadow">
+                   <enum>QFrame::Plain</enum>
+                  </property>
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="openProgramInstallerButton">
+                  <property name="text">
+                   <string>Open Maneki Neko Program Installer</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QPushButton" name="previousButton">
+              <property name="minimumSize">
+               <size>
+                <width>91</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>&lt;== Previous</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QDialogButtonBox" name="helpPageButtonBox">
+              <property name="standardButtons">
+               <set>QDialogButtonBox::Close|QDialogButtonBox::Ok</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
        </widget>
       </item>
      </layout>

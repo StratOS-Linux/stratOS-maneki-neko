@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../../../../../opt/maneki-neko/src/png/maneki_neko.png</normaloff>../../../../../../opt/maneki-neko/src/png/maneki_neko.png</iconset>
+    <normaloff>../png/maneki_neko.png</normaloff>../png/maneki_neko.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QDialog{
