@@ -348,7 +348,6 @@ class welcomeScreen(QMainWindow):
         # send popup message and exit function
         if programInstallQueueLen == 0:
             message = QMessageBox.about(self,"Cannot Install","No programs marked for install.")
-            #message.setStyleSheet("QMessageBox{ background-color: rgb(30, 31, 47);	color: rgb(118, 159, 240);	font: 9pt \"JetBrains Mono\";}")
             return
         # now call function to determine selected sources
         self.updateProgramSRCPreference()
@@ -847,22 +846,28 @@ class changeDefaultSettingsDialog(QDialog):
         self.primaryDialogButtonBox.rejected.connect(self.reject)
         self.primaryDialogButtonBox.accepted.connect(self.accept)
         self.primaryDialogButtonBox.helpRequested.connect(lambda: \
-                                                                    self.dialogStackedWidget.setCurrentIndex(1))
+                                                          self.dialogStackedWidget.setCurrentIndex(1))
         
         self.previousButton.clicked.connect(lambda: \
-                                                    self.dialogStackedWidget.setCurrentIndex(0))
+                                            self.dialogStackedWidget.setCurrentIndex(0))
         
         self.helpPageButtonBox.accepted.connect(self.accept)
         self.helpPageButtonBox.rejected.connect(self.reject)
 
         self.openProgramInstallerButton.clicked.connect(self.closeDialogAndOpenInstaller)
+        self.openGNOMETweaksButton.clicked.connect(self.openGNOMETweaks)
 
-       
+    def openGNOMETweaks(self):
 
-    def showHelp(self):
-        currentIndex = self.dialogStackedWidget.currentIndex()
-        if currentIndex == 0:
-            self.dialogStackedWidget.setCurrentIndex(currentIndex+1)
+        command = ['gnome-tweaks']
+        temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
+
+        # get the STDOUT
+        result=temporary.communicate()
+
+        return
+
+
 
     def closeDialogAndOpenInstaller(self):
        
