@@ -32,7 +32,7 @@ class welcomeScreen(QMainWindow):
         self.distroInstallerButton.clicked.connect(self.runDistroInstallerScript)
         self.changeThemeButton.clicked.connect(self.runThemeChangerScript)
         self.browserInstallerButton.clicked.connect(self.runBrowserInstallerScript)
-        self.openLUGVITCbutton.clicked.connect(self.openLUGVITC_Website)
+        self.openWEBSITEbutton.clicked.connect(self.openWEBSITE_Website)
         self.openFORUMbutton.clicked.connect(self.openFORUM_Website)
         self.autostartCheckBox.clicked.connect(self.setupAutostart)
         self.creditsButton.clicked.connect(self.openCreditsDialog)
@@ -148,18 +148,18 @@ class welcomeScreen(QMainWindow):
 
         return
 
-    def openLUGVITC_Website(self):
+    def openWEBSITE_Website(self):
         # command to open the URL
-        command = ["xdg-open", "www.lugvitc.org"]
+        command = ["xdg-open", "www.stratos-linux.github.io"]
         run = subprocess.Popen(command)
-        print("Opening LUGVITC website on default browser")
+        print("Opening WEBSITE website on default browser")
         return
     
     def openFORUM_Website(self):
         # command to open the URL
-        command = ["xdg-open", "https://forum.lugvitc.org"]
+        command = ["xdg-open", "https://forum.stratos-linux.github.io"]
         run = subprocess.Popen(command)
-        print("Opening LUGVITC forum website on default browser")
+        print("Opening WEBSITE forum website on default browser")
 
         return
 
@@ -245,7 +245,7 @@ class creditsWindow(QDialog):
         loadUi("src/ui/creditsDialog.ui",self)
 
         self.openBedrockSiteButton.clicked.connect(self.openBedrockWebsite)
-        self.openGithubRepo.clicked.connect(self.openLUGVITCrepo)
+        self.openGithubRepo.clicked.connect(self.openWEBSITErepo)
 
         return
     
@@ -258,13 +258,13 @@ class creditsWindow(QDialog):
         print("Opening Bedrock Linux website on default browser.")
         return
 
-    def openLUGVITCrepo(self):
+    def openWEBSITErepo(self):
         # the command to open the website
-        command = ['xdg-open', 'https://github.com/lugvitc']
+        command = ['xdg-open', 'https://stratos-linux.github.io']
 
         # run the command
         run = subprocess.Popen(command)
-        print("Opening LUGVITC Github repo on default browser.")
+        print("Opening WEBSITE Github repo on default browser.")
         return
 
 

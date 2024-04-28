@@ -572,13 +572,13 @@
                    </spacer>
                   </item>
                   <item>
-                   <widget class="QPushButton" name="openLUGVITCbutton">
+                   <widget class="QPushButton" name="openWEBSITEbutton">
                     <property name="styleSheet">
                      <string notr="true">font: 11pt &quot;Liberation Mono&quot;;
 color: rgb(255, 0, 243);</string>
                     </property>
                     <property name="text">
-                     <string>lugvitc.org</string>
+                     <string>stratos-linux.github.io</string>
                     </property>
                     <property name="flat">
                      <bool>true</bool>
@@ -592,7 +592,7 @@ color: rgb(255, 0, 243);</string>
 color: rgb(52, 194, 206);</string>
                     </property>
                     <property name="text">
-                     <string>forum.lugvitc.org</string>
+                     <string>forum.stratos-linux.github.io</string>
                     </property>
                     <property name="flat">
                      <bool>true</bool>
