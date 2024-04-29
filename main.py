@@ -82,7 +82,7 @@ packageSRCReference = { # PACKAGE source reference dictionary
                                     # ======== MISCELLANEOUS ========
                                     "github" : "github-desktop-bin",                \
                                     "obsidian" : "obsidian-bin",                    \
-                                    "gsconnect": "gnome-shell-extension-gsconnect-git"   
+                                    "gsconnect": "gnome-shell-extension-gsconnect"   
                                 }   ,                                               \
                         
                         # ===== ALL PACMAN PROGRAMS ========
