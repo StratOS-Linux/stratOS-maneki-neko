@@ -41,17 +41,10 @@
   <property name="styleSheet">
    <string notr="true">QMainWindow{
 	background-color: rgb(30, 31, 47);
-
 	color: rgb(118, 159, 240);
 }
 
-QMessageBox{
-	background-color: rgb(30, 31, 47);
-	
-	font: 9pt &quot;JetBrains Mono&quot;;
-	color: rgb(118, 159, 240);
 
-};
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -60,7 +53,9 @@ QMessageBox{
 	background-color: rgb(30, 31, 47);
 	
 	color: rgb(118, 159, 240);
-};
+}
+
+
 
 </string>
    </property>

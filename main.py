@@ -81,7 +81,8 @@ packageSRCReference = { # PACKAGE source reference dictionary
                                     
                                     # ======== MISCELLANEOUS ========
                                     "github" : "github-desktop-bin",                \
-                                    "obsidian" : "obsidian-bin"             
+                                    "obsidian" : "obsidian-bin",                    \
+                                    "gsconnect": "gnome-shell-extension-gsconnect-git"   
                                 }   ,                                               \
                         
                         # ===== ALL PACMAN PROGRAMS ========
@@ -97,7 +98,9 @@ packageSRCReference = { # PACKAGE source reference dictionary
                                     "libreoffice": "libreoffice-fresh",             \
                                     
                                     # ======= TEXT EDITORS =======
-                                    # ====> NONE <==== for PACMAN
+                                    "stratmacs":"emacs",                            \
+                                    "stratvim":"neovim",                            \
+                                    
 
                                     # ======= MISCELLANEOUS =======
                                     "atril": "atril",                               \
@@ -280,10 +283,11 @@ class welcomeScreen(QMainWindow):
             programSRCPreference['obsidian'] = 'pacman'
 
 
-        # these programs have ONLY ONE software source so hence putting None
-        programSRCPreference['stratvim'] = None
-        programSRCPreference['stratmacs'] = None
-        programSRCPreference['gsconnect'] = None
+        # these custom StratOS programs have ONLY ONE software source i.e. PACMAN
+        programSRCPreference['stratvim'] = 'pacman'
+        programSRCPreference['stratmacs'] = 'pacman'
+        # gsconnect only has an AUR for Arch stratum
+        programSRCPreference['gsconnect'] = 'aur'
 
         return
 
@@ -650,7 +654,7 @@ class welcomeScreen(QMainWindow):
         
         if dialog.exec_():
             programInstallerOpened = dialog.programInstallerOpened
-            print(programInstallerOpened)
+
             if programInstallerOpened == True:
                 self.windowStackedWidget.setCurrentIndex(3)
                 self.morphNextButton()
@@ -860,10 +864,14 @@ class changeDefaultSettingsDialog(QDialog):
     def openGNOMETweaks(self):
 
         command = ['gnome-tweaks']
-        temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
 
-        # get the STDOUT
-        result=temporary.communicate()
+        try:
+            temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
+            # get the STDOUT
+            result=temporary.communicate()
+            
+        except FileNotFoundError:
+            print("openGNOMETweaks(): Couldn't open Gnome Tweaks... ")
 
         return
 
