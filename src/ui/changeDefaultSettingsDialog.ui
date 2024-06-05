@@ -192,12 +192,15 @@ QMessageBox{
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>156</width>
+                  <width>176</width>
                   <height>16777215</height>
                  </size>
                 </property>
                 <property name="text">
                  <string>Default Web Browser</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
@@ -248,12 +251,15 @@ QMessageBox{
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>156</width>
+                  <width>176</width>
                   <height>16777215</height>
                  </size>
                 </property>
                 <property name="text">
                  <string>Default Text Editor</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
@@ -294,34 +300,16 @@ QMessageBox{
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>156</width>
+                  <width>176</width>
                   <height>16777215</height>
                  </size>
                 </property>
                 <property name="text">
                  <string>Default Office Suite</string>
                 </property>
-               </widget>
-              </item>
-              <item row="2" column="1">
-               <widget class="QComboBox" name="officeComboBox">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
+                <property name="wordWrap">
+                 <bool>true</bool>
                 </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>151</width>
-                  <height>35</height>
-                 </size>
-                </property>
-                <item>
-                 <property name="text">
-                  <string>None</string>
-                 </property>
-                </item>
                </widget>
               </item>
               <item row="3" column="0">
@@ -340,12 +328,15 @@ QMessageBox{
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>156</width>
+                  <width>176</width>
                   <height>16777215</height>
                  </size>
                 </property>
                 <property name="text">
                  <string>Default Media Player</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
@@ -386,12 +377,15 @@ QMessageBox{
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>135</width>
+                  <width>176</width>
                   <height>16777215</height>
                  </size>
                 </property>
                 <property name="text">
                  <string>Default PDF Viewer</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
@@ -432,12 +426,15 @@ QMessageBox{
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>156</width>
+                  <width>176</width>
                   <height>16777215</height>
                  </size>
                 </property>
                 <property name="text">
                  <string>Default Image Viewer</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
@@ -478,12 +475,15 @@ QMessageBox{
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>156</width>
+                  <width>176</width>
                   <height>16777215</height>
                  </size>
                 </property>
                 <property name="text">
                  <string>Default System Theme</string>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
@@ -503,6 +503,25 @@ QMessageBox{
                 </property>
                 <property name="text">
                  <string>Open GNOME Tweaks</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QPushButton" name="pushButton">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>151</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Select Office Suite</string>
                 </property>
                </widget>
               </item>
@@ -579,8 +598,8 @@ QMessageBox{
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>627</width>
-                 <height>775</height>
+                 <width>264</width>
+                 <height>788</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_5">
