@@ -701,9 +701,11 @@ class welcomeScreen(QMainWindow):
         # create the desktop file and save it in $HOME/.config/autostart when the checkBox is checked
         if self.autostartCheckBox.isChecked():
             # opening the file in write mode
-            with open(filePath,"w") as f:
 
-                fileContent=f"""
+            try:
+                with open(filePath,"w") as f:
+
+                    fileContent=f"""
 [Desktop Entry]
 Type=Application
 Name=StratOS Maneki-Neko
@@ -717,19 +719,22 @@ Path={WORK_DIR}
 Terminal=false
 StartupNotify=false
                     """
-                f.write(fileContent)
+                    f.write(fileContent)
                 # end of with block
-            print("setupAutostart(): create desktop file: OK")
+                print("setupAutostart(): create desktop file: OK")
 
-            #make file executable
-            command = ["chmod", "+x", filePath] 
-            run = subprocess.Popen(command)
-            print("setupAutostart(): make desktop file executable: OK")
+                #make file executable
+                command = ["chmod", "+x", filePath] 
+                run = subprocess.Popen(command)
+                print("setupAutostart(): make desktop file executable: OK")
 
-            print("Maneki Neko autostart Enabled")
+                print("setupAutostart(): Maneki Neko autostart Enabled")
 
-            # update checkbox text for feedback
-            self.autostartCheckBox.setText("Autostart Maneki Neko (Enabled)")
+                # update checkbox text for feedback
+                self.autostartCheckBox.setText("setupAutostart(): Autostart Maneki Neko (Enabled)")
+            except FileNotFoundError:
+                print("setupAutostart(): Maneki could not create desktop file for autostart.")
+                self.autostartCheckBox.toggle()
 
         else:
             try:
