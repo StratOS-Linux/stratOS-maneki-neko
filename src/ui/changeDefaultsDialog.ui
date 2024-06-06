@@ -389,7 +389,7 @@
                </widget>
               </item>
               <item row="5" column="1">
-               <widget class="QPushButton" name="pushButton_4">
+               <widget class="QPushButton" name="selectXLSXButton">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -492,7 +492,7 @@
                </widget>
               </item>
               <item row="6" column="1">
-               <widget class="QPushButton" name="pushButton">
+               <widget class="QPushButton" name="selectPDFButton">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
                   <horstretch>0</horstretch>

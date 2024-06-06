@@ -5,7 +5,6 @@ import sys
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets, QtCore, QtGui
 
-import script_runner as run
 
 from PyQt5.QtWidgets import QMainWindow,  QApplication,  QDialog, QMessageBox
 from time import sleep
@@ -849,7 +848,7 @@ class changeDefaultSettingsDialog(QDialog):
         
 
         super(changeDefaultSettingsDialog,self).__init__()
-        loadUi(WORK_DIR + "/src/ui/changeDefaultSettingsDialog.ui",self)
+        loadUi(WORK_DIR + "/src/ui/changeDefaultsDialog.ui",self)
         
         # set dialog to ALWAYS SHOW THE MAIN PAGE OF DIALOG
         self.dialogStackedWidget.setCurrentIndex(0)
@@ -866,7 +865,83 @@ class changeDefaultSettingsDialog(QDialog):
         self.helpPageButtonBox.rejected.connect(self.reject)
 
         self.openProgramInstallerButton.clicked.connect(self.closeDialogAndOpenInstaller)
+
         self.openGNOMETweaksButton.clicked.connect(self.openGNOMETweaks)
+        self.openGNOMESettingsButton.clicked.connect(self.openGNOMESettings)
+        self.selectTextEditorButton.clicked.connect(self.selectTextEditor)
+        self.selectDOCXButton.clicked.connect(self.selectDOCXEditor)
+        self.selectPPTXButton.clicked.connect(self.selectPPTXEditor)
+        self.selectXLSXButton.clicked.connect(self.selectXLSXEditor)
+        self.selectPDFButton.clicked.connect(self.selectPDFViewer)
+
+
+
+
+    def selectTextEditor(self):
+
+        command = ['gnome-terminal', '--', f'mimeopen -d {WORK_DIR}/src/sampleFiles/sample.py {WORK_DIR}/src/sampleFiles/sample.cpp ~/sample.c ~/sample.md ~/sample.java ~/sample.yaml ~/sample.toml ~/sample.sh ~/sample.p6 ~/sample.tex ~/sample.js {WORK_DIR}/src/sampleFiles/sample.txt']
+        try:
+            temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
+            
+        except FileNotFoundError:
+            print("selectTextEditor(): Couldn't run MIMEOPEN command to change default text editor... ")
+
+        return
+
+    def selectPDFViewer(self):
+
+        command = ['gnome-terminal', '--', f'mimeopen -d {WORK_DIR}/src/sampleFiles/sample.pdf']
+        try:
+            temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
+            
+        except FileNotFoundError:
+            print("selectPDFViewer(): Couldn't run MIMEOPEN command to change default PDF viewer... ")
+
+        return
+
+    def selectDOCXEditor(self):
+        command = ['gnome-terminal', '--', f'mimeopen -d {WORK_DIR}/src/sampleFiles/sample.odt ~/sample.doc ~/sample.docx']
+        try:
+            temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
+            
+        except FileNotFoundError:
+            print("selectDOCXEditor(): Couldn't run MIMEOPEN command to change default Word file editor... ")
+
+        return
+
+    def selectPPTXEditor(self):
+        command = ['gnome-terminal', '--', f'mimeopen -d {WORK_DIR}/src/sampleFiles/sample.odp ~/sample.ppt ~/sample.pptx']
+        try:
+            temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
+            
+        except FileNotFoundError:
+            print("selectPPTXEditor(): Couldn't run MIMEOPEN command to change default Powerpoint file editor... ")
+
+        return
+
+    def selectXLSXEditor(self):
+        command = ['gnome-terminal', '--', f'mimeopen -d {WORK_DIR}/src/sampleFiles/sample.ods ~/sample.xls ~/sample.xlsx']
+        try:
+            temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
+            
+        except FileNotFoundError:
+            print("selectXLSXEditor(): Couldn't run MIMEOPEN command to change default Excel file editor... ")
+
+        return
+
+
+
+    def openGNOMESettings(self):
+        command = ['gnome-control-center', 'default-applications']
+
+        try:
+            temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
+            
+        except FileNotFoundError:
+            print("openGNOMESettings(): Couldn't open Gnome Settings... ")
+
+        return
+
 
     def openGNOMETweaks(self):
 
