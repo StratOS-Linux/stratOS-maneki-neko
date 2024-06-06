@@ -20,8 +20,7 @@ printMediaPlayers(){
 
       # Check if 'MimeType' supports mp4, mp3, mkv, mov, aac, m4a formats
       if [[ $mime_type == *"video/mp4"* && $mime_type == *"audio/mpeg"* || $mime_type == *"video/x-matroska"* || $mime_type == *"video/quicktime"* && $mime_type == *"audio/aac"* && $mime_type == *"audio/x-m4a"* ]] && [[ $categories == *"AudioVideo"* || $categories == *"Player"* ]]; then
-          echo "$name||$file"
-          echo ";"
+          echo "$name||$file;"
       fi
     done
   else
@@ -36,4 +35,3 @@ printMediaPlayers "$HOME/.local/share/flatpak/exports/share/applications/"
 printMediaPlayers "/usr/share/applications/"
 printMediaPlayers "/var/lib/flatpak/exports/share/applications/"
 
-echo EOS

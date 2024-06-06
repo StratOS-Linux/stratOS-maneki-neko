@@ -18,8 +18,7 @@ printTXTEditors(){
 
       # Check if 'MimeType' supports txt and 'Categories' contain 'TextEditor' or 'IDE'
       if [[ $mime_type == *"text/plain"* && ( $categories == *"TextEditor"* || $categories == *"IDE"* ) ]]; then
-          echo "$name||$file"
-          echo ";"
+          echo "$name||$file;"
         fi
     done
   else
@@ -34,5 +33,3 @@ printTXTEditors(){
 printTXTEditors "$HOME/.local/share/flatpak/exports/share/applications/"
 printTXTEditors "/usr/share/applications/"
 printTXTEditors "/var/lib/flatpak/exports/share/applications/"
-
-echo EOS

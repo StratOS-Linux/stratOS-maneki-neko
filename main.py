@@ -5,6 +5,8 @@ import sys
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets, QtCore, QtGui
 
+import script_runner as run
+
 from PyQt5.QtWidgets import QMainWindow,  QApplication,  QDialog, QMessageBox
 from time import sleep
 import os, subprocess

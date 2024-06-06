@@ -18,8 +18,7 @@ printWebBrowsers() {
 
       # Check if 'MimeType' supports http/https and 'Categories' contain 'Network' and 'WebBrowser'
       if [[ $mime_type == *"x-scheme-handler/http"* || $mime_type == *"x-scheme-handler/https"* ]] && [[ $categories == *"Network"* && $categories == *"WebBrowser"* ]]; then
-          echo "$name||$file"
-          echo ";"
+          echo "$name||$file;"
       fi
     done
   else
@@ -33,5 +32,3 @@ printWebBrowsers() {
 printWebBrowsers "$HOME/.local/share/flatpak/exports/share/applications/"
 printWebBrowsers "/usr/share/applications/"
 printWebBrowsers "/var/lib/flatpak/exports/share/applications/"
-
-echo EOS

@@ -17,8 +17,7 @@ if [ -d "$dir" ]; then
 
     # Check if 'MimeType' supports OpenDocument TEXT and Microsoft Office WORD FILE DOCUMENT formats
     if [[ $mime_type == *"application/vnd.oasis.opendocument.text"* || $mime_type == *"application/vnd.openxmlformats-officedocument.wordprocessingml.document"*  ]] && [[ $categories == *"Office"* ]]; then
-        echo "$name||$file"
-        echo ";"
+        echo "$name||$file;"
     fi
   done
 else
@@ -32,4 +31,3 @@ printDOCXApps "$HOME/.local/share/flatpak/exports/share/applications/"
 printDOCXApps "/usr/share/applications/"
 printDOCXApps "/var/lib/flatpak/exports/share/applications/"
 
-echo EOS

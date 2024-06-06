@@ -18,8 +18,7 @@ printPPTXApps(){
 
       # Check if 'MimeType' supports OpenDocument PRESENTATION and Microsoft POWERPOINT formats
       if [[ $mime_type == *"application/vnd.oasis.opendocument.presentation"* || $mime_type == *"application/vnd.openxmlformats-officedocument.presentationml.presentation"* ]] && [[ $categories == *"Office"* ]]; then
-          echo "$name||$file"
-          echo ";"
+          echo "$name||$file;"
       fi
     done
   else
@@ -33,5 +32,3 @@ printPPTXApps(){
 printPPTXApps "$HOME/.local/share/flatpak/exports/share/applications/"
 printPPTXApps "/usr/share/applications/"
 printPPTXApps "/var/lib/flatpak/exports/share/applications/"
-
-echo EOS

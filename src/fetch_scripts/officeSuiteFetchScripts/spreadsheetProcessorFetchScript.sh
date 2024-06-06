@@ -17,8 +17,7 @@ if [ -d "$dir" ]; then
 
     # Check if 'MimeType' supports OpenDocument SPREADSHEET and Microsoft EXCEL formats
     if [[ $mime_type == *"application/vnd.oasis.opendocument.spreadsheet"* || $mime_type == *"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"* ]] && [[ $categories == *"Office"* ]]; then
-        echo "$name||$file"
-        echo ";"
+        echo "$name||$file;"
     fi
   done
 else
@@ -32,5 +31,5 @@ printXLSXApps "$HOME/.local/share/flatpak/exports/share/applications/"
 printXLSXApps "/usr/share/applications/"
 printXLSXApps "/var/lib/flatpak/exports/share/applications/"
 
-echo EOS
+
 

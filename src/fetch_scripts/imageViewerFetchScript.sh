@@ -19,8 +19,7 @@ printImageViewers(){
 
       # Check if 'MimeType' supports image formats and if it's a viewer or a web browser
       if [[ $mime_type == *"image/"* ]] && [[ $categories == *"Graphics"* ]]; then
-          echo "$name||$file"
-          echo ";"
+          echo "$name||$file;"
       fi
     done
   else

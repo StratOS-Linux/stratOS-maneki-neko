@@ -18,8 +18,7 @@ printPDFViewers(){
       # Check if 'MimeType' supports pdf format
       if [[ $mime_type == *"application/pdf"* || $mime_type == *"x-scheme-handler/http"* || $mime_type == *"x-scheme-handler/https"* ]] \
       && [[ $categories == *"Viewer"* || $categories == *"DocumentViewer"* || $categories == *"WebBrowser"* ]]; then
-          echo "$name||$file"
-          echo ";"
+          echo "$name||$file;"
       fi
     done
   else
@@ -35,4 +34,3 @@ printPDFViewers "$HOME/.local/share/flatpak/exports/share/applications/"
 printPDFViewers "/usr/share/applications/"
 printPDFViewers "/var/lib/flatpak/exports/share/applications/"
 
-echo EOS
