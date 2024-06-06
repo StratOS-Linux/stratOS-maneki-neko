@@ -1,9 +1,9 @@
 #!/bin/bash
 
-
-printPPTXApps(){
-# Directory containing .desktop files
+printWebBrowsers() {
+  # directory containing .desktop files
   local dir=$1
+
   # Check if directory exists
   if [ -d "$dir" ]; then
     # Find .desktop files
@@ -16,22 +16,22 @@ printPPTXApps(){
       local mime_type=$(grep -E '^MimeType=' "$file" | cut -d'=' -f2)
       local categories=$(grep -E '^Categories=' "$file" | cut -d'=' -f2)
 
-      # Check if 'MimeType' supports OpenDocument PRESENTATION and Microsoft POWERPOINT formats
-      if [[ $mime_type == *"application/vnd.oasis.opendocument.presentation"* || $mime_type == *"application/vnd.openxmlformats-officedocument.presentationml.presentation"* ]] && [[ $categories == *"Office"* ]]; then
+      # Check if 'MimeType' supports http/https and 'Categories' contain 'Network' and 'WebBrowser'
+      if [[ $mime_type == *"x-scheme-handler/http"* || $mime_type == *"x-scheme-handler/https"* ]] && [[ $categories == *"Network"* && $categories == *"WebBrowser"* ]]; then
           echo "$name||$file"
           echo ";"
       fi
     done
   else
-    # if directory not found then print nothing and exit function
-    :
+      # if directory not found then print nothing and exit function
+
+    : 
   fi
 }
 
-
 # Call the function with the provided directories
-printPPTXApps "$HOME/.local/share/flatpak/exports/share/applications/"
-printPPTXApps "/usr/share/applications/"
-printPPTXApps "/var/lib/flatpak/exports/share/applications/"
+printWebBrowsers "$HOME/.local/share/flatpak/exports/share/applications/"
+printWebBrowsers "/usr/share/applications/"
+printWebBrowsers "/var/lib/flatpak/exports/share/applications/"
 
 echo EOS
