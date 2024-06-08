@@ -19,7 +19,7 @@
 The official stratOS welcome screen page. Written in python and uses PyQt5 widget toolkit. \
 The namesake `Maneki Neko` refers to the beckoning cat, to welcome the new users to our system.
 
-![maneki on stratos desktop](image-1.png)
+![maneki on stratos desktop](01_readme_stratos.png)
 
 ## What does `stratos-maneki-neko` do?
 
@@ -32,9 +32,9 @@ You can also perform quick and easy tasks, to begin your new StratOS journey by:
     3. Installing popular Linux applications.
 
 
-![alt text](<Screenshot from 2024-06-08 19-32-26.png>)
+![alt text](<02_readme_changeSetting.png>)
 
-![alt text](image-2.png)
+![alt text](03_readme_programInstaller.png)
 
 
 
