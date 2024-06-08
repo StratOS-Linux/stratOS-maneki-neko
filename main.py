@@ -879,7 +879,7 @@ class changeDefaultSettingsDialog(QDialog):
 
     def selectTextEditor(self):
 
-        command = ['gnome-terminal', '--', f'bash -c "mimeopen -d {WORK_DIR}/src/sampleFiles/sample.py {WORK_DIR}/src/sampleFiles/sample.cpp ~/sample.c ~/sample.md ~/sample.java ~/sample.yaml ~/sample.toml ~/sample.sh ~/sample.p6 ~/sample.tex ~/sample.js {WORK_DIR}/src/sampleFiles/sample.txt"']
+        command = ['gnome-terminal', '-e', f"bash -c 'mimeopen -d {WORK_DIR}/src/sampleFiles/sample.py {WORK_DIR}/src/sampleFiles/sample.cpp ~/sample.c ~/sample.md ~/sample.java ~/sample.yaml ~/sample.toml ~/sample.sh ~/sample.p6 ~/sample.tex ~/sample.js {WORK_DIR}/src/sampleFiles/sample.txt'"]
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
@@ -890,7 +890,7 @@ class changeDefaultSettingsDialog(QDialog):
 
     def selectPDFViewer(self):
 
-        command = ['gnome-terminal', '--', f'bash -c "mimeopen -d {WORK_DIR}/src/sampleFiles/sample.pdf"']
+        command = ['gnome-terminal', '-e', f"bash -c 'mimeopen -d {WORK_DIR}/src/sampleFiles/sample.pdf'"]
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
@@ -900,7 +900,7 @@ class changeDefaultSettingsDialog(QDialog):
         return
 
     def selectDOCXEditor(self):
-        command = ['gnome-terminal', '--', f'bash -c "mimeopen -d {WORK_DIR}/src/sampleFiles/sample.odt ~/sample.doc ~/sample.docx"']
+        command = ['gnome-terminal', '-e', f"bash -c 'mimeopen -d {WORK_DIR}/src/sampleFiles/sample.odt ~/sample.doc ~/sample.docx'"]
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
@@ -910,7 +910,7 @@ class changeDefaultSettingsDialog(QDialog):
         return
 
     def selectPPTXEditor(self):
-        command = ['gnome-terminal', '--', f'bash -c "mimeopen -d {WORK_DIR}/src/sampleFiles/sample.odp ~/sample.ppt ~/sample.pptx"']
+        command = ['gnome-terminal', '-e', f"bash -c 'mimeopen -d {WORK_DIR}/src/sampleFiles/sample.odp ~/sample.ppt ~/sample.pptx'"]
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
@@ -920,7 +920,7 @@ class changeDefaultSettingsDialog(QDialog):
         return
 
     def selectXLSXEditor(self):
-        command = ['gnome-terminal', '--', f'bash -c "mimeopen -d {WORK_DIR}/src/sampleFiles/sample.ods ~/sample.xls ~/sample.xlsx"']
+        command = ['gnome-terminal', '-e', f"bash -c 'mimeopen -d {WORK_DIR}/src/sampleFiles/sample.ods ~/sample.xls ~/sample.xlsx'"]
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
@@ -949,8 +949,7 @@ class changeDefaultSettingsDialog(QDialog):
 
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
-            # get the STDOUT
-            result=temporary.communicate()
+         
             
         except FileNotFoundError:
             print("openGNOMETweaks(): Couldn't open Gnome Tweaks... ")
