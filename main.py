@@ -584,20 +584,17 @@ class welcomeScreen(QMainWindow):
 
     def runDistroInstallerScript(self):
 
-        # work need to be done
-        print("executing the installer script")
-
         # the command to execute
         # pls change this
-        command = ["gnome-terminal", "--", '/usr/local/bin/StratOS-configure-distro']
+        try:
+            print("runDistroInstaller(): executing the installer script")
+            command = ["gnome-terminal", "--", '/usr/local/bin/StratOS-configure-distro']
 
-        temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
+            temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
 
-        # get the STDOUT
-        result=temporary.communicate()
-
-        #print(result)
-
+        # error handling
+        except FileNotFoundError:
+            print("runDistroInstaller(): Could not find /usr/local/bin/StratOS-configure-distro")
         return
 
     def openPackageInstallerPage(self):
@@ -733,8 +730,9 @@ StartupNotify=false
 
                 # update checkbox text for feedback
                 self.autostartCheckBox.setText("setupAutostart(): Autostart Maneki Neko (Enabled)")
-            except FileNotFoundError:
+            except FileNotFoundError as E404:
                 print("setupAutostart(): Maneki could not create desktop file for autostart.")
+                print(f"setupAutostart(): ERROR: {E404}\n")
                 self.autostartCheckBox.toggle()
 
         else:

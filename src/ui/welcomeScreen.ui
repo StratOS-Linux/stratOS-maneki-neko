@@ -36,7 +36,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../../../../../../../opt/maneki-neko/src/png/maneki_neko.png</normaloff>../../../../../../../../opt/maneki-neko/src/png/maneki_neko.png</iconset>
+    <normaloff>../../../../../opt/maneki-neko/src/png/maneki_neko.png</normaloff>../../../../../opt/maneki-neko/src/png/maneki_neko.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow{
@@ -101,7 +101,7 @@
             <enum>QFrame::Plain</enum>
            </property>
            <property name="currentIndex">
-            <number>2</number>
+            <number>3</number>
            </property>
            <widget class="QWidget" name="zerothPage">
             <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -1060,8 +1060,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>116</width>
-                    <height>296</height>
+                    <width>305</width>
+                    <height>370</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1141,7 +1141,7 @@ font: 57 10pt &quot;Noto Sans&quot;;
                         </item>
                         <item>
                          <property name="text">
-                          <string>Obsidian (as AppImage)</string>
+                          <string>Obsidian</string>
                          </property>
                          <property name="checkState">
                           <enum>PartiallyChecked</enum>
@@ -1175,8 +1175,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>116</width>
-                    <height>196</height>
+                    <width>305</width>
+                    <height>370</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1263,8 +1263,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>116</width>
-                    <height>191</height>
+                    <width>305</width>
+                    <height>370</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1339,8 +1339,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>116</width>
-                    <height>191</height>
+                    <width>305</width>
+                    <height>370</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1416,7 +1416,7 @@ font: 57 10pt &quot;Noto Sans&quot;;
                     <x>0</x>
                     <y>0</y>
                     <width>305</width>
-                    <height>365</height>
+                    <height>370</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -4505,33 +4505,33 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
 font: bold 11pt &quot;JetBrains Mono&quot;;
 }</string>
                      </property>
-                     <layout class="QVBoxLayout" name="verticalLayout_64">
+                     <layout class="QHBoxLayout" name="horizontalLayout_25">
                       <item>
-                       <layout class="QHBoxLayout" name="horizontalLayout_25">
+                       <layout class="QVBoxLayout" name="verticalLayout_62">
                         <item>
-                         <layout class="QVBoxLayout" name="verticalLayout_62">
-                          <item>
-                           <widget class="QLabel" name="BRAVEHeader_12">
-                            <property name="minimumSize">
-                             <size>
-                              <width>40</width>
-                              <height>50</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>16777215</width>
-                              <height>50</height>
-                             </size>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">color: rgb(255, 255, 255);</string>
-                            </property>
-                            <property name="text">
-                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;==&amp;gt; &lt;span style=&quot; text-decoration: underline;&quot;&gt;GSConnect (KDE Connect for GNOME)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                            </property>
-                           </widget>
-                          </item>
+                         <widget class="QLabel" name="BRAVEHeader_12">
+                          <property name="minimumSize">
+                           <size>
+                            <width>40</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color: rgb(255, 255, 255);</string>
+                          </property>
+                          <property name="text">
+                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;==&amp;gt; &lt;span style=&quot; text-decoration: underline;&quot;&gt;GSConnect (KDE Connect for GNOME)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <layout class="QVBoxLayout" name="verticalLayout_34">
                           <item>
                            <widget class="QLabel" name="BRAVEDesc_11">
                             <property name="text">
@@ -4545,89 +4545,142 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
                             </property>
                            </widget>
                           </item>
+                          <item>
+                           <widget class="QFrame" name="githubDesktopSources_2">
+                            <property name="minimumSize">
+                             <size>
+                              <width>0</width>
+                              <height>35</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>35</height>
+                             </size>
+                            </property>
+                            <layout class="QHBoxLayout" name="horizontalLayout_44">
+                             <property name="sizeConstraint">
+                              <enum>QLayout::SetMinimumSize</enum>
+                             </property>
+                             <item>
+                              <widget class="QLabel" name="sourceLabel_17">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>145</width>
+                                 <height>0</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>145</width>
+                                 <height>16777215</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">color: rgb(255, 255, 255);</string>
+                               </property>
+                               <property name="text">
+                                <string>Package Source:</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QRadioButton" name="githubDesktopAURButton_2">
+                               <property name="text">
+                                <string>AUR</string>
+                               </property>
+                               <property name="checked">
+                                <bool>true</bool>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </widget>
+                          </item>
                          </layout>
                         </item>
-                        <item>
-                         <widget class="Line" name="line_18">
-                          <property name="minimumSize">
-                           <size>
-                            <width>0</width>
-                            <height>185</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>16777215</width>
-                            <height>515</height>
-                           </size>
-                          </property>
-                          <property name="orientation">
-                           <enum>Qt::Vertical</enum>
-                          </property>
-                         </widget>
-                        </item>
-                        <item>
-                         <widget class="QFrame" name="frame_23">
-                          <property name="minimumSize">
-                           <size>
-                            <width>90</width>
-                            <height>0</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>120</width>
-                            <height>16777215</height>
-                           </size>
-                          </property>
-                          <property name="frameShape">
-                           <enum>QFrame::NoFrame</enum>
-                          </property>
-                          <property name="frameShadow">
-                           <enum>QFrame::Raised</enum>
-                          </property>
-                          <layout class="QVBoxLayout" name="verticalLayout_63">
-                           <item>
-                            <widget class="QLabel" name="label_20">
-                             <property name="minimumSize">
-                              <size>
-                               <width>90</width>
-                               <height>90</height>
-                              </size>
-                             </property>
-                             <property name="maximumSize">
-                              <size>
-                               <width>120</width>
-                               <height>120</height>
-                              </size>
-                             </property>
-                             <property name="sizeIncrement">
-                              <size>
-                               <width>1</width>
-                               <height>1</height>
-                              </size>
-                             </property>
-                             <property name="baseSize">
-                              <size>
-                               <width>100</width>
-                               <height>100</height>
-                              </size>
-                             </property>
-                             <property name="text">
-                              <string/>
-                             </property>
-                             <property name="pixmap">
-                              <pixmap>../png/app_icons/gsconnect.png</pixmap>
-                             </property>
-                             <property name="scaledContents">
-                              <bool>true</bool>
-                             </property>
-                            </widget>
-                           </item>
-                          </layout>
-                         </widget>
-                        </item>
                        </layout>
+                      </item>
+                      <item>
+                       <widget class="Line" name="line_18">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>185</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>515</height>
+                         </size>
+                        </property>
+                        <property name="orientation">
+                         <enum>Qt::Vertical</enum>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QFrame" name="frame_23">
+                        <property name="minimumSize">
+                         <size>
+                          <width>90</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>120</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::NoFrame</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Raised</enum>
+                        </property>
+                        <layout class="QVBoxLayout" name="verticalLayout_63">
+                         <item>
+                          <widget class="QLabel" name="label_20">
+                           <property name="minimumSize">
+                            <size>
+                             <width>90</width>
+                             <height>90</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>120</width>
+                             <height>120</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>1</width>
+                             <height>1</height>
+                            </size>
+                           </property>
+                           <property name="baseSize">
+                            <size>
+                             <width>100</width>
+                             <height>100</height>
+                            </size>
+                           </property>
+                           <property name="text">
+                            <string/>
+                           </property>
+                           <property name="pixmap">
+                            <pixmap>../png/app_icons/gsconnect.png</pixmap>
+                           </property>
+                           <property name="scaledContents">
+                            <bool>true</bool>
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
+                       </widget>
                       </item>
                      </layout>
                     </widget>
