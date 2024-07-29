@@ -877,7 +877,7 @@ class changeDefaultSettingsDialog(QDialog):
 
     def selectTextEditor(self):
 
-        command = ['gnome-terminal', '-e', f"bash -c 'mimeopen -d {WORK_DIR}/src/sampleFiles/sample.py {WORK_DIR}/src/sampleFiles/sample.cpp ~/sample.c ~/sample.md ~/sample.java ~/sample.yaml ~/sample.toml ~/sample.sh ~/sample.p6 ~/sample.tex ~/sample.js {WORK_DIR}/src/sampleFiles/sample.txt'"]
+        command = ['gnome-terminal', '-e', f"bash -c '{WORK_DIR}/src/scripts/mimeopenScripts/setDefaultPDFApp.sh'"]
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
@@ -888,7 +888,7 @@ class changeDefaultSettingsDialog(QDialog):
 
     def selectPDFViewer(self):
 
-        command = ['gnome-terminal', '-e', f"bash -c 'mimeopen -d {WORK_DIR}/src/sampleFiles/sample.pdf'"]
+        command = ['gnome-terminal', '-e', f'bash -c \'{WORK_DIR}/src/scripts/mimeopenScripts/setDefaultPDFApp.sh\'']
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
@@ -898,7 +898,7 @@ class changeDefaultSettingsDialog(QDialog):
         return
 
     def selectDOCXEditor(self):
-        command = ['gnome-terminal', '-e', f"bash -c 'mimeopen -d {WORK_DIR}/src/sampleFiles/sample.odt ~/sample.doc ~/sample.docx'"]
+        command = ['gnome-terminal', '--', f'bash \'{WORK_DIR}/src/scripts/mimeopenScripts/setDefaultDOCXApp.sh; exec bash\'']
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
@@ -908,7 +908,7 @@ class changeDefaultSettingsDialog(QDialog):
         return
 
     def selectPPTXEditor(self):
-        command = ['gnome-terminal', '-e', f"bash -c 'mimeopen -d {WORK_DIR}/src/sampleFiles/sample.odp ~/sample.ppt ~/sample.pptx'"]
+        command = ['gnome-terminal', '--', f'bash -c {WORK_DIR}/src/scripts/mimeopenScripts/setDefaultPresentationApp.sh']
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
@@ -918,7 +918,7 @@ class changeDefaultSettingsDialog(QDialog):
         return
 
     def selectXLSXEditor(self):
-        command = ['gnome-terminal', '-e', f"bash -c 'mimeopen -d {WORK_DIR}/src/sampleFiles/sample.ods ~/sample.xls ~/sample.xlsx'"]
+        command = ['gnome-terminal', '-e', f"bash -c '{WORK_DIR}/src/scripts/mimeopenScripts/setDefaultSpreadsheetApp.sh'"]
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
