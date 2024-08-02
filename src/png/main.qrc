@@ -1,0 +1,40 @@
+ 
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>switch-off.png</file>
+    <file>switch-on.png</file>
+    <file>GitHub-logo.png</file>
+    <file>logo.png</file>
+    <file>original_logo.png</file>
+    <file>stratos.jpg</file>
+    <file>maneki_neko.png</file>
+    <file>iceCreamCone.png</file>
+    <file>desktop.png</file>
+    <file>BedrockLinux.png</file>
+    <file>BedrockLinux (1).png</file>
+    <file>stratos-crop.jpg</file>
+
+    <file>app_icons/gsconnect.png</file>
+    <file>app_icons/github.png</file>
+    <file>app_icons/stratvim.png</file>
+    <file>app_icons/stratmacs_symbolic.png</file>
+    <file>app_icons/stratvim_symbolic.png</file>
+    <file>app_icons/obsidian.png</file>
+    <file>app_icons/atril.png</file>
+    <file>app_icons/vlc.png</file>
+    <file>app_icons/onlyoffice.png</file>
+    <file>app_icons/libreoffice.png</file>
+    <file>app_icons/mpv.png</file>
+    <file>app_icons/firefox.png</file>
+    <file>app_icons/evince.png</file>
+    <file>app_icons/vscodium.png</file>
+    <file>app_icons/stratmacs.png</file>
+    <file>app_icons/brave.png</file>
+    <file>app_icons/chromium.png</file>
+    <file>app_icons/librewolf.png</file>
+
+
+
+
+</qresource>
+</RCC>
