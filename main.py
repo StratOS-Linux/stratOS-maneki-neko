@@ -5,14 +5,11 @@ import sys
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets, QtCore, QtGui
 
-# importing class RenewableTimer from RenewableTimer.py
-# 
-# from RenewableTimer import RenewableTimer
 
-import resources
 from PyQt5.QtWidgets import QMainWindow,  QApplication,  QDialog, QMessageBox
 from time import sleep
 import os, subprocess
+import resources
 
 
 #LICENSE
@@ -34,7 +31,6 @@ StratOS-Maneki-Neko: Welcome Screen GUI Application for StratOS-Linux, written i
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 '''
-
 
 
 # globals
@@ -115,7 +111,9 @@ packageSRCReference = { # PACKAGE source reference dictionary
                         }     
                         
         }
-
+AURInstallQueue = None
+FLATPAKInstallQueue = None
+PACMANInstallQueue = None
 programSRCPreference = {}   # list of all apps with the selected source for installation
 programInstallQueue = []    # list of all apps selected for install
 programInstallQueueLen = 0  # number of all apps selected for install, 0 is temporary value and
@@ -131,10 +129,6 @@ lastPage=3  # the last page of the app is the 3rd page
 WORK_DIR = os.getcwd() # gets working directory of the python script
                        # at install location value shoulda be /opt/maneki-neko
                        # to HARDCODE this , change WORK_DIR to /opt/maneki-neko
-
-
-# global variable that stores whether user wants to install flatpaks system wide or not
-flatpakInstallSystemWide = True
 
 # ===============================================================================================================
 
@@ -161,6 +155,9 @@ class welcomeScreen(QMainWindow):
     defaultTXTlist     = ['stratmacs']                 # list of all Text Editors marked for install by DEFAULT
     defaultMISClist    = ['evince']                    # list of all Miscellaneous programs marked for install by DEFAULT
     
+    AURInstallQueue = None
+    FLATPAKInstallQueue = None
+    PACMANInstallQueue = None
 
     def __init__(self):
         global defaultAPPSList
@@ -184,6 +181,8 @@ class welcomeScreen(QMainWindow):
         self.autostartCheckBox.clicked.connect(self.setupAutostart)
         self.creditsButton.clicked.connect(self.openCreditsDialog)
         self.changeSettingsButton.clicked.connect(self.openchangeDefaultSettingsDialog)
+
+    
 
         # package-installer page related-stuffs
         self.packageInstallerButton.clicked.connect(self.openPackageInstallerPage)
@@ -302,7 +301,7 @@ class welcomeScreen(QMainWindow):
         return
 
     def proceedToInstall(self):
-        global programInstallQueue, programInstallQueueLen
+        global programInstallQueue, programSRCPreference, packageSRCReference, programInstallQueueLen, AURInstallQueue, FLATPAKInstallQueue, PACMANInstallQueue
         sleep(0.3)
         # clear list if not empty
         if programInstallQueue != []:
@@ -365,6 +364,14 @@ class welcomeScreen(QMainWindow):
             return
         # now call function to determine selected sources
         self.updateProgramSRCPreference()
+
+        # prepare program install queues (global var)
+
+
+        AURInstallQueue      = {"aur"       : [packageSRCReference["aur"][p]        for p,v in programSRCPreference.items() if v == "aur"      and p in programInstallQueue ]}
+        FLATPAKInstallQueue  = {"flatpak"   : [packageSRCReference["flatpak"][p]    for p,v in programSRCPreference.items() if v == "flatpak"  and p in programInstallQueue ]}
+        PACMANInstallQueue   = {"pacman"    : [packageSRCReference["pacman"][p]     for p,v in programSRCPreference.items() if v == "pacman"   and p in programInstallQueue ]}
+
         # now call the install dialog
         dialog = installDialog()
         if dialog.exec_():
@@ -615,8 +622,6 @@ class welcomeScreen(QMainWindow):
         self.morphNextButton()
         return
 
-    
-    # keep for Maneki neko On StratOS Hyprland
     def runThemeChangerScript(self):
         # work need to be done
         print("executing the installer script")
@@ -634,8 +639,6 @@ class welcomeScreen(QMainWindow):
 
         return
 
-
-    # keep for Maneki neko On StratOS Hyprland
     def runBrowserInstallerScript(self):
         # work need to be done
         print("executing the installer script")
@@ -742,8 +745,7 @@ StartupNotify=false
                 print("setupAutostart(): Maneki Neko autostart Enabled")
 
                 # update checkbox text for feedback
-                self.autostartCheckBox.setText("Autostart Maneki Neko (Enabled)")
-                
+                self.autostartCheckBox.setText("setupAutostart(): Autostart Maneki Neko (Enabled)")
             except FileNotFoundError as E404:
                 print("setupAutostart(): Maneki could not create desktop file for autostart.")
                 print(f"setupAutostart(): ERROR: {E404}\n")
@@ -804,30 +806,56 @@ class creditsWindow(QDialog):
 
 class installDialog(QDialog):
 
-    AURInstallQueue = {}
-    FLATPAKInstallQueue = {}
-    PACMANInstallQueue = {}
+    AURInstallQueue = None
+    FLATPAKInstallQueue = None
+    PACMANInstallQueue = None
+    installFlatpaksSystemWide = True
+    isThereFlatpak = True
+    isTherePacman = True
+    isThereAUR = True
 
     def __init__(self):
+        global AURInstallQueue, FLATPAKInstallQueue, PACMANInstallQueue
+        self.AURInstallQueue        = AURInstallQueue
+        self.PACMANInstallQueue     = PACMANInstallQueue
+        self.FLATPAKInstallQueue    = FLATPAKInstallQueue 
+
         super(installDialog,self).__init__()
         loadUi(WORK_DIR + "/src/ui/installDialog.ui", self)
         
-        self.FLATPAKInstallQueue  = {"flatpak"   : [packageSRCReference["flatpak"][p]    for p,v in programSRCPreference.items() if v == "flatpak"  and p in programInstallQueue ]}       
-        self.AURInstallQueue      = {"aur"       : [packageSRCReference["aur"][p]        for p,v in programSRCPreference.items() if v == "aur"      and p in programInstallQueue ]}
-        self.PACMANInstallQueue   = {"pacman"    : [packageSRCReference["pacman"][p]     for p,v in programSRCPreference.items() if v == "pacman"   and p in programInstallQueue ]}
-        
-        # number of flatpak programs
-        N = len(self.FLATPAKInstallQueue['flatpak'])
-        if N == 0:
-            self.sudoCheckBox.setEnabled(False)
-            self.flatpakSudoLabel.setEnabled(False)
-            self.sudoCheckBox.setText("No flatpaks to install.")
-
-
         self.cancelButton.clicked.connect(self.reject)
         self.updateInstallQueueLabel()
+        
         self.proceedButton.clicked.connect(self.invokeInstallScript)
-        self.sudoCheckBox.toggled.connect(self.toggleFlatpakInstallState)
+        # set these status variables to false
+        # if no AUR packages marked for install
+        self.isThereAUR = False if len(self.AURInstallQueue["aur"]) == 0 else True
+        # if no FLATPAK packages marked for install
+        self.isThereFlatpak = False if len(self.FLATPAKInstallQueue["flatpak"]) == 0 else True
+        # if no PACMAN packages marked for install
+        self.isTherePacman = False if len(self.PACMANInstallQueue["pacman"]) == 0 else True
+        if not self.isThereFlatpak:
+            self.flatpakSudoLabel.setEnabled(False)
+            self.sudoCheckBox.setEnabled(False)
+            self.sudoCheckBox.setText("No Flatpaks marked for install")
+        else:
+            self.flatpakSudoLabel.setEnabled(True)
+            self.sudoCheckBox.setEnabled(True)
+        
+        self.sudoCheckBox.toggled.connect(self.setFlatpakInstallPreference)
+
+                
+
+
+
+
+    def setFlatpakInstallPreference(self):
+        self.installFlatpaksSystemWide = self.sudoCheckBox.isChecked()
+        if self.installFlatpaksSystemWide:
+            self.sudoCheckBox.setText("Yes, install packages system-wide")
+        else:
+            self.sudoCheckBox.setText("No, install packages for me only. (user-space)")
+        return
 
     def updateInstallQueueLabel(self):
         if programInstallQueueLen == 1:
@@ -849,33 +877,23 @@ class installDialog(QDialog):
         self.installQueueLabel.setText(labelString)
         return
     
-    def toggleFlatpakInstallState(self):
-        global flatpakInstallSystemWide
-        if self.sudoCheckBox.isChecked():
-            flatpakInstallSystemWide = True
-            self.sudoCheckBox.setText("Yes, install packages system-wide")
-        else: 
-            flatpakInstallSystemWide = False
-            self.sudoCheckBox.setText("No, install packages for myself. (UserSpace in ~/.var/app)")
-
-
     def invokeInstallScript(self):
-        global programInstallQueue, programSRCPreference, packageSRCReference
         # function that calls the external shell script to begin installation
-        print("Installing programs....")
+        print("manekiProgramInstaller(): Installing programs....")
 
-
-        
 
         print(self.AURInstallQueue)
         print(self.FLATPAKInstallQueue)
         print(self.PACMANInstallQueue)
 
+        # we can use these status variables to check whether we need to call the adj. install script or not
+        print("isThereAUR:",self.isThereAUR)
+        print("isThereFlatpak:" , self.isThereFlatpak)
+        print("isTherePacman:",self.isTherePacman)
 
-        if flatpakInstallSystemWide:
-            # call scripts to install all programs with all flatpaks system wide
-            
+        print("installFlatpaksSystemWide:",self.installFlatpaksSystemWide)
         
+
  
         self.accept()
         return
@@ -884,6 +902,7 @@ class installDialog(QDialog):
 class changeDefaultSettingsDialog(QDialog):
 
     programInstallerOpened = False
+
 
     def __init__(self):
         
