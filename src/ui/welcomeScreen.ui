@@ -18,8 +18,8 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>1000</width>
-    <height>800</height>
+    <width>1040</width>
+    <height>830</height>
    </size>
   </property>
   <property name="baseSize">
@@ -63,6 +63,12 @@
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>16777215</height>
+    </size>
+   </property>
    <property name="styleSheet">
     <string notr="true">QWidget{
 	background-color: rgb(30, 31, 47);
@@ -74,7 +80,7 @@
 
 </string>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QHBoxLayout" name="horizontalLayout_32">
     <item>
      <widget class="QFrame" name="windowFrame">
       <property name="minimumSize">
@@ -96,40 +102,40 @@
        </size>
       </property>
       <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
+       <enum>QFrame::Box</enum>
       </property>
       <property name="frameShadow">
        <enum>QFrame::Plain</enum>
       </property>
       <property name="lineWidth">
-       <number>1</number>
+       <number>2</number>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
+      <layout class="QHBoxLayout" name="horizontalLayout_30">
        <item>
         <layout class="QVBoxLayout" name="window_verticalLayout">
          <item>
           <widget class="QStackedWidget" name="windowStackedWidget">
            <property name="frameShape">
-            <enum>QFrame::Box</enum>
+            <enum>QFrame::Panel</enum>
            </property>
            <property name="frameShadow">
-            <enum>QFrame::Plain</enum>
+            <enum>QFrame::Raised</enum>
            </property>
            <property name="currentIndex">
-            <number>2</number>
+            <number>0</number>
            </property>
            <widget class="QWidget" name="zerothPage">
             <layout class="QVBoxLayout" name="verticalLayout_5">
              <item>
               <widget class="QFrame" name="zerothPageFrame">
                <property name="frameShape">
-                <enum>QFrame::Panel</enum>
+                <enum>QFrame::Box</enum>
                </property>
                <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
+                <enum>QFrame::Plain</enum>
                </property>
                <property name="lineWidth">
-                <number>2</number>
+                <number>1</number>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_7">
                 <item>
@@ -541,8 +547,8 @@
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>939</width>
-                  <height>664</height>
+                  <width>924</width>
+                  <height>696</height>
                  </rect>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -581,17 +587,6 @@
                                   <width>0</width>
                                   <height>35</height>
                                  </size>
-                                </property>
-                                <property name="styleSheet">
-                                 <string notr="true">
-
-    QPushButton:hover {
-        background-color: #3b4261;
-    }
-
-    QPushButton:pressed {
-        background-color: #414868;
-    }</string>
                                 </property>
                                 <property name="text">
                                  <string>Credits</string>
@@ -753,17 +748,7 @@
                            <string>Opens the terminal and installs the specified distro(s) of your choice.</string>
                           </property>
                           <property name="styleSheet">
-                           <string notr="true">QPushButton{font-size:16px;
-}
-
-
-    QPushButton:hover {
-        background-color: #3b4261;
-    }
-
-    QPushButton:pressed {
-        background-color: #414868;
-    }</string>
+                           <string notr="true">font-size:16px;</string>
                           </property>
                           <property name="text">
                            <string>Install another Distribution</string>
@@ -781,17 +766,7 @@
                            </font>
                           </property>
                           <property name="styleSheet">
-                           <string notr="true">QPushButton{font-size:16px;
-}
-
-
-    QPushButton:hover {
-        background-color: #3b4261;
-    }
-
-    QPushButton:pressed {
-        background-color: #414868;
-    }</string>
+                           <string notr="true">font-size:16px;</string>
                           </property>
                           <property name="text">
                            <string>Change Default Settings</string>
@@ -809,17 +784,7 @@
                            </font>
                           </property>
                           <property name="styleSheet">
-                           <string notr="true">QPushButton{font-size:16px;
-}
-
-
-    QPushButton:hover {
-        background-color: #3b4261;
-    }
-
-    QPushButton:pressed {
-        background-color: #414868;
-    }</string>
+                           <string notr="true">font-size:16px;</string>
                           </property>
                           <property name="text">
                            <string>Install software</string>
@@ -868,18 +833,8 @@
                         <item>
                          <widget class="QPushButton" name="openDISCORDbutton">
                           <property name="styleSheet">
-                           <string notr="true">
-QPushButton{
-font: 11pt &quot;Liberation Mono&quot;;
-color: rgb(255, 0, 243);
-}
-    QPushButton:hover {
-        background-color: #3b4261;
-    }
-
-    QPushButton:pressed {
-        background-color: #414868;
-    }</string>
+                           <string notr="true">font: 11pt &quot;Liberation Mono&quot;;
+color: rgb(255, 0, 243);</string>
                           </property>
                           <property name="text">
                            <string>Discord</string>
@@ -902,19 +857,8 @@ color: rgb(255, 0, 243);
                         <item>
                          <widget class="QPushButton" name="openMATRIXbutton">
                           <property name="styleSheet">
-                           <string notr="true">
-
-QPushButton{
-font: 11pt &quot;Liberation Mono&quot;;
-color: rgb(2, 240, 255);
-}
-    QPushButton:hover {
-        background-color: #3b4261;
-    }
-
-    QPushButton:pressed {
-        background-color: #414868;
-    }</string>
+                           <string notr="true">font: 11pt &quot;Liberation Mono&quot;;
+color: rgb(2, 240, 255);</string>
                           </property>
                           <property name="text">
                            <string>Matrix</string>
@@ -937,16 +881,9 @@ color: rgb(2, 240, 255);
                         <item>
                          <widget class="QPushButton" name="openMASTODONbutton">
                           <property name="styleSheet">
-                           <string notr="true">QPushButton{
-font: 11pt &quot;Liberation Mono&quot;;
-}
-    QPushButton:hover {
-        background-color: #3b4261;
-    }
-
-    QPushButton:pressed {
-        background-color: #414868;
-    }</string>
+                           <string notr="true">font: 11pt &quot;Liberation Mono&quot;;
+	color: rgb(118, 159, 240);
+</string>
                           </property>
                           <property name="text">
                            <string>Mastodon</string>
@@ -1161,7 +1098,7 @@ color: rgb(255, 0, 76);</string>
             </layout>
            </widget>
            <widget class="QWidget" name="thirdPage">
-            <layout class="QVBoxLayout" name="verticalLayout_25">
+            <layout class="QHBoxLayout" name="horizontalLayout_31">
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_11">
                <item>
@@ -1229,8 +1166,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>104</width>
-                    <height>284</height>
+                    <width>305</width>
+                    <height>409</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1344,8 +1281,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>104</width>
-                    <height>184</height>
+                    <width>305</width>
+                    <height>409</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1432,8 +1369,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>104</width>
-                    <height>179</height>
+                    <width>305</width>
+                    <height>409</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1508,8 +1445,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>104</width>
-                    <height>179</height>
+                    <width>305</width>
+                    <height>409</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1584,8 +1521,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>104</width>
-                    <height>254</height>
+                    <width>303</width>
+                    <height>407</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -4900,16 +4837,7 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
               <string notr="true">QPushButton:!enabled {
 background-color: rgb(20 ,21, 37);
 	color: rgb(48, 89, 170);
-}
-
-
-    QPushButton:hover {
-        background-color: #3b4261;
-    }
-
-    QPushButton:pressed {
-        background-color: #414868;
-    }</string>
+}</string>
              </property>
              <property name="text">
               <string>Back</string>
@@ -4929,16 +4857,6 @@ background-color: rgb(20 ,21, 37);
                <width>75</width>
                <height>16777215</height>
               </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">
-    QPushButton:hover {
-        background-color: #3b4261;
-    }
-
-    QPushButton:pressed {
-        background-color: #414868;
-    }</string>
              </property>
              <property name="text">
               <string>Next</string>
