@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1000</width>
-    <height>620</height>
+    <height>753</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -101,7 +101,7 @@
             <enum>QFrame::Plain</enum>
            </property>
            <property name="currentIndex">
-            <number>3</number>
+            <number>0</number>
            </property>
            <widget class="QWidget" name="zerothPage">
             <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -279,6 +279,9 @@
                           <property name="frameShape">
                            <enum>QFrame::NoFrame</enum>
                           </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Plain</enum>
+                          </property>
                           <property name="text">
                            <string/>
                           </property>
@@ -447,6 +450,18 @@
               <layout class="QHBoxLayout" name="firstPage_horizontalLayout_2">
                <item>
                 <widget class="QLabel" name="terminalPic">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                   <horstretch>1</horstretch>
+                   <verstretch>1</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>321</height>
+                  </size>
+                 </property>
                  <property name="frameShape">
                   <enum>QFrame::Panel</enum>
                  </property>
@@ -466,6 +481,18 @@
                </item>
                <item>
                 <widget class="QLabel" name="stratvimPic">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                   <horstretch>1</horstretch>
+                   <verstretch>1</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>321</height>
+                  </size>
+                 </property>
                  <property name="frameShape">
                   <enum>QFrame::Panel</enum>
                  </property>
@@ -490,53 +517,375 @@
            <widget class="QWidget" name="secondPage">
             <layout class="QVBoxLayout" name="verticalLayout_6">
              <item>
-              <widget class="QFrame" name="secondPageFrame">
-               <property name="font">
-                <font/>
+              <widget class="QScrollArea" name="scrollArea">
+               <property name="widgetResizable">
+                <bool>true</bool>
                </property>
-               <property name="frameShape">
-                <enum>QFrame::Panel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <property name="lineWidth">
-                <number>2</number>
-               </property>
-               <layout class="QVBoxLayout" name="verticalLayout_10">
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_6">
-                  <item>
-                   <layout class="QVBoxLayout" name="verticalLayout_9">
+               <widget class="QWidget" name="scrollAreaWidgetContents">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>-174</y>
+                  <width>730</width>
+                  <height>726</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_10">
+                 <item>
+                  <widget class="QFrame" name="secondPageFrame">
+                   <property name="font">
+                    <font/>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::Panel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <property name="lineWidth">
+                    <number>2</number>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_64">
                     <item>
-                     <layout class="QHBoxLayout" name="credit_buttonBox">
+                     <layout class="QVBoxLayout" name="verticalLayout_8">
                       <item>
-                       <widget class="QPushButton" name="creditsButton">
-                        <property name="minimumSize">
-                         <size>
-                          <width>0</width>
-                          <height>35</height>
-                         </size>
+                       <layout class="QVBoxLayout" name="verticalLayout_7">
+                        <property name="sizeConstraint">
+                         <enum>QLayout::SetMinimumSize</enum>
                         </property>
-                        <property name="text">
-                         <string>Credits</string>
-                        </property>
-                       </widget>
+                        <item>
+                         <layout class="QHBoxLayout" name="horizontalLayout_6">
+                          <item>
+                           <layout class="QVBoxLayout" name="verticalLayout_9">
+                            <item>
+                             <layout class="QHBoxLayout" name="credit_buttonBox">
+                              <item>
+                               <widget class="QPushButton" name="creditsButton">
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>0</width>
+                                  <height>35</height>
+                                 </size>
+                                </property>
+                                <property name="text">
+                                 <string>Credits</string>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="Line" name="line">
+                                <property name="minimumSize">
+                                 <size>
+                                  <width>0</width>
+                                  <height>30</height>
+                                 </size>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>16777215</width>
+                                  <height>30</height>
+                                 </size>
+                                </property>
+                                <property name="frameShadow">
+                                 <enum>QFrame::Plain</enum>
+                                </property>
+                                <property name="lineWidth">
+                                 <number>2</number>
+                                </property>
+                                <property name="orientation">
+                                 <enum>Qt::Vertical</enum>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QCheckBox" name="autostartCheckBox">
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>16777215</width>
+                                  <height>35</height>
+                                 </size>
+                                </property>
+                                <property name="text">
+                                 <string>Autostart Maneki Neko</string>
+                                </property>
+                                <property name="iconSize">
+                                 <size>
+                                  <width>24</width>
+                                  <height>24</height>
+                                 </size>
+                                </property>
+                                <property name="checked">
+                                 <bool>false</bool>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <spacer name="horizontalSpacer_2">
+                                <property name="orientation">
+                                 <enum>Qt::Horizontal</enum>
+                                </property>
+                                <property name="sizeType">
+                                 <enum>QSizePolicy::MinimumExpanding</enum>
+                                </property>
+                                <property name="sizeHint" stdset="0">
+                                 <size>
+                                  <width>40</width>
+                                  <height>20</height>
+                                 </size>
+                                </property>
+                               </spacer>
+                              </item>
+                             </layout>
+                            </item>
+                            <item>
+                             <widget class="QLabel" name="p3_heading1">
+                              <property name="font">
+                               <font>
+                                <family>JetBrains Mono</family>
+                                <pointsize>15</pointsize>
+                                <weight>75</weight>
+                                <italic>false</italic>
+                                <bold>true</bold>
+                               </font>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">font: bold 15pt &quot;JetBrains Mono&quot;;</string>
+                              </property>
+                              <property name="text">
+                               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;==&amp;gt; Setup your System&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                              </property>
+                              <property name="alignment">
+                               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                              </property>
+                             </widget>
+                            </item>
+                           </layout>
+                          </item>
+                          <item>
+                           <widget class="QFrame" name="frame_2">
+                            <property name="minimumSize">
+                             <size>
+                              <width>87</width>
+                              <height>85</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>93</width>
+                              <height>90</height>
+                             </size>
+                            </property>
+                            <property name="frameShape">
+                             <enum>QFrame::Box</enum>
+                            </property>
+                            <property name="frameShadow">
+                             <enum>QFrame::Plain</enum>
+                            </property>
+                            <layout class="QHBoxLayout" name="horizontalLayout_5">
+                             <item>
+                              <widget class="QLabel" name="chinnaLogo">
+                               <property name="frameShape">
+                                <enum>QFrame::NoFrame</enum>
+                               </property>
+                               <property name="text">
+                                <string/>
+                               </property>
+                               <property name="pixmap">
+                                <pixmap>../png/stratOS_logo.png</pixmap>
+                               </property>
+                               <property name="scaledContents">
+                                <bool>true</bool>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                       </layout>
                       </item>
                       <item>
-                       <widget class="Line" name="line">
-                        <property name="minimumSize">
-                         <size>
-                          <width>0</width>
-                          <height>30</height>
-                         </size>
-                        </property>
-                        <property name="maximumSize">
-                         <size>
-                          <width>16777215</width>
-                          <height>30</height>
-                         </size>
-                        </property>
+                       <layout class="QHBoxLayout" name="horizontalLayout_2">
+                        <item>
+                         <widget class="QCommandLinkButton" name="distroInstallerButton">
+                          <property name="font">
+                           <font>
+                            <pointsize>-1</pointsize>
+                           </font>
+                          </property>
+                          <property name="toolTip">
+                           <string/>
+                          </property>
+                          <property name="toolTipDuration">
+                           <number>-1</number>
+                          </property>
+                          <property name="statusTip">
+                           <string/>
+                          </property>
+                          <property name="whatsThis">
+                           <string>Opens the terminal and installs the specified distro(s) of your choice.</string>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font-size:16px;</string>
+                          </property>
+                          <property name="text">
+                           <string>Install another Distribution</string>
+                          </property>
+                          <property name="description">
+                           <string>Opens the terminal and installs the specified distro(s) of your choice</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QCommandLinkButton" name="changeSettingsButton">
+                          <property name="font">
+                           <font>
+                            <pointsize>-1</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font-size:16px;</string>
+                          </property>
+                          <property name="text">
+                           <string>Change Default Settings</string>
+                          </property>
+                          <property name="description">
+                           <string>Change some common default settings such as default theme, text editor or office suite.</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QCommandLinkButton" name="packageInstallerButton">
+                          <property name="font">
+                           <font>
+                            <pointsize>-1</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font-size:16px;</string>
+                          </property>
+                          <property name="text">
+                           <string>Install software</string>
+                          </property>
+                          <property name="description">
+                           <string>Install and setup your preferred software from the command line using &quot;rock&quot;.</string>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <layout class="QHBoxLayout" name="horizontalLayout_4">
+                        <item>
+                         <widget class="QLabel" name="p3_heading2">
+                          <property name="font">
+                           <font>
+                            <family>JetBrains Mono</family>
+                            <pointsize>15</pointsize>
+                            <weight>75</weight>
+                            <italic>false</italic>
+                            <bold>true</bold>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">font: bold 15pt &quot;JetBrains Mono&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;==&amp;gt; Contact us at...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <spacer name="horizontalSpacer_3">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>40</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                        <item>
+                         <widget class="QPushButton" name="openDISCORDbutton">
+                          <property name="styleSheet">
+                           <string notr="true">font: 11pt &quot;Liberation Mono&quot;;
+color: rgb(255, 0, 243);</string>
+                          </property>
+                          <property name="text">
+                           <string>Discord</string>
+                          </property>
+                          <property name="icon">
+                           <iconset>
+                            <normaloff>../png/app_icons/discord-removebg-preview.png</normaloff>../png/app_icons/discord-removebg-preview.png</iconset>
+                          </property>
+                          <property name="iconSize">
+                           <size>
+                            <width>24</width>
+                            <height>24</height>
+                           </size>
+                          </property>
+                          <property name="flat">
+                           <bool>true</bool>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QPushButton" name="openMATRIXbutton">
+                          <property name="styleSheet">
+                           <string notr="true">font: 11pt &quot;Liberation Mono&quot;;
+color: rgb(2, 240, 255);</string>
+                          </property>
+                          <property name="text">
+                           <string>Matrix</string>
+                          </property>
+                          <property name="icon">
+                           <iconset>
+                            <normaloff>../png/app_icons/matrix.png</normaloff>../png/app_icons/matrix.png</iconset>
+                          </property>
+                          <property name="iconSize">
+                           <size>
+                            <width>24</width>
+                            <height>24</height>
+                           </size>
+                          </property>
+                          <property name="flat">
+                           <bool>true</bool>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QPushButton" name="openMASTODONbutton">
+                          <property name="styleSheet">
+                           <string notr="true">font: 11pt &quot;Liberation Mono&quot;;
+	color: rgb(118, 159, 240);
+</string>
+                          </property>
+                          <property name="text">
+                           <string>Mastodon</string>
+                          </property>
+                          <property name="icon">
+                           <iconset>
+                            <normaloff>../png/app_icons/mastodon.png</normaloff>../png/app_icons/mastodon.png</iconset>
+                          </property>
+                          <property name="iconSize">
+                           <size>
+                            <width>24</width>
+                            <height>24</height>
+                           </size>
+                          </property>
+                          <property name="flat">
+                           <bool>true</bool>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </item>
+                      <item>
+                       <widget class="Line" name="line_3">
                         <property name="frameShadow">
                          <enum>QFrame::Plain</enum>
                         </property>
@@ -544,446 +893,185 @@
                          <number>2</number>
                         </property>
                         <property name="orientation">
-                         <enum>Qt::Vertical</enum>
+                         <enum>Qt::Horizontal</enum>
                         </property>
                        </widget>
                       </item>
                       <item>
-                       <widget class="QCheckBox" name="autostartCheckBox">
+                       <widget class="QLabel" name="label101">
                         <property name="maximumSize">
                          <size>
                           <width>16777215</width>
-                          <height>35</height>
+                          <height>70</height>
                          </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>JetBrains Mono</family>
+                          <pointsize>12</pointsize>
+                          <weight>75</weight>
+                          <italic>false</italic>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">font: 75 bold 12pt &quot;JetBrains Mono&quot;;
+color: rgb(255, 0, 76);</string>
                         </property>
                         <property name="text">
-                         <string>Autostart Maneki Neko</string>
+                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;==&amp;gt; Hope you enjoy StratOS! &amp;lt;==&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                         </property>
-                        <property name="iconSize">
-                         <size>
-                          <width>24</width>
-                          <height>24</height>
-                         </size>
-                        </property>
-                        <property name="checked">
-                         <bool>false</bool>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
                         </property>
                        </widget>
                       </item>
                       <item>
-                       <spacer name="horizontalSpacer_2">
+                       <widget class="Line" name="line_2">
+                        <property name="frameShadow">
+                         <enum>QFrame::Plain</enum>
+                        </property>
                         <property name="orientation">
                          <enum>Qt::Horizontal</enum>
                         </property>
-                        <property name="sizeType">
-                         <enum>QSizePolicy::MinimumExpanding</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLabel" name="madeByWhomLabel">
+                        <property name="maximumSize">
                          <size>
-                          <width>40</width>
-                          <height>20</height>
+                          <width>16777215</width>
+                          <height>70</height>
                          </size>
                         </property>
-                       </spacer>
+                        <property name="styleSheet">
+                         <string notr="true">font: 11pt &quot;JetBrains Mono&quot;;</string>
+                        </property>
+                        <property name="text">
+                         <string>- Made with ❤️ by the StratOS Team</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QFrame" name="frame">
+                        <property name="minimumSize">
+                         <size>
+                          <width>320</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Raised</enum>
+                        </property>
+                        <layout class="QHBoxLayout" name="horizontalLayout_3">
+                         <item>
+                          <widget class="QLabel" name="desktopPic">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                             <horstretch>1</horstretch>
+                             <verstretch>1</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>331</width>
+                             <height>250</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>300</height>
+                            </size>
+                           </property>
+                           <property name="sizeIncrement">
+                            <size>
+                             <width>0</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="baseSize">
+                            <size>
+                             <width>0</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="frameShape">
+                            <enum>QFrame::Box</enum>
+                           </property>
+                           <property name="frameShadow">
+                            <enum>QFrame::Raised</enum>
+                           </property>
+                           <property name="lineWidth">
+                            <number>4</number>
+                           </property>
+                           <property name="text">
+                            <string/>
+                           </property>
+                           <property name="pixmap">
+                            <pixmap>../png/desktop.png</pixmap>
+                           </property>
+                           <property name="scaledContents">
+                            <bool>true</bool>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QLabel" name="lugfetchPic">
+                           <property name="sizePolicy">
+                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                             <horstretch>1</horstretch>
+                             <verstretch>1</verstretch>
+                            </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>331</width>
+                             <height>250</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>280</height>
+                            </size>
+                           </property>
+                           <property name="frameShape">
+                            <enum>QFrame::Box</enum>
+                           </property>
+                           <property name="frameShadow">
+                            <enum>QFrame::Raised</enum>
+                           </property>
+                           <property name="lineWidth">
+                            <number>4</number>
+                           </property>
+                           <property name="text">
+                            <string/>
+                           </property>
+                           <property name="pixmap">
+                            <pixmap>../png/StrataOS features images/lugfetch.png</pixmap>
+                           </property>
+                           <property name="scaledContents">
+                            <bool>true</bool>
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
+                       </widget>
                       </item>
                      </layout>
                     </item>
-                    <item>
-                     <widget class="QLabel" name="p3_heading1">
-                      <property name="font">
-                       <font>
-                        <family>JetBrains Mono</family>
-                        <pointsize>15</pointsize>
-                        <weight>75</weight>
-                        <italic>false</italic>
-                        <bold>true</bold>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">font: bold 15pt &quot;JetBrains Mono&quot;;</string>
-                      </property>
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;==&amp;gt; Setup your System&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                      </property>
-                     </widget>
-                    </item>
                    </layout>
-                  </item>
-                  <item>
-                   <widget class="QFrame" name="frame_2">
-                    <property name="minimumSize">
-                     <size>
-                      <width>200</width>
-                      <height>70</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
-                      <width>210</width>
-                      <height>75</height>
-                     </size>
-                    </property>
-                    <property name="frameShape">
-                     <enum>QFrame::NoFrame</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QHBoxLayout" name="horizontalLayout_5">
-                     <item>
-                      <widget class="QLabel" name="chinnaLogo">
-                       <property name="frameShape">
-                        <enum>QFrame::NoFrame</enum>
-                       </property>
-                       <property name="text">
-                        <string/>
-                       </property>
-                       <property name="pixmap">
-                        <pixmap>../png/logo.png</pixmap>
-                       </property>
-                       <property name="scaledContents">
-                        <bool>true</bool>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_2">
-                  <item>
-                   <widget class="QCommandLinkButton" name="distroInstallerButton">
-                    <property name="font">
-                     <font>
-                      <pointsize>-1</pointsize>
-                     </font>
-                    </property>
-                    <property name="toolTip">
-                     <string/>
-                    </property>
-                    <property name="toolTipDuration">
-                     <number>-1</number>
-                    </property>
-                    <property name="statusTip">
-                     <string/>
-                    </property>
-                    <property name="whatsThis">
-                     <string>Opens the terminal and installs the specified distro(s) of your choice.</string>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">font-size:16px;</string>
-                    </property>
-                    <property name="text">
-                     <string>Install another Distribution</string>
-                    </property>
-                    <property name="description">
-                     <string>Opens the terminal and installs the specified distro(s) of your choice</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QCommandLinkButton" name="changeSettingsButton">
-                    <property name="font">
-                     <font>
-                      <pointsize>-1</pointsize>
-                     </font>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">font-size:16px;</string>
-                    </property>
-                    <property name="text">
-                     <string>Change Default Settings</string>
-                    </property>
-                    <property name="description">
-                     <string>Change some common default settings such as default theme, text editor or office suite.</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QCommandLinkButton" name="packageInstallerButton">
-                    <property name="font">
-                     <font>
-                      <pointsize>-1</pointsize>
-                     </font>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">font-size:16px;</string>
-                    </property>
-                    <property name="text">
-                     <string>Install software</string>
-                    </property>
-                    <property name="description">
-                     <string>Install and setup your preferred software from the command line using &quot;rock&quot;.</string>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_4">
-                  <item>
-                   <widget class="QLabel" name="p3_heading2">
-                    <property name="font">
-                     <font>
-                      <family>JetBrains Mono</family>
-                      <pointsize>15</pointsize>
-                      <weight>75</weight>
-                      <italic>false</italic>
-                      <bold>true</bold>
-                     </font>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">font: bold 15pt &quot;JetBrains Mono&quot;;</string>
-                    </property>
-                    <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;==&amp;gt; Contact us at...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <spacer name="horizontalSpacer_3">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="openDISCORDbutton">
-                    <property name="styleSheet">
-                     <string notr="true">font: 11pt &quot;Liberation Mono&quot;;
-color: rgb(255, 0, 243);</string>
-                    </property>
-                    <property name="text">
-                     <string>Discord Server</string>
-                    </property>
-                    <property name="flat">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="openMATRIXbutton">
-                    <property name="styleSheet">
-                     <string notr="true">font: 11pt &quot;Liberation Mono&quot;;
-color: rgb(2, 240, 255);</string>
-                    </property>
-                    <property name="text">
-                     <string>Matrix Server</string>
-                    </property>
-                    <property name="flat">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="openMASTODONbutton">
-                    <property name="styleSheet">
-                     <string notr="true">font: 11pt &quot;Liberation Mono&quot;;
-	color: rgb(118, 159, 240);
-</string>
-                    </property>
-                    <property name="text">
-                     <string>Mastodon</string>
-                    </property>
-                    <property name="flat">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <widget class="Line" name="line_2">
-                  <property name="frameShadow">
-                   <enum>QFrame::Plain</enum>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_8">
-                  <item>
-                   <layout class="QVBoxLayout" name="verticalLayout_7">
-                    <property name="sizeConstraint">
-                     <enum>QLayout::SetMinimumSize</enum>
-                    </property>
-                    <item>
-                     <widget class="QLabel" name="label101">
-                      <property name="maximumSize">
-                       <size>
-                        <width>16777215</width>
-                        <height>70</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>JetBrains Mono</family>
-                        <pointsize>12</pointsize>
-                        <weight>75</weight>
-                        <italic>false</italic>
-                        <bold>true</bold>
-                       </font>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">font: 75 bold 12pt &quot;JetBrains Mono&quot;;
-color: rgb(255, 0, 76);</string>
-                      </property>
-                      <property name="text">
-                       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;==&amp;gt; Hope you enjoy StratOS! &amp;lt;==&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="Line" name="line_3">
-                      <property name="frameShadow">
-                       <enum>QFrame::Plain</enum>
-                      </property>
-                      <property name="lineWidth">
-                       <number>2</number>
-                      </property>
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="madeByWhomLabel">
-                      <property name="maximumSize">
-                       <size>
-                        <width>16777215</width>
-                        <height>70</height>
-                       </size>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">font: 11pt &quot;JetBrains Mono&quot;;</string>
-                      </property>
-                      <property name="text">
-                       <string>- Made with ❤️ by the StratOS Team</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <widget class="QFrame" name="frame">
-                    <property name="minimumSize">
-                     <size>
-                      <width>320</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="frameShape">
-                     <enum>QFrame::StyledPanel</enum>
-                    </property>
-                    <property name="frameShadow">
-                     <enum>QFrame::Raised</enum>
-                    </property>
-                    <layout class="QHBoxLayout" name="horizontalLayout_3">
-                     <item>
-                      <widget class="QLabel" name="desktopPic">
-                       <property name="sizePolicy">
-                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                         <horstretch>1</horstretch>
-                         <verstretch>1</verstretch>
-                        </sizepolicy>
-                       </property>
-                       <property name="minimumSize">
-                        <size>
-                         <width>0</width>
-                         <height>0</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>16777215</width>
-                         <height>300</height>
-                        </size>
-                       </property>
-                       <property name="sizeIncrement">
-                        <size>
-                         <width>0</width>
-                         <height>0</height>
-                        </size>
-                       </property>
-                       <property name="baseSize">
-                        <size>
-                         <width>0</width>
-                         <height>0</height>
-                        </size>
-                       </property>
-                       <property name="frameShape">
-                        <enum>QFrame::Box</enum>
-                       </property>
-                       <property name="frameShadow">
-                        <enum>QFrame::Raised</enum>
-                       </property>
-                       <property name="lineWidth">
-                        <number>4</number>
-                       </property>
-                       <property name="text">
-                        <string/>
-                       </property>
-                       <property name="pixmap">
-                        <pixmap>../png/desktop.png</pixmap>
-                       </property>
-                       <property name="scaledContents">
-                        <bool>true</bool>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QLabel" name="lugfetchPic">
-                       <property name="maximumSize">
-                        <size>
-                         <width>16777215</width>
-                         <height>300</height>
-                        </size>
-                       </property>
-                       <property name="frameShape">
-                        <enum>QFrame::Box</enum>
-                       </property>
-                       <property name="frameShadow">
-                        <enum>QFrame::Raised</enum>
-                       </property>
-                       <property name="lineWidth">
-                        <number>4</number>
-                       </property>
-                       <property name="text">
-                        <string/>
-                       </property>
-                       <property name="pixmap">
-                        <pixmap>../png/StrataOS features images/lugfetch.png</pixmap>
-                       </property>
-                       <property name="scaledContents">
-                        <bool>true</bool>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-               </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
               </widget>
              </item>
             </layout>
@@ -1060,8 +1148,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>104</width>
-                    <height>284</height>
+                    <width>305</width>
+                    <height>365</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1175,8 +1263,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>104</width>
-                    <height>184</height>
+                    <width>305</width>
+                    <height>365</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1263,8 +1351,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>104</width>
-                    <height>179</height>
+                    <width>305</width>
+                    <height>365</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1339,8 +1427,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>104</width>
-                    <height>179</height>
+                    <width>305</width>
+                    <height>365</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1415,8 +1503,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>319</width>
-                    <height>383</height>
+                    <width>305</width>
+                    <height>365</height>
                    </rect>
                   </property>
                   <attribute name="label">

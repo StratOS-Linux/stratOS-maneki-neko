@@ -98,19 +98,22 @@ packageSRCReference = { # PACKAGE source reference dictionary
                                     
                                     # ======= OFFICE SUITES ========               
                                     "libreoffice": "libreoffice-fresh",             \
-                                    
-                                    # ======= TEXT EDITORS =======
-                                    "stratmacs":"emacs",                            \
-                                    "stratvim":"neovim",                            \
-                                    
 
                                     # ======= MISCELLANEOUS =======
                                     "atril": "atril",                               \
                                     "evince": "evince",                             \
                                     "obsidian": "obsidian"                          \
-                        }     
-                        
+                                }    ,
+
+                        # ======= ALL Programs installed using Special Install Scripts ========
+                        # ======= TEXT EDITORS =======
+                        "script": {
+                                    "stratmacs":"stratmacs_installer",              \
+                                    "stratvim":"stratvim_installer"                  
+                        }                               
         }
+
+
 AURInstallQueue = None
 FLATPAKInstallQueue = None
 PACMANInstallQueue = None
@@ -293,8 +296,12 @@ class welcomeScreen(QMainWindow):
 
 
         # these custom StratOS programs have ONLY ONE software source i.e. PACMAN
-        programSRCPreference['stratvim'] = 'pacman'
-        programSRCPreference['stratmacs'] = 'pacman'
+        # these custom Programs also use custom install scripts to install their themes and modules =========================
+        programSRCPreference['stratvim'] = 'script'
+        programSRCPreference['stratmacs'] = 'script'
+        # ===================================================================================================================
+
+
         # gsconnect only has an AUR for Arch stratum
         programSRCPreference['gsconnect'] = 'aur'
 

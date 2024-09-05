@@ -416,6 +416,13 @@ background-color: rgb(26, 27, 38);
    </item>
    <item>
     <widget class="QDialogButtonBox" name="dialogButtonBox">
+     <property name="styleSheet">
+      <string notr="true">
+	background-color: rgb(26, 27, 38);
+	alternate-background-color: rgb(33, 39, 54);
+	color: rgb(118, 159, 240);
+</string>
+     </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
