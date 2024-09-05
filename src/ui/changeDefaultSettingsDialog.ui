@@ -50,7 +50,23 @@ QMessageBox{
 	font: 9pt &quot;JetBrains Mono&quot;;
 	color: rgb(118, 159, 240);
 
-};
+}
+
+ QPushButton{
+        background-color: #292e42;
+        border: 1px solid #3b4261;
+        color: #a9b1d6;
+        padding: 10px;
+        border-radius: 7px;
+    }
+
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }
 </string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -598,8 +614,8 @@ QMessageBox{
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>264</width>
-                 <height>788</height>
+                 <width>627</width>
+                 <height>789</height>
                 </rect>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_5">

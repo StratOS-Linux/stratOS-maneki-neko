@@ -946,7 +946,7 @@ class changeDefaultSettingsDialog(QDialog):
 
     def selectTextEditor(self):
 
-        command = ['gnome-terminal', '-e', f"bash -c '{WORK_DIR}/src/scripts/mimeopenScripts/setDefaultPDFApp.sh'"]
+        command = ['gnome-terminal', '-e', f"bash -c '{WORK_DIR}/src/scripts/mimeopenScripts/setDefaultTextEditor.sh'"]
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
@@ -957,7 +957,7 @@ class changeDefaultSettingsDialog(QDialog):
 
     def selectPDFViewer(self):
 
-        command = ['gnome-terminal', '-e', f'bash -c \'{WORK_DIR}/src/scripts/mimeopenScripts/setDefaultPDFApp.sh\'']
+        command = ['gnome-terminal', '-e', f' bash -c \'{WORK_DIR}/src/scripts/mimeopenScripts/setDefaultPDFApp.sh\'']
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
@@ -967,7 +967,7 @@ class changeDefaultSettingsDialog(QDialog):
         return
 
     def selectDOCXEditor(self):
-        command = ['gnome-terminal', '--', f'bash \'{WORK_DIR}/src/scripts/mimeopenScripts/setDefaultDOCXApp.sh; exec bash\'']
+        command = ['gnome-terminal', '-e', f' bash -c {WORK_DIR}/src/scripts/mimeopenScripts/setDefaultDOCXApp.sh']
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
@@ -977,7 +977,7 @@ class changeDefaultSettingsDialog(QDialog):
         return
 
     def selectPPTXEditor(self):
-        command = ['gnome-terminal', '--', f'bash -c {WORK_DIR}/src/scripts/mimeopenScripts/setDefaultPresentationApp.sh']
+        command = ['gnome-terminal', '-e', f' bash -c {WORK_DIR}/src/scripts/mimeopenScripts/setDefaultPresentationApp.sh']
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
@@ -987,7 +987,7 @@ class changeDefaultSettingsDialog(QDialog):
         return
 
     def selectXLSXEditor(self):
-        command = ['gnome-terminal', '-e', f"bash -c '{WORK_DIR}/src/scripts/mimeopenScripts/setDefaultSpreadsheetApp.sh'"]
+        command = ['gnome-terminal', '-e', f" bash -c '{WORK_DIR}/src/scripts/mimeopenScripts/setDefaultSpreadsheetApp.sh'"]
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
@@ -1004,8 +1004,8 @@ class changeDefaultSettingsDialog(QDialog):
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
-        except FileNotFoundError:
-            print("openGNOMESettings(): Couldn't open Gnome Settings... ")
+        except FileNotFoundError as E404:
+            print(f"openGNOMESettings()[404]: Couldn't open Gnome Settings...:: {E404} ")
 
         return
 
@@ -1018,8 +1018,8 @@ class changeDefaultSettingsDialog(QDialog):
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
          
             
-        except FileNotFoundError:
-            print("openGNOMETweaks(): Couldn't open Gnome Tweaks... ")
+        except FileNotFoundError as E404:
+            print(f"openGNOMETweaks()[404]: Couldn't open Gnome Tweaks...:: {E404} ")
 
         return
 

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1000</width>
-    <height>753</height>
+    <height>664</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -44,6 +44,21 @@
 	color: rgb(118, 159, 240);
 }
 
+ QPushButton {
+        background-color: #292e42;
+        border: 1px solid #3b4261;
+        color: #a9b1d6;
+        padding: 10px;
+        border-radius: 7px;
+    }
+
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }
 
 </string>
   </property>
@@ -101,7 +116,7 @@
             <enum>QFrame::Plain</enum>
            </property>
            <property name="currentIndex">
-            <number>0</number>
+            <number>2</number>
            </property>
            <widget class="QWidget" name="zerothPage">
             <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -525,9 +540,9 @@
                 <property name="geometry">
                  <rect>
                   <x>0</x>
-                  <y>-174</y>
-                  <width>730</width>
-                  <height>726</height>
+                  <y>0</y>
+                  <width>926</width>
+                  <height>696</height>
                  </rect>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -566,6 +581,17 @@
                                   <width>0</width>
                                   <height>35</height>
                                  </size>
+                                </property>
+                                <property name="styleSheet">
+                                 <string notr="true">
+
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }</string>
                                 </property>
                                 <property name="text">
                                  <string>Credits</string>
@@ -727,7 +753,17 @@
                            <string>Opens the terminal and installs the specified distro(s) of your choice.</string>
                           </property>
                           <property name="styleSheet">
-                           <string notr="true">font-size:16px;</string>
+                           <string notr="true">QPushButton{font-size:16px;
+}
+
+
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }</string>
                           </property>
                           <property name="text">
                            <string>Install another Distribution</string>
@@ -745,7 +781,17 @@
                            </font>
                           </property>
                           <property name="styleSheet">
-                           <string notr="true">font-size:16px;</string>
+                           <string notr="true">QPushButton{font-size:16px;
+}
+
+
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }</string>
                           </property>
                           <property name="text">
                            <string>Change Default Settings</string>
@@ -763,7 +809,17 @@
                            </font>
                           </property>
                           <property name="styleSheet">
-                           <string notr="true">font-size:16px;</string>
+                           <string notr="true">QPushButton{font-size:16px;
+}
+
+
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }</string>
                           </property>
                           <property name="text">
                            <string>Install software</string>
@@ -812,8 +868,18 @@
                         <item>
                          <widget class="QPushButton" name="openDISCORDbutton">
                           <property name="styleSheet">
-                           <string notr="true">font: 11pt &quot;Liberation Mono&quot;;
-color: rgb(255, 0, 243);</string>
+                           <string notr="true">
+QPushButton{
+font: 11pt &quot;Liberation Mono&quot;;
+color: rgb(255, 0, 243);
+}
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }</string>
                           </property>
                           <property name="text">
                            <string>Discord</string>
@@ -836,8 +902,19 @@ color: rgb(255, 0, 243);</string>
                         <item>
                          <widget class="QPushButton" name="openMATRIXbutton">
                           <property name="styleSheet">
-                           <string notr="true">font: 11pt &quot;Liberation Mono&quot;;
-color: rgb(2, 240, 255);</string>
+                           <string notr="true">
+
+QPushButton{
+font: 11pt &quot;Liberation Mono&quot;;
+color: rgb(2, 240, 255);
+}
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }</string>
                           </property>
                           <property name="text">
                            <string>Matrix</string>
@@ -860,9 +937,16 @@ color: rgb(2, 240, 255);</string>
                         <item>
                          <widget class="QPushButton" name="openMASTODONbutton">
                           <property name="styleSheet">
-                           <string notr="true">font: 11pt &quot;Liberation Mono&quot;;
-	color: rgb(118, 159, 240);
-</string>
+                           <string notr="true">QPushButton{
+font: 11pt &quot;Liberation Mono&quot;;
+}
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }</string>
                           </property>
                           <property name="text">
                            <string>Mastodon</string>
@@ -1103,7 +1187,6 @@ color: rgb(255, 0, 76);</string>
 background-color: rgb(20 ,21, 37);
 border-radius: 8px;
 color: rgb(255, 0, 76);
-qproperty-subcontrol-position: center;
 
 
 }
@@ -1111,13 +1194,11 @@ QToolBox::tab:selected {
 background-color: rgb(20 ,21, 57);
 border-radius: 8px;
 color: rgb(255, 0, 76);
-qproperty-subcontrol-position: center;
 
 }
 
 QToolBox{
 
-qproperty-subcontrol-position: center;
 
 	font: 9pt &quot;JetBrains Mono&quot;;
 
@@ -1148,8 +1229,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>305</width>
-                    <height>365</height>
+                    <width>116</width>
+                    <height>296</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1263,8 +1344,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>305</width>
-                    <height>365</height>
+                    <width>116</width>
+                    <height>196</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1351,8 +1432,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>305</width>
-                    <height>365</height>
+                    <width>116</width>
+                    <height>191</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1427,8 +1508,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>305</width>
-                    <height>365</height>
+                    <width>116</width>
+                    <height>191</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1504,7 +1585,7 @@ font: 57 10pt &quot;Noto Sans&quot;;
                     <x>0</x>
                     <y>0</y>
                     <width>305</width>
-                    <height>365</height>
+                    <height>409</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -4805,15 +4886,30 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>75</width>
                <height>35</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>75</width>
+               <height>16777215</height>
               </size>
              </property>
              <property name="styleSheet">
               <string notr="true">QPushButton:!enabled {
 background-color: rgb(20 ,21, 37);
 	color: rgb(48, 89, 170);
-}</string>
+}
+
+
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }</string>
              </property>
              <property name="text">
               <string>Back</string>
@@ -4824,9 +4920,25 @@ background-color: rgb(20 ,21, 37);
             <widget class="QPushButton" name="nextButton">
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>75</width>
                <height>35</height>
               </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>75</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }</string>
              </property>
              <property name="text">
               <string>Next</string>

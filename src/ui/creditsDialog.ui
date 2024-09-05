@@ -22,7 +22,23 @@
 background-color: rgb(26, 27, 38);
 	alternate-background-color: rgb(33, 39, 54);
 
-}</string>
+}
+
+ QPushButton {
+        background-color: #292e42;
+        border: 1px solid #3b4261;
+        color: #a9b1d6;
+        padding: 12px;
+        border-radius: 7px;
+    }
+
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -369,11 +385,7 @@ background-color: rgb(26, 27, 38);
            <string comment="Visit StratOS Github Repo" extracomment="Visit StratOS Github Repo"/>
           </property>
           <property name="styleSheet">
-           <string notr="true">QPushButton{
-background-color: rgb(26, 27, 38);
-	alternate-background-color: rgb(33, 39, 54);
-	color: rgb(118, 159, 240);
-}</string>
+           <string notr="true"/>
           </property>
           <property name="text">
            <string>Github Repo</string>
@@ -417,11 +429,7 @@ background-color: rgb(26, 27, 38);
    <item>
     <widget class="QDialogButtonBox" name="dialogButtonBox">
      <property name="styleSheet">
-      <string notr="true">
-	background-color: rgb(26, 27, 38);
-	alternate-background-color: rgb(33, 39, 54);
-	color: rgb(118, 159, 240);
-</string>
+      <string notr="true"/>
      </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>

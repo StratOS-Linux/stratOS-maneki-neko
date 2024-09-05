@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>817</width>
-    <height>363</height>
+    <width>834</width>
+    <height>399</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -40,7 +40,23 @@
 	background-color: rgb(30, 31, 47);
 	
 	color: rgb(118, 159, 240);
-};
+}
+
+ QPushButton {
+        background-color: #292e42;
+        border: 1px solid #3b4261;
+        color: #a9b1d6;
+        padding: 19px;
+        border-radius: 7px;
+    }
+
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }
 
 </string>
   </property>
