@@ -29,7 +29,7 @@ show_dialog() {
 
 # Function to set default application and show dialog
 set_default_and_show_dialog() {
-    if mimeopen -d sampleFiles/sample.py sampleFiles/sample.cpp ~/sample.c ~/sample.md ~/sample.java ~/sample.yaml ~/sample.toml ~/sample.sh ~/sample.p6 ~/sample.tex ~/sample.js sampleFiles/sample.txt; then
+    if mimeopen -d $(pwd)/src/scripts/mimeopenScripts/sampleFiles/sample.py $(pwd)/src/scripts/mimeopenScripts/sampleFiles/sample.cpp ~/sample.c ~/sample.md ~/sample.java ~/sample.yaml ~/sample.toml ~/sample.sh ~/sample.p6 ~/sample.tex ~/sample.js $(pwd)/src/scripts/mimeopenScripts/sampleFiles/sample.txt 2>/dev/null; then
         echo "==> ==> Selected application will be launched now..."
         show_dialog "The Default Text Editor App has been set."
     else

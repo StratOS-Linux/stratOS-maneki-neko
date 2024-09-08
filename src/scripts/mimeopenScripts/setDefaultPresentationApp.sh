@@ -29,7 +29,13 @@ show_dialog() {
 
 # Function to set default application and show dialog
 set_default_and_show_dialog() {
-    if mimeopen -d sampleFiles/sample.odp ~/sample.ppt ~/sample.pptx; then
+    
+    # create temporary PPTX and PPT files
+    touch /tmp/sample.pptx
+    touch /tmp/sample.ppt
+
+
+    if mimeopen -d /tmp/sample.pptx /tmp/sample.ppt $(pwd)/src/scripts/mimeopenScripts/sampleFiles/sample.odp 2>/dev/null; then
         echo "==> ==> Selected application will be launched now..."
         show_dialog "The Default Presentation Maker App has been set."
     else

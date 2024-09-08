@@ -29,7 +29,11 @@ show_dialog() {
 
 # Function to set default application and show dialog
 set_default_and_show_dialog() {
-    if mimeopen -d sampleFiles/sample.odt ~/sample.doc ~/sample.docx; then
+    # create temporary DOC and DOCX files in /tmp
+    touch /tmp/sample.docx
+    touch /tmp/sample.doc
+
+    if mimeopen -d /tmp/sample.docx /tmp/sample.doc $(pwd)/src/scripts/mimeopenScripts/sampleFiles/sample.odt 2>/dev/null; then
         echo "==> ==> Selected application will be launched now..."
         show_dialog "The Default Word Processor App has been set."
     else

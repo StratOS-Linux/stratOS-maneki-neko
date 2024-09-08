@@ -29,7 +29,11 @@ show_dialog() {
 
 # Function to set default application and show dialog
 set_default_and_show_dialog() {
-    if mimeopen -d sampleFiles/sample.ods ~/sample.xls ~/sample.xlsx; then
+    
+    touch /tmp/sample.xlsx
+    touch /tmp/sample.xls
+
+    if mimeopen -d /tmp/sample.xls /tmp/sample.xlsx $(pwd)/src/scripts/mimeopenScripts/sampleFiles/sample.ods 2>/dev/null; then
         echo "==> ==> Selected application will be launched now..."
         show_dialog "The Default Spreadsheet Editor App has been set."
     else

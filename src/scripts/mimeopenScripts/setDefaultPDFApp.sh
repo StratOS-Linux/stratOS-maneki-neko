@@ -18,6 +18,7 @@ echo "
 ⠸⣿⣿⣿⣿⣿⣿⡇⠀⠀⢸⣿⣿⣿⣿⣿⣿⠇⠀⠀
 ⠀⠈⠉⠙⠛⠉⠉⠀⠀⠀⠀⠉⠉⠛⠋⠉⠁⠀⠀⠀
 "
+
 echo "==== ==== >> Set the Default PDF Application << ==== ===="
 echo
 
@@ -29,7 +30,7 @@ show_dialog() {
 
 # Function to set default application and show dialog
 set_default_and_show_dialog() {
-    if mimeopen -d sampleFiles/sample.pdf ; then
+    if mimeopen -d $(pwd)/src/scripts/mimeopenScripts/sampleFiles/sample.pdf 2>/dev/null ; then
         echo "==> ==> Selected application will be launched now..."
         show_dialog "The Default PDF App has been set."
     else
