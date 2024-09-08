@@ -1,8 +1,9 @@
-.vscode/*
+.vscode/
 
-__pycache__/*
+__pycache__/
 
 RenewableTimer.py
+*.pyc
 
-
+__pycache__/resources.cpython-312.pyc
 __pycache__/resources.cpython-312.pyc
