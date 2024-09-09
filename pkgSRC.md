@@ -17,13 +17,13 @@ For review and reference.
 
 | Office Suites | Sources                                                                         |
 | ------------- | ------------------------------------------------------------------------------- |
-| ONLYOFFICE    | apt (wget the .deb file and install it), flatpak, AUR, _not suggested_ AppImage |
-| LibreOffice   | pacman, flatpak, apt, _not suggested_ AppImage                                  |
+| ONLYOFFICE    | apt (wget the .deb file and install it), flatpak, AUR,  ~~AppImage~~ |
+| LibreOffice   | pacman, flatpak, apt, ~~AppImage~~                                  |
 
 | Text Editors | Sources (how to install)                            |
 | ------------ | --------------------------------------------------- |
-| StratMacs    | **You Tell Me @stratmacs_maintainer**               |
-| StratVIM     | **You Tell Me @stratvim_maintainer**                |
+| StratMacs    | Custom install Script: installs nvim using pacman and git clones the stratvim configs to the users .config directory              |
+| StratVIM     | Custom install Script: installs emacs using pacman and git clones the strat configs to the users .config directory                  |
 | VSCodium     | apt, (vscodium.com apt repo), official AUR, flatpak |
 
 | Misc Programs  | Sources                                                                                                                                                                                                 |
@@ -32,5 +32,11 @@ For review and reference.
 | Evince PDF     | apt, pacman                                                                                                                                                                                             |
 | GitHub Desktop | apt, (wget .deb file and install), AUR                                                                                                                                                                  |
 | Obsidian       | apt (wget .deb file and install), AUR, pacman                                                                                                                                                         |
-| GSConnect      | https://github.com/GSConnect/gnome-shell-extension-gsconnect/wiki/Installation#standard _gnome shell extensions program must be preinstalled_ also _browser extensions have to be installed seperately_ |
+| GSConnect      | AUR, https://github.com/GSConnect/gnome-shell-extension-gsconnect/wiki/Installation#standard _gnome shell extensions program must be preinstalled_ also _browser extensions have to be installed seperately_ |
 
+
+### Future inclusions
+
+- Terminal applications
+- Developer Tools, like Java compiler, JAVA runtime, CLANG compiler, NodeJS
+- GPU Drivers installation (AMD/NVIDIA OpenSource as well as Proprietary drivers) on supported bedrock stratum

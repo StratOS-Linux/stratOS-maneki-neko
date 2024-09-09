@@ -9,6 +9,7 @@ from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtWidgets import QMainWindow,  QApplication,  QDialog, QMessageBox
 from time import sleep
 import os, subprocess
+from os.path import isfile
 import resources
 
 
@@ -36,6 +37,9 @@ StratOS-Maneki-Neko: Welcome Screen GUI Application for StratOS-Linux, written i
 # globals
 app = QApplication(sys.argv)
 
+# global variable used to count number of errors until time to display error popup message
+# each time error occurs, this variable gets decremented
+# if its zero, the error message is displayed.
 
 packageSRCReference = { # PACKAGE source reference dictionary
 
@@ -132,6 +136,10 @@ lastPage=3  # the last page of the app is the 3rd page
 WORK_DIR = os.getcwd() # gets working directory of the python script
                        # at install location value shoulda be /opt/maneki-neko
                        # to HARDCODE this , change WORK_DIR to /opt/maneki-neko
+
+
+
+
 
 # ===============================================================================================================
 
@@ -367,7 +375,7 @@ class welcomeScreen(QMainWindow):
         # if programQueue is empty ie not filled
         # send popup message and exit function
         if programInstallQueueLen == 0:
-            message = QMessageBox.about(self,"Cannot Install","No programs marked for install.")
+            self.errorMessageBox(title = 'Cannot Install', message = 'No programs marked for install', icon = 'warn')
             return
         # now call function to determine selected sources
         self.updateProgramSRCPreference()
@@ -380,7 +388,7 @@ class welcomeScreen(QMainWindow):
         PACMANInstallQueue   = {"pacman"    : [packageSRCReference["pacman"][p]     for p,v in programSRCPreference.items() if v == "pacman"   and p in programInstallQueue ]}
 
         # now call the install dialog
-        dialog = installDialog()
+        dialog = installDialog(self)
         if dialog.exec_():
             return
 
@@ -607,16 +615,23 @@ class welcomeScreen(QMainWindow):
 
     def runDistroInstallerScript(self):
 
+        if not isfile('/usr/local/bin/StratOS-configure-distro'):
+            self.errorMessageBox(title = 'Cannot Open DistroInstaller', message = ' Maneki could not open helper program to install distros on StratOS.', details = "/usr/local/bin/StratOS-configure-distro: No such file or directory", icon = 'critical')
+            return
         # the command to execute
-        # pls change this
         try:
             print("runDistroInstaller(): executing the installer script")
-            command = ["gnome-terminal", "--", '/usr/local/bin/StratOS-configure-distro']
+            command = ["gnome-terminal", "-e", '/usr/local/bin/StratOS-configure-distro']
 
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
 
+            if temporary == 1:
+                self.errorMessageBox(title = 'Cannot Open DistroInstaller', message = ' Maneki could not open helper program to install distros on StratOS.', details = E404, icon = 'critical')
+
+
         # error handling
-        except FileNotFoundError:
+        except FileNotFoundError as E404:
+            self.errorMessageBox(title = 'Cannot Open DistroInstaller', message = ' Maneki could not open helper program to install distros on StratOS.', details = E404, icon = 'critical')
             print("runDistroInstaller(): Could not find /usr/local/bin/StratOS-configure-distro")
         return
 
@@ -629,49 +644,46 @@ class welcomeScreen(QMainWindow):
         self.morphNextButton()
         return
 
-    def runThemeChangerScript(self):
-        # work need to be done
-        print("executing the installer script")
+    def errorMessageBox(self, title, message, details = None, icon = "info"):
 
-        # the command to execute
-        # pls change this
-        command = ["gnome-terminal", "--", '/usr/local/bin/StratOS-configure-theme']
+        if icon == "info":
+            msg = QMessageBox(1, title, message, QMessageBox.Ok,icon = QMessageBox.Information, parent = self)
+        elif icon == "warn":
+            msg = QMessageBox(1, title, message, QMessageBox.Ok,icon = QMessageBox.Warning, parent = self)
+        elif icon == "critical":
+            print('\a')
+            msg = QMessageBox(1, title, message, QMessageBox.Ok,icon = QMessageBox.Critical, parent = self)
 
-        temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
+        if details:
+            msg.setDetailedText(details)
 
-        # get the STDOUT
-        result=temporary.communicate()
+        msg.setDefaultButton(QMessageBox.Ok)
+        msg.setStyleSheet("""                             
+            QWidget{
+	            background-color: rgb(30, 31, 47);
+	            color: rgb(118, 159, 240);
+            }
+            QPushButton{font-size:16px;}
 
-        #print(result)
 
-        return
+            QPushButton:hover {
+                background-color: #3b4261;
+            }
 
-    def runBrowserInstallerScript(self):
-        # work need to be done
-        print("executing the installer script")
-
-        # the command to execute
-        # pls change this
-
-        command = ["gnome-terminal", "--", '/usr/local/bin/StratOS-configure-browser']
-
-        temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
-
-        # get the STDOUT
-        result=temporary.communicate()
-
-        #print(result)
-
-        return
+            QPushButton:pressed {
+                background-color: #414868;
+            }
+                                                """)
+        msg.exec()
 
     def openWebsite(self):
         # command to open the URL
-        command = ["xdg-open", "stratos-linux.github.io"]
+        command = ["xdg-open", "https://stratos-linux.org"]
         run = subprocess.Popen(command)
         return
 
     def openchangeDefaultSettingsDialog(self):
-        dialog = changeDefaultSettingsDialog()
+        dialog = changeDefaultSettingsDialog(self)
         
         if dialog.exec_():
             programInstallerOpened = dialog.programInstallerOpened
@@ -703,11 +715,12 @@ class welcomeScreen(QMainWindow):
         return  
 
     def openCreditsDialog(self):
-        dialog = creditsWindow()
+        dialog = creditsWindow(self)
         if dialog.exec_():
             return
 
     def setupAutostart(self):
+        global errorCount
         # define home and hence the full file path for the DESKTOP FILE
         home = os.path.expanduser("~")
 
@@ -734,7 +747,7 @@ GenericName=Welcome Screen App
 Comment=Welcome Screen Application for StratOS
 Exec={EXEC_PATH}
 Icon={WORK_DIR}/src/png/maneki_neko.png
-Comment=StratOS welcome screen
+Comment=StratOS Welcome Screen Application
 X-GNOME-Autostart-enabled=true
 Path={WORK_DIR}
 Terminal=false
@@ -752,8 +765,9 @@ StartupNotify=false
                 print("setupAutostart(): Maneki Neko autostart Enabled")
 
                 # update checkbox text for feedback
-                self.autostartCheckBox.setText("setupAutostart(): Autostart Maneki Neko (Enabled)")
+                self.autostartCheckBox.setText("Autostart Maneki Neko (Enabled)")
             except FileNotFoundError as E404:
+                self.errorMessageBox(title = 'Cannot Enable Autostart', message = ' Maneki could not create desktop file for autostart.', details = E404, icon = 'critical')
                 print("setupAutostart(): Maneki could not create desktop file for autostart.")
                 print(f"setupAutostart(): ERROR: {E404}\n")
                 self.autostartCheckBox.toggle()
@@ -784,7 +798,7 @@ StartupNotify=false
 #            |_|         |_|                                                 
 
 class creditsWindow(QDialog):
-    def __init__(self):
+    def __init__(self, parent = None):
         # init the class and the ui file
         super(creditsWindow,self).__init__()
         loadUi(WORK_DIR + "/src/ui/creditsDialog.ui",self)
@@ -821,7 +835,7 @@ class installDialog(QDialog):
     isTherePacman = True
     isThereAUR = True
 
-    def __init__(self):
+    def __init__(self, parent = None):
         global AURInstallQueue, FLATPAKInstallQueue, PACMANInstallQueue
         self.AURInstallQueue        = AURInstallQueue
         self.PACMANInstallQueue     = PACMANInstallQueue
@@ -911,7 +925,21 @@ class changeDefaultSettingsDialog(QDialog):
     programInstallerOpened = False
 
 
-    def __init__(self):
+        # variable used to count number of errors in each function until time to display error popup message
+        # each time error occurs, this variable gets decremented
+        # if its zero, the error message is displayed.
+
+    errorCount = {  "selectTextEditor"  : 2     ,\
+                    "selectPDFViewer"   : 2     ,\
+                    "selectDOCXEditor"  : 2     ,\
+                    "selectPPTXEditor"  : 2     ,\
+                    "selectXLSXEditor"  : 2     ,\
+                    "openGNOMETweaks"   : 2     ,\
+                    "openGNOMESettings" : 2     
+
+                }
+
+    def __init__(self, parent = None):
         
 
         super(changeDefaultSettingsDialog,self).__init__()
@@ -942,7 +970,37 @@ class changeDefaultSettingsDialog(QDialog):
         self.selectPDFButton.clicked.connect(self.selectPDFViewer)
 
 
+    def errorMessageBox(self, title, message, function,details = None):
 
+
+        if self.errorCount[function] > 0:
+            self.errorCount[function] -= 1
+            return
+        else:
+            self.errorCount[function] = 2
+            msg = QMessageBox(1, title, message, QMessageBox.Ok,icon = QMessageBox.Critical, parent = self)
+
+            if details:
+                    msg.setDetailedText(str(details))
+    
+            msg.setDefaultButton(QMessageBox.Ok)
+            msg.setStyleSheet("""                             
+                QWidget{
+	                background-color: rgb(30, 31, 47);
+	                color: rgb(118, 159, 240);
+                }
+                QPushButton{font-size:16px;}
+
+
+                QPushButton:hover {
+                    background-color: #3b4261;
+                }
+
+                QPushButton:pressed {
+                    background-color: #414868;
+                }
+                                                    """)
+            msg.exec()
 
     def selectTextEditor(self):
 
@@ -950,7 +1008,9 @@ class changeDefaultSettingsDialog(QDialog):
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
-        except FileNotFoundError:
+        except FileNotFoundError as E404:
+            self.errorMessageBox(title="Cannot Open",message="Cannot open GNOME Terminal...", details = E404, function = "selectTextEditor")
+
             print("selectTextEditor(): Couldn't run MIMEOPEN command to change default text editor... ")
 
         return
@@ -961,7 +1021,9 @@ class changeDefaultSettingsDialog(QDialog):
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
-        except FileNotFoundError:
+        except FileNotFoundError as E404:
+            self.errorMessageBox(title="Cannot Open",message="Cannot open GNOME Terminal...", details = E404, function = "selectPDFViewer")
+
             print("selectPDFViewer(): Couldn't run MIMEOPEN command to change default PDF viewer... ")
 
         return
@@ -971,7 +1033,9 @@ class changeDefaultSettingsDialog(QDialog):
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
-        except FileNotFoundError:
+        except FileNotFoundError as E404:
+            self.errorMessageBox(title="Cannot Open",message="Cannot open GNOME Terminal...", details = E404, function = "selectDOCXEditor")
+
             print("selectDOCXEditor(): Couldn't run MIMEOPEN command to change default Word file editor... ")
 
         return
@@ -981,7 +1045,9 @@ class changeDefaultSettingsDialog(QDialog):
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
-        except FileNotFoundError:
+        except FileNotFoundError as E404:
+            self.errorMessageBox(title="Cannot Open",message="Cannot open GNOME Terminal...", details = E404, function = "selectPPTXEditor")
+
             print("selectPPTXEditor(): Couldn't run MIMEOPEN command to change default Powerpoint file editor... ")
 
         return
@@ -991,7 +1057,9 @@ class changeDefaultSettingsDialog(QDialog):
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
-        except FileNotFoundError:
+        except FileNotFoundError as E404:
+            self.errorMessageBox(title="Cannot Open",message="Cannot open GNOME Terminal...", details = E404, function = "selectXLSXEditor")
+
             print("selectXLSXEditor(): Couldn't run MIMEOPEN command to change default Excel file editor... ")
 
         return
@@ -1005,6 +1073,7 @@ class changeDefaultSettingsDialog(QDialog):
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
             
         except FileNotFoundError as E404:
+            self.errorMessageBox(title="Cannot Open",message="Cannot open GNOME Settings...", details = E404, function = "openGNOMESettings")
             print(f"openGNOMESettings()[404]: Couldn't open Gnome Settings...:: {E404} ")
 
         return
@@ -1019,6 +1088,7 @@ class changeDefaultSettingsDialog(QDialog):
          
             
         except FileNotFoundError as E404:
+            self.errorMessageBox(title="Cannot Open",message="Cannot open GNOME Tweaks...", details = E404, function = "openGNOMETweaks")
             print(f"openGNOMETweaks()[404]: Couldn't open Gnome Tweaks...:: {E404} ")
 
         return
@@ -1030,7 +1100,8 @@ class changeDefaultSettingsDialog(QDialog):
         self.programInstallerOpened = True
         self.accept()
         return
-    
+
+
 
 
 

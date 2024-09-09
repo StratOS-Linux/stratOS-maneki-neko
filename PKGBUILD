@@ -8,6 +8,8 @@ license=('GPL-v3')
 depends=('bash'
 	 'dialog'
 	 'gnome-terminal'
+     'python'
+     'python-pyqt5'
 	 'qt5-wayland')
 optdepends=()
 source=("git+${url}")

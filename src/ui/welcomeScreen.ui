@@ -541,8 +541,8 @@
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>926</width>
-                  <height>696</height>
+                  <width>939</width>
+                  <height>664</height>
                  </rect>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -1229,8 +1229,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>116</width>
-                    <height>296</height>
+                    <width>104</width>
+                    <height>284</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1344,8 +1344,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>116</width>
-                    <height>196</height>
+                    <width>104</width>
+                    <height>184</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1432,8 +1432,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>116</width>
-                    <height>191</height>
+                    <width>104</width>
+                    <height>179</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1508,8 +1508,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>116</width>
-                    <height>191</height>
+                    <width>104</width>
+                    <height>179</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1584,8 +1584,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>305</width>
-                    <height>409</height>
+                    <width>104</width>
+                    <height>254</height>
                    </rect>
                   </property>
                   <attribute name="label">

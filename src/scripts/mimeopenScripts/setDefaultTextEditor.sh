@@ -29,7 +29,16 @@ show_dialog() {
 
 # Function to set default application and show dialog
 set_default_and_show_dialog() {
-    if mimeopen -d $(pwd)/src/scripts/mimeopenScripts/sampleFiles/sample.py $(pwd)/src/scripts/mimeopenScripts/sampleFiles/sample.cpp ~/sample.c ~/sample.md ~/sample.java ~/sample.yaml ~/sample.toml ~/sample.sh ~/sample.p6 ~/sample.tex ~/sample.js $(pwd)/src/scripts/mimeopenScripts/sampleFiles/sample.txt 2>/dev/null; then
+
+    # create (temporary) empty .C, .JAVA, .YAML, .TOML, .SH, .P6, .TEX, .JS, .PS1, .RS, .CONF, .BASHRC, .ZSHRC files in /tmp directory
+    touch /tmp/sample.c /tmp/sample.java
+    touch /tmp/sample.yaml /tmp/sample.toml
+    touch /tmp/sample.sh /tmp/sample.p6
+    touch /tmp/sample.tex /tmp/sample.js
+    touch /tmp/sample.ps1 /tmp/sample.rs
+    touch /tmp/sample.conf /tmp/.bashrc /tmp/.zshrc
+
+    if mimeopen -d $(pwd)/src/scripts/mimeopenScripts/sampleFiles/sample.py $(pwd)/src/scripts/mimeopenScripts/sampleFiles/sample.cpp  /tmp/sample.c /tmp/sample.java /tmp/sample.yaml /tmp/sample.toml /tmp/sample.sh /tmp/sample.p6 /tmp/sample.tex /tmp/sample.js /tmp/sample.ps1 /tmp/sample.rs /tmp/sample.conf /tmp/.bashrc /tmp/.zshrc $(pwd)/src/scripts/mimeopenScripts/sampleFiles/sample.txt 2>/dev/null; then
         echo "==> ==> Selected application will be launched now..."
         show_dialog "The Default Text Editor App has been set."
     else
