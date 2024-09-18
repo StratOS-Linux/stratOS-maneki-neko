@@ -1067,7 +1067,7 @@ class changeDefaultSettingsDialog(QDialog):
 
 
     def openGNOMESettings(self):
-        command = ['gnome-control-center', 'default-applications']
+        command = ['gnome-control-center', 'default-apps']
 
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
