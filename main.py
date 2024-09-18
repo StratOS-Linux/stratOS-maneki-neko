@@ -1081,7 +1081,7 @@ class changeDefaultSettingsDialog(QDialog):
 
     def openGNOMETweaks(self):
 
-        command = ['gnome-tweaks']
+        command = ['gnome-tweaks', 'appearance']
 
         try:
             temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
