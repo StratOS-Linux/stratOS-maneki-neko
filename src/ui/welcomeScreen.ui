@@ -122,7 +122,7 @@
             <enum>QFrame::Raised</enum>
            </property>
            <property name="currentIndex">
-            <number>0</number>
+            <number>2</number>
            </property>
            <widget class="QWidget" name="zerothPage">
             <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -547,8 +547,8 @@
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>924</width>
-                  <height>696</height>
+                  <width>922</width>
+                  <height>779</height>
                  </rect>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_10">
@@ -587,6 +587,24 @@
                                   <width>0</width>
                                   <height>35</height>
                                  </size>
+                                </property>
+                                <property name="styleSheet">
+                                 <string notr="true"> QPushButton {
+        background-color: #292e42;
+        border: 1px solid #3b4261;
+        color: #a9b1d6;
+        padding: 5px;
+        border-radius: 7px;
+    }
+
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }
+</string>
                                 </property>
                                 <property name="text">
                                  <string>Credits</string>
@@ -660,6 +678,18 @@
                             </item>
                             <item>
                              <widget class="QLabel" name="p3_heading1">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>50</height>
+                               </size>
+                              </property>
+                              <property name="maximumSize">
+                               <size>
+                                <width>16777215</width>
+                                <height>55</height>
+                               </size>
+                              </property>
                               <property name="font">
                                <font>
                                 <family>JetBrains Mono</family>
@@ -673,7 +703,7 @@
                                <string notr="true">font: bold 15pt &quot;JetBrains Mono&quot;;</string>
                               </property>
                               <property name="text">
-                               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;==&amp;gt; Setup your System&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;==&amp;gt; Setup your system&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                               </property>
                               <property name="alignment">
                                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -692,8 +722,8 @@
                             </property>
                             <property name="maximumSize">
                              <size>
-                              <width>93</width>
-                              <height>90</height>
+                              <width>120</width>
+                              <height>118</height>
                              </size>
                             </property>
                             <property name="frameShape">
@@ -748,7 +778,23 @@
                            <string>Opens the terminal and installs the specified distro(s) of your choice.</string>
                           </property>
                           <property name="styleSheet">
-                           <string notr="true">font-size:16px;</string>
+                           <string notr="true"> QPushButton {
+        background-color: #292e42;
+        border: 1px solid #3b4261;
+        color: #a9b1d6;
+		font-size: 16px;
+        padding: 5px;
+        border-radius: 7px;
+    }
+
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }
+</string>
                           </property>
                           <property name="text">
                            <string>Install another Distribution</string>
@@ -766,7 +812,23 @@
                            </font>
                           </property>
                           <property name="styleSheet">
-                           <string notr="true">font-size:16px;</string>
+                           <string notr="true"> QPushButton {
+        background-color: #292e42;
+        border: 1px solid #3b4261;
+        color: #a9b1d6;
+		font-size: 16px;
+        padding: 5px;
+        border-radius: 7px;
+    }
+
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }
+</string>
                           </property>
                           <property name="text">
                            <string>Change Default Settings</string>
@@ -784,7 +846,23 @@
                            </font>
                           </property>
                           <property name="styleSheet">
-                           <string notr="true">font-size:16px;</string>
+                           <string notr="true"> QPushButton {
+        background-color: #292e42;
+        border: 1px solid #3b4261;
+        color: #a9b1d6;
+		font-size: 16px;
+        padding: 5px;
+        border-radius: 7px;
+    }
+
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }
+</string>
                           </property>
                           <property name="text">
                            <string>Install software</string>
@@ -800,6 +878,12 @@
                        <layout class="QHBoxLayout" name="horizontalLayout_4">
                         <item>
                          <widget class="QLabel" name="p3_heading2">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>50</height>
+                           </size>
+                          </property>
                           <property name="font">
                            <font>
                             <family>JetBrains Mono</family>
@@ -833,8 +917,24 @@
                         <item>
                          <widget class="QPushButton" name="openDISCORDbutton">
                           <property name="styleSheet">
-                           <string notr="true">font: 11pt &quot;Liberation Mono&quot;;
-color: rgb(255, 0, 243);</string>
+                           <string notr="true">
+ QPushButton {
+        background-color: #292e42;
+        border: 1px solid #3b4261;
+        color: #a9b1d6;
+font: 11pt &quot;Liberation Mono&quot;;
+color: rgb(255, 0, 243);        padding: 5px;
+        border-radius: 7px;
+    }
+
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }
+</string>
                           </property>
                           <property name="text">
                            <string>Discord</string>
@@ -857,8 +957,24 @@ color: rgb(255, 0, 243);</string>
                         <item>
                          <widget class="QPushButton" name="openMATRIXbutton">
                           <property name="styleSheet">
-                           <string notr="true">font: 11pt &quot;Liberation Mono&quot;;
-color: rgb(2, 240, 255);</string>
+                           <string notr="true">
+ QPushButton {
+        background-color: #292e42;
+        border: 1px solid #3b4261;
+        color: #4fd6be;
+		font: 11pt &quot;Liberation Mono&quot;;
+    		padding: 5px;
+        border-radius: 7px;
+    }
+
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }
+</string>
                           </property>
                           <property name="text">
                            <string>Matrix</string>
@@ -881,8 +997,23 @@ color: rgb(2, 240, 255);</string>
                         <item>
                          <widget class="QPushButton" name="openMASTODONbutton">
                           <property name="styleSheet">
-                           <string notr="true">font: 11pt &quot;Liberation Mono&quot;;
-	color: rgb(118, 159, 240);
+                           <string notr="true">
+ QPushButton {
+        background-color: #292e42;
+        border: 1px solid #3b4261;
+        color: #7dcfff;
+font: 11pt &quot;Liberation Mono&quot;;
+    padding: 5px;
+        border-radius: 7px;
+    }
+
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }
 </string>
                           </property>
                           <property name="text">
@@ -920,10 +1051,22 @@ color: rgb(2, 240, 255);</string>
                       </item>
                       <item>
                        <widget class="QLabel" name="label101">
+                        <property name="sizePolicy">
+                         <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+                          <horstretch>0</horstretch>
+                          <verstretch>0</verstretch>
+                         </sizepolicy>
+                        </property>
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>80</height>
+                         </size>
+                        </property>
                         <property name="maximumSize">
                          <size>
                           <width>16777215</width>
-                          <height>70</height>
+                          <height>90</height>
                          </size>
                         </property>
                         <property name="font">
@@ -1166,8 +1309,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>305</width>
-                    <height>409</height>
+                    <width>116</width>
+                    <height>296</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1281,8 +1424,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>305</width>
-                    <height>409</height>
+                    <width>116</width>
+                    <height>196</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1369,8 +1512,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>305</width>
-                    <height>409</height>
+                    <width>116</width>
+                    <height>191</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1445,8 +1588,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>305</width>
-                    <height>409</height>
+                    <width>116</width>
+                    <height>191</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -1521,8 +1664,8 @@ font: 57 10pt &quot;Noto Sans&quot;;
                    <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>303</width>
-                    <height>407</height>
+                    <width>301</width>
+                    <height>405</height>
                    </rect>
                   </property>
                   <attribute name="label">
@@ -4837,7 +4980,24 @@ font: bold 11pt &quot;JetBrains Mono&quot;;
               <string notr="true">QPushButton:!enabled {
 background-color: rgb(20 ,21, 37);
 	color: rgb(48, 89, 170);
-}</string>
+}
+
+ QPushButton {
+        background-color: #292e42;
+        border: 1px solid #3b4261;
+        color: #a9b1d6;
+        padding: 5px;
+        border-radius: 7px;
+    }
+
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }
+</string>
              </property>
              <property name="text">
               <string>Back</string>
@@ -4857,6 +5017,24 @@ background-color: rgb(20 ,21, 37);
                <width>75</width>
                <height>16777215</height>
               </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"> QPushButton {
+        background-color: #292e42;
+        border: 1px solid #3b4261;
+        color: #a9b1d6;
+        padding: 5px;
+        border-radius: 7px;
+    }
+
+    QPushButton:hover {
+        background-color: #3b4261;
+    }
+
+    QPushButton:pressed {
+        background-color: #414868;
+    }
+</string>
              </property>
              <property name="text">
               <string>Next</string>
