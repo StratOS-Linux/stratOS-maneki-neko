@@ -5,6 +5,8 @@ __pycache__/
 RenewableTimer.py
 
 *.pyc
+*.bak
+__pycache__/resources.cpython-312.pyc
+__pycache__/resources.cpython-312.pyc
 
-__pycache__/resources.cpython-312.pyc
-__pycache__/resources.cpython-312.pyc
+*.code-workspace
