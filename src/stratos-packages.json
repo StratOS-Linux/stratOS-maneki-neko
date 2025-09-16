@@ -1,0 +1,41 @@
+{
+   
+    "flatpak": {
+        "brave": "com.brave.Browser",
+        "firefox": "org.mozilla.Firefox",
+        "chromium": "org.chromium.Chromium",
+        "librewolf": "io.gitlab.librewolf-community",
+        "vlc": "org.videolan.VLC",
+        "mpv": "io.mpv.Mpv",
+        "libreoffice": "org.libreoffice.LibreOffice",
+        "onlyoffice": "org.onlyoffice.desktopeditors",
+        "vscodium": "com.vscodium.codium"
+    },
+    "aur": {
+        "brave": "brave-bin",
+        "librewolf": "librewolf-bin",
+        "mpv": "mpv-full",
+        "vlc": "vlc-git",
+        "onlyoffice": "onlyoffice-bin",
+        "vscodium": "vscodium-bin",
+        "github": "github-desktop-bin",
+        "obsidian": "obsidian-bin",
+        "gsconnect": "gnome-shell-extension-gsconnect"
+    },
+    "_comment5": "===== ALL PACMAN PROGRAMS ========",
+    "pacman": {
+        "chromium": "chromium",
+        "firefox": "firefox",
+        "vlc": "vlc",
+        "mpv": "mpv",
+        "libreoffice": "libreoffice-fresh",
+        "atril": "atril",
+        "evince": "evince",
+        "obsidian": "obsidian"
+    },
+    "_comment6": "======= ALL Programs installed using Special Install Scripts ========",
+    "script": {
+        "stratmacs": "stratmacs_installer",
+        "stratvim": "stratvim_installer"
+    }
+}
