@@ -1,16 +1,16 @@
 #!/usr/bin/env python
 
 #Modules
-import sys
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets, QtCore, QtGui
-
-
-from PyQt5.QtWidgets import QMainWindow,  QApplication,  QDialog, QMessageBox
+from PyQt5.QtWidgets import QMainWindow,  QApplication,  QDialog, QMessageBox, QLabel
 from time import sleep
-import os, subprocess
 from os.path import isfile
-import resources
+import subprocess
+import sys
+import os
+import time
+import json
 
 
 #LICENSE
@@ -35,87 +35,137 @@ StratOS-Maneki-Neko: Welcome Screen GUI Application for StratOS-Linux, written i
 
 
 # globals
+# Terminal invocation utility
+def invoke_in_terminal(command_args, *, cwd=None, env=None, raise_on_error=False, shell_type="auto"):
+    """
+    Run a command in a new terminal window using DEFAULT_TERMINAL, fallback to xfce4-terminal if needed.
+    Returns a dict: { 'success': bool, 'exit_code': int, 'error': Exception or None }
+    If raise_on_error is True, raises exception on failure.
+    
+    Args:
+        command_args: List of command arguments or single command string
+        shell_type: "auto", "python", "bash", or "direct"
+                   - "auto": Auto-detect based on file extension
+                   - "python": Execute with python interpreter
+                   - "bash": Execute with bash shell
+                   - "direct": Execute command directly (original behavior)
+    """
+    import subprocess
+    import os
+    
+    # Process command based on shell_type
+    if isinstance(command_args, list) and len(command_args) > 0:
+        first_arg = command_args[0]
+        
+        # Auto-detect shell type if not specified
+        if shell_type == "auto":
+            if first_arg.endswith('.py'):
+                shell_type = "python"
+            elif first_arg.endswith('.sh'):
+                shell_type = "bash"
+            else:
+                shell_type = "direct"
+        
+        # Prepare command based on shell type
+        if shell_type == "python":
+            # For Python files, use python interpreter
+            if len(command_args) == 1:
+                # Single Python file
+                final_command = f"python3 '{first_arg}'; echo 'Press Enter to close...'; read"
+            else:
+                # Python file with arguments - escape quotes in JSON strings
+                escaped_args = []
+                for arg in command_args[1:]:
+                    if arg.startswith('{') or arg.startswith('['):
+                        # This is likely a JSON string, escape it properly
+                        escaped_arg = arg.replace('"', '\\"')
+                        escaped_args.append(f'"{escaped_arg}"')
+                    else:
+                        escaped_args.append(f"'{arg}'")
+                args_str = ' '.join(escaped_args)
+                final_command = f"python3 '{first_arg}' {args_str}; echo 'Press Enter to close...'; read"
+        elif shell_type == "bash":
+            # For shell scripts, use bash
+            if len(command_args) == 1:
+                final_command = f"bash '{first_arg}'; echo 'Press Enter to close...'; read"
+            else:
+                args_str = ' '.join(f"'{arg}'" for arg in command_args[1:])
+                final_command = f"bash '{first_arg}' {args_str}; echo 'Press Enter to close...'; read"
+        else:
+            # Direct execution (original behavior)
+            final_command = ' '.join(f"'{arg}'" for arg in command_args) + "; echo 'Press Enter to close...'; read"
+    else:
+        # Handle string command
+        final_command = str(command_args) + "; echo 'Press Enter to close...'; read"
+    
+    terminal = globals().get('DEFAULT_TERMINAL', 'x-terminal-emulator')
+    fallback_terminal = 'xfce4-terminal'
+    
+    # Terminal-specific command formatting
+    def format_terminal_command(term, cmd):
+        if 'xfce4-terminal' in term:
+            return [term, '--command', f'bash -c "{cmd}"']
+        elif 'gnome-terminal' in term:
+            return [term, '--', 'bash', '-c', cmd]
+        elif 'konsole' in term:
+            return [term, '-e', 'bash', '-c', cmd]
+        elif 'xterm' in term:
+            return [term, '-e', 'bash', '-c', cmd]
+        else:
+            # Generic fallback
+            return [term, '-e', 'bash', '-c', cmd]
+    
+    primary_args = format_terminal_command(terminal, final_command)
+    fallback_args = format_terminal_command(fallback_terminal, final_command)
+    
+    try:
+        proc = subprocess.Popen(primary_args, cwd=cwd, env=env)
+        proc.wait()
+        exit_code = proc.returncode
+        if exit_code == 0:
+            return {'success': True, 'exit_code': exit_code, 'error': None}
+        else:
+            proc2 = subprocess.Popen(fallback_args, cwd=cwd, env=env)
+            proc2.wait()
+            exit_code2 = proc2.returncode
+            if exit_code2 == 0:
+                return {'success': True, 'exit_code': exit_code2, 'error': None}
+            else:
+                if raise_on_error:
+                    raise subprocess.CalledProcessError(exit_code2, primary_args)
+                return {'success': False, 'exit_code': exit_code2, 'error': None}
+    except Exception as e:
+        try:
+            proc2 = subprocess.Popen(fallback_args, cwd=cwd, env=env)
+            proc2.wait()
+            exit_code2 = proc2.returncode
+            if exit_code2 == 0:
+                return {'success': True, 'exit_code': exit_code2, 'error': None}
+            else:
+                if raise_on_error:
+                    raise subprocess.CalledProcessError(exit_code2, fallback_args)
+                return {'success': False, 'exit_code': exit_code2, 'error': e}
+        except Exception as e2:
+            if raise_on_error:
+                raise e2
+            return {'success': False, 'exit_code': None, 'error': e2}
+
+import json
 app = QApplication(sys.argv)
 
 # global variable used to count number of errors until time to display error popup message
 # each time error occurs, this variable gets decremented
 # if its zero, the error message is displayed.
 
-packageSRCReference = { # PACKAGE source reference dictionary
 
-                        # IMP!! packageSRCReference != packageSRCPreference
 
-                        # {"source1" : {"program1":"com.source1.Program1", "program2":"com.source1.Program2"}
-                        # }
+# Load packageSRCReference from external JSON file
+json_path = os.path.join(os.getcwd(), "src/stratos-packages.json")
+with open(json_path, "r") as f:
+    packageSRCReference = json.load(f)
 
-                        # ===== ALL FLATPAKS =====
-                        "flatpak":{  # ======== BROWSERS ======== 
-                                    "brave": "com.brave.Browser",                   \
-                                    "firefox": "org.mozilla.Firefox",               \
-                                    "chromium": "org.chromium.Chromium",            \
-                                    "librewolf": "io.gitlab.librewolf-community",   \
-
-                                    # ======== MEDIA PLAYERS ========
-                                    "vlc" : "org.videolan.VLC",                     \
-                                    "mpv" : "io.mpv.Mpv",                           \
-
-                                    # ======== OFFICE PROGRAMS ========
-                                    "libreoffice": "org.libreoffice.LibreOffice",   \
-                                    "onlyoffice": "org.onlyoffice.desktopeditors",  \
-
-                                    # ======== TEXT EDITORS ========
-                                    "vscodium": "com.vscodium.codium"               \
-
-                                    # ======== MISCELLANEOUS ========
-                                    # ====> NONE <==== for FLATPAK
-                                }   ,                                               \
-                        
-                        # ====== ALL ARCH USER REPOSITORY PROGRAMS ======
-                        "aur" : {   # ======== BROWSERS ========
-                                    "brave" : "brave-bin",                          \
-                                    "librewolf" : "librewolf-bin",                  \
-                                    
-                                    # ======== MEDIA PLAYERS ========
-                                    "mpv": "mpv-full",                              \
-                                    "vlc": "vlc-git",                               \
-                                    
-                                    # ======== OFFICE PROGRAMS ========
-                                    "onlyoffice": "onlyoffice-bin",                 \
-                                    
-                                    # ======== TEXT EDITORS ========
-                                    "vscodium": "vscodium-bin",                     \
-                                    
-                                    # ======== MISCELLANEOUS ========
-                                    "github" : "github-desktop-bin",                \
-                                    "obsidian" : "obsidian-bin",                    \
-                                    "gsconnect": "gnome-shell-extension-gsconnect"   
-                                }   ,                                               \
-                        
-                        # ===== ALL PACMAN PROGRAMS ========
-                        "pacman":{  # ======= WEB BROWSERS ========
-                                    "chromium": "chromium",                         \
-                                    "firefox": "firefox",                           \
-
-                                    # ======= MEDIA PLAYERS ========
-                                    "vlc": "vlc",                                   \
-                                    "mpv": "mpv",                                   \
-                                    
-                                    # ======= OFFICE SUITES ========               
-                                    "libreoffice": "libreoffice-fresh",             \
-
-                                    # ======= MISCELLANEOUS =======
-                                    "atril": "atril",                               \
-                                    "evince": "evince",                             \
-                                    "obsidian": "obsidian"                          \
-                                }    ,
-
-                        # ======= ALL Programs installed using Special Install Scripts ========
-                        # ======= TEXT EDITORS =======
-                        "script": {
-                                    "stratmacs":"stratmacs_installer",              \
-                                    "stratvim":"stratvim_installer"                  
-                        }                               
-        }
+# Get terminal emulator from $TERM or fallback
+DEFAULT_TERMINAL = os.environ.get("TERM", "x-terminal-emulator")
 
 
 AURInstallQueue = None
@@ -147,7 +197,7 @@ WORK_DIR = os.getcwd() # gets working directory of the python script
 # |  \/  | __ _ _ __   ___| | _(_) | \ | | ___| | _____  
 # | |\/| |/ _` | '_ \ / _ \ |/ / | |  \| |/ _ \ |/ / _ \ 
 # | |  | | (_| | | | |  __/   <| | | |\  |  __/   < (_) |
-# |_|  |_|\__,_|_| |_|\___|_|\_\_| |_| \_|\___|_|\_\___/ 
+# /_/   \_\ .__/| .__/|_|_|\___|_|\_\_| |_| \_|\___|_|\_\___/ 
                                                        
 #     _                _ _           _   _             
 #    / \   _ __  _ __ | (_) ___ __ _| |_(_) ___  _ __  
@@ -614,25 +664,13 @@ class welcomeScreen(QMainWindow):
             self.nextButton.setText("Exit")
 
     def runDistroInstallerScript(self):
-
         if not isfile('/usr/local/bin/StratOS-configure-distro'):
             self.errorMessageBox(title = 'Cannot Open DistroInstaller', message = ' Maneki could not open helper program to install distros on StratOS.', details = "/usr/local/bin/StratOS-configure-distro: No such file or directory", icon = 'critical')
             return
-        # the command to execute
-        try:
-            print("runDistroInstaller(): executing the installer script")
-            command = ["gnome-terminal", "-e", '/usr/local/bin/StratOS-configure-distro']
-
-            temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
-
-            if temporary == 1:
-                self.errorMessageBox(title = 'Cannot Open DistroInstaller', message = ' Maneki could not open helper program to install distros on StratOS.', details = E404, icon = 'critical')
-
-
-        # error handling
-        except FileNotFoundError as E404:
-            self.errorMessageBox(title = 'Cannot Open DistroInstaller', message = ' Maneki could not open helper program to install distros on StratOS.', details = E404, icon = 'critical')
-            print("runDistroInstaller(): Could not find /usr/local/bin/StratOS-configure-distro")
+        print("runDistroInstaller(): executing the installer script")
+        result = invoke_in_terminal(['/usr/local/bin/StratOS-configure-distro'])
+        if not result['success']:
+            self.errorMessageBox(title = 'Cannot Open DistroInstaller', message = 'Failed to launch installer script.', details = str(result['error']), icon = 'critical')
         return
 
     def openPackageInstallerPage(self):
@@ -826,6 +864,9 @@ class creditsWindow(QDialog):
 
 
 class installDialog(QDialog):
+    import asyncio
+
+    
 
     AURInstallQueue = None
     FLATPAKInstallQueue = None
@@ -843,9 +884,10 @@ class installDialog(QDialog):
 
         super(installDialog,self).__init__()
         loadUi(WORK_DIR + "/src/ui/installDialog.ui", self)
-        
+        self.dialogStackedWidget.setCurrentIndex(0)
         self.cancelButton.clicked.connect(self.reject)
         self.updateInstallQueueLabel()
+        
         
         self.proceedButton.clicked.connect(self.invokeInstallScript)
         # set these status variables to false
@@ -899,25 +941,57 @@ class installDialog(QDialog):
         return
     
     def invokeInstallScript(self):
-        # function that calls the external shell script to begin installation
-        print("manekiProgramInstaller(): Installing programs....")
-
-
-        print(self.AURInstallQueue)
-        print(self.FLATPAKInstallQueue)
-        print(self.PACMANInstallQueue)
-
-        # we can use these status variables to check whether we need to call the adj. install script or not
-        print("isThereAUR:",self.isThereAUR)
-        print("isThereFlatpak:" , self.isThereFlatpak)
-        print("isTherePacman:",self.isTherePacman)
-
-        print("installFlatpaksSystemWide:",self.installFlatpaksSystemWide)
-        
-
- 
-        self.accept()
-        return
+        """Launch the package installer script with package data as arguments."""
+        try:
+            # Prepare package data - extract the actual package lists from the dictionaries
+            aur_packages = self.AURInstallQueue.get("aur", []) if self.AURInstallQueue else []
+            pacman_packages = self.PACMANInstallQueue.get("pacman", []) if self.PACMANInstallQueue else []
+            flatpak_packages = self.FLATPAKInstallQueue.get("flatpak", []) if self.FLATPAKInstallQueue else []
+            
+            print(f"🚀 Debug - AUR queue: {self.AURInstallQueue}")
+            print(f"🚀 Debug - Pacman queue: {self.PACMANInstallQueue}")
+            print(f"🚀 Debug - Flatpak queue: {self.FLATPAKInstallQueue}")
+            print(f"🚀 Debug - Extracted AUR packages: {aur_packages}")
+            print(f"🚀 Debug - Extracted Pacman packages: {pacman_packages}")
+            print(f"🚀 Debug - Extracted Flatpak packages: {flatpak_packages}")
+            
+            # Create JSON string for combined packages
+            package_data = {
+                'aur': aur_packages,
+                'pacman': pacman_packages,
+                'flatpak': flatpak_packages
+            }
+            packages_json = json.dumps(package_data)
+            
+            print(f"🚀 Debug - Final JSON: {packages_json}")
+            print(f"🚀 Debug - installFlatpaksSystemWide: {self.installFlatpaksSystemWide}")
+            
+            # Path to the installer script
+            installer_script = os.path.join(WORK_DIR, "src", "scripts", "installscripts", "package_installer.py")
+            
+            # Prepare command arguments
+            command_args = [installer_script, "--packages-json", packages_json]
+            
+            # Add flatpak system-wide installation flag if needed
+            if self.installFlatpaksSystemWide:
+                command_args.append("--ifsw")
+            
+            print(f"🚀 Launching installer with command: {command_args}")
+            print(f"🚀 Flatpak installation scope: {'system-wide' if self.installFlatpaksSystemWide else 'user-only'}")
+            
+            # Launch installer script in terminal using python shell type
+            result = invoke_in_terminal(command_args, shell_type="python")
+            
+            if result['success']:
+                print("✅ Installer script launched successfully")
+                self.accept()
+            else:
+                print(f"❌ Failed to launch installer script: {result.get('error', 'Unknown error')}")
+                
+        except Exception as e:
+            print(f"❌ Error launching installer script: {e}")
+            import traceback
+            traceback.print_exc()
 
 
 class changeDefaultSettingsDialog(QDialog):
@@ -1003,65 +1077,54 @@ class changeDefaultSettingsDialog(QDialog):
             msg.exec()
 
     def selectTextEditor(self):
-
-        command = ['gnome-terminal', '-e', f"bash -c '{WORK_DIR}/src/scripts/mimeopenScripts/setDefaultTextEditor.sh'"]
-        try:
-            temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
-            
-        except FileNotFoundError as E404:
-            self.errorMessageBox(title="Cannot Open",message="Cannot open GNOME Terminal...", details = E404, function = "selectTextEditor")
-
+        result = invoke_in_terminal([f"bash -c '{WORK_DIR}/src/scripts/mimeopenScripts/setDefaultTextEditor.sh'"])
+        if not result['success']:
+            self.errorMessageBox(title="Cannot Open",message="Cannot open terminal emulator...", details = str(result['error']), function = "selectTextEditor")
             print("selectTextEditor(): Couldn't run MIMEOPEN command to change default text editor... ")
-
+        else:
+            print("selectTextEditor(): Successfully ran MIMEOPEN command to change default text editor.")
+            tmp = QMessageBox(0,"Success", "Successfully changed default text editor.")
+            
         return
 
     def selectPDFViewer(self):
-
-        command = ['gnome-terminal', '-e', f' bash -c \'{WORK_DIR}/src/scripts/mimeopenScripts/setDefaultPDFApp.sh\'']
-        try:
-            temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
-            
-        except FileNotFoundError as E404:
-            self.errorMessageBox(title="Cannot Open",message="Cannot open GNOME Terminal...", details = E404, function = "selectPDFViewer")
-
+        result = invoke_in_terminal([f"bash -c '{WORK_DIR}/src/scripts/mimeopenScripts/setDefaultPDFApp.sh'"])
+        if not result['success']:
+            self.errorMessageBox(title="Cannot Open",message="Cannot open terminal emulator...", details = str(result['error']), function = "selectPDFViewer")
             print("selectPDFViewer(): Couldn't run MIMEOPEN command to change default PDF viewer... ")
-
+        else:
+            print("selectPDFViewer(): Successfully ran MIMEOPEN command to change default PDF viewer.")
+            tmp = QMessageBox(0,"Success", "Successfully changed default PDF viewer.")
         return
 
     def selectDOCXEditor(self):
-        command = ['gnome-terminal', '-e', f' bash -c {WORK_DIR}/src/scripts/mimeopenScripts/setDefaultDOCXApp.sh']
-        try:
-            temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
-            
-        except FileNotFoundError as E404:
-            self.errorMessageBox(title="Cannot Open",message="Cannot open GNOME Terminal...", details = E404, function = "selectDOCXEditor")
-
+        result = invoke_in_terminal([f"bash -c '{WORK_DIR}/src/scripts/mimeopenScripts/setDefaultDOCXApp.sh'"])
+        if not result['success']:
+            self.errorMessageBox(title="Cannot Open",message="Cannot open terminal emulator...", details = str(result['error']), function = "selectDOCXEditor")
             print("selectDOCXEditor(): Couldn't run MIMEOPEN command to change default Word file editor... ")
-
+        else:
+            print("selectDOCXEditor(): Successfully ran MIMEOPEN command to change default Word file editor.")
+            tmp = QMessageBox(0,"Success", "Successfully changed default Word file editor.")
         return
 
     def selectPPTXEditor(self):
-        command = ['gnome-terminal', '-e', f' bash -c {WORK_DIR}/src/scripts/mimeopenScripts/setDefaultPresentationApp.sh']
-        try:
-            temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
-            
-        except FileNotFoundError as E404:
-            self.errorMessageBox(title="Cannot Open",message="Cannot open GNOME Terminal...", details = E404, function = "selectPPTXEditor")
-
+        result = invoke_in_terminal([f"bash -c '{WORK_DIR}/src/scripts/mimeopenScripts/setDefaultPresentationApp.sh'"])
+        if not result['success']:
+            self.errorMessageBox(title="Cannot Open",message="Cannot open terminal emulator...", details = str(result['error']), function = "selectPPTXEditor")
             print("selectPPTXEditor(): Couldn't run MIMEOPEN command to change default Powerpoint file editor... ")
-
+        else:
+            print("selectPPTXEditor(): Successfully ran MIMEOPEN command to change default Powerpoint file editor.")
+            tmp = QMessageBox(0,"Success", "Successfully changed default Powerpoint file editor.")
         return
 
     def selectXLSXEditor(self):
-        command = ['gnome-terminal', '-e', f" bash -c '{WORK_DIR}/src/scripts/mimeopenScripts/setDefaultSpreadsheetApp.sh'"]
-        try:
-            temporary = subprocess.Popen(command,stdout=subprocess.PIPE)
-            
-        except FileNotFoundError as E404:
-            self.errorMessageBox(title="Cannot Open",message="Cannot open GNOME Terminal...", details = E404, function = "selectXLSXEditor")
-
+        result = invoke_in_terminal([f"bash -c '{WORK_DIR}/src/scripts/mimeopenScripts/setDefaultSpreadsheetApp.sh'"])
+        if not result['success']:
+            self.errorMessageBox(title="Cannot Open",message="Cannot open terminal emulator...", details = str(result['error']), function = "selectXLSXEditor")
             print("selectXLSXEditor(): Couldn't run MIMEOPEN command to change default Excel file editor... ")
-
+        else:
+            print("selectXLSXEditor(): Successfully ran MIMEOPEN command to change default Excel file editor.")
+            tmp = QMessageBox(0,"Success", "Successfully changed default Excel file editor.")
         return
 
 
